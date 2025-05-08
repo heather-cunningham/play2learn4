@@ -23,20 +23,28 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a id="play2learn-logo-home-link" class="navbar-brand" href="#">
-        Play2Learn Logo
+      <!-- Site Logo -->
+      <a id="play2learn-logo-home-link" class="navbar-brand" href="{% url 'pages:home' %}" 
+        alt="Play2Learn Logo: Click, tap, or press Enter to go to the home page" 
+        title="Play2Learn Logo: Click, tap, or press Enter to go to the home page">Play2Learn Logo
         <!-- <img id="play2learn-logo" src="" alt="Play2Learn Logo" 
           class="img-fluid"/> -->
-      </a>
+      </a> <!-- END Site Logo -->
 
+      <!-- Mobile Main Menu btn -->
       <button id="main-menu-toggle-btn" class="navbar-toggler me-3" type="button" data-bs-toggle="collapse" 
         data-bs-target="#main-menu" aria-expanded="false" aria-controls="main-menu" 
         aria-label="Toggle Mobile Main Menu">
         <span class="navbar-toggler-icon"></span>
-      </button>
+      </button><!-- END Mobile Main Menu btn -->
 
       <div id="main-menu" class="collapse navbar-collapse me-3 justify-content-end text-end">
         <ul id="main-menu-top-nav" class="navbar-nav ms-auto">
+          <li id="home-nav-item" class="nav-item active">
+            <a id="home-nav-link" class="nav-link" href="{% url 'pages:home' %}" 
+              alt="Go to the home page">Home</a> 
+          </li>
+
           <!-- Games Dropdown -->
           <li id="games-nav-dropdown" class="nav-item dropdown ms-auto">
             <a id="games-dropdown-link" 
@@ -72,23 +80,13 @@
                 </form>
             </div>
           </li><!-- END Me/My Account Dropdown -->
-          
-          <li id="home-nav-item" class="nav-item active">
-            <a id="home-nav-link" class="nav-link" href="#">Home</a> 
-          </li>
-          <li id="about-nav-item" class="nav-item">
-            <a id="about-nav-link" class="nav-link" href="">About</a>
-          </li>
-          <li id="contact-nav-item" class="nav-item">
-            <a id="contact-nav-link" class="nav-link" href="">Contact Us</a>
-          </li>
 
-          <!-- Sign In/Up Dropdown -->
+          <!-- Sign In/SignUp Dropdown -->
           <li id="sign-nav-dropdown" class="nav-item dropdown ms-auto">
             <a id="sign-dropdown-link" class="nav-link dropdown-toggle" 
               href="#"  
               role="button" data-bs-toggle="dropdown" aria-haspopup="true" 
-              aria-expanded="false">Sign In/Up</a>
+              aria-expanded="false">Sign In / Sign Up</a>
             <div id="sign-dropdown-menu-div" class="dropdown-menu" 
               aria-labelledby="sign-dropdown-link">
               <a id="login-nav-link" class="dropdown-item" href="#">Log in</a>
@@ -105,7 +103,34 @@
     <div id="app"></div>
   </main>
 
-  <footer></footer>
+  <footer class="fixed-bottom bg-light row">
+    <div class="col">
+      <nav>
+        <ul class="nav float-end">
+          <li id="about-footer-item" class="nav-item">
+            <a id="about-footer-link" class="nav-link" href="{% url 'pages:about' %}" 
+              alt="Go to our About Us page">About</a>
+          </li>
+          <li id="contact-footer-item" class="nav-item">
+            <a id="contact-footer-link" class="nav-link" href="#" 
+              alt="Go to our Contact Us page">Contact Us</a>
+          </li>
+          <li id="feedback-footer-item" class="nav-item">
+            <a id="feedback-footer-link" class="nav-link" href="#" 
+              alt="Send feedback or write a review">Feedback</a>
+          </li>
+        </ul>
+      </nav>
+      <p class="m-2">
+        <cite>Website designed &amp; developed by: 
+          <a href="https://github.com/heather-cunningham" rel="noopener" target="_blank" 
+          alt="See my GitHub portfolio" title="See my GitHub portfolio">Heather I. Cunningham</a>
+        </cite>
+      </p>
+    </div>
+    </nav>
+  </footer>
+
 
    <!-- FONT AWESOME CDN -->
   <script src="https://kit.fontawesome.com/5edc2e2a09.js" crossorigin="anonymous"></script>

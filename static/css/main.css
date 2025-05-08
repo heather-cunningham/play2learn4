@@ -1,14 +1,18 @@
 html, body {
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 18px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 18px;
+}
+
+cite {
+  font-size: 0.75rem;
 }
 
 /* HEADER, NAV styles */
-#games-dropdown-menu-div, 
-#me-dropdown-menu-div,  
+#games-dropdown-menu-div,
+#me-dropdown-menu-div,
 #sign-dropdown-menu-div {
-    min-width: 7rem;
+  min-width: 7rem;
 }
 /* End HEADER, NAV styles */
-
-  
