@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     ## Third-party, I installed apps
 
     ## My local apps
-    "games.apps.GamesConfig"
+    "games.apps.GamesConfig",
+    "pages.apps.PagesConfig",
 ]
 
 SITE_ID = 1
