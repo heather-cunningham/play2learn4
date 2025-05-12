@@ -18,6 +18,9 @@
   <script defer src="http://localhost:8080/js/chunk-vendors.js"></script>
   <script defer src="http://localhost:8080/js/app.js"></script>
 
+  <!-- All images and graphics used in this web app are free clip art, unless otherwise indicated
+      it was created free with an AI tool, like DALL-E. -->
+
   <title>{% block title %}{% endblock %} | Play2Learn</title>
   {% endblock %} <!-- end head -->
 </head>
@@ -26,61 +29,76 @@
   {% block body %}
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a id="play2learn-logo-home-link" class="navbar-brand" href="#">
-        Play2Learn Logo
-        <!-- <img id="play2learn-logo" src="" alt="Play2Learn Logo" 
-          class="img-fluid"/> -->
-      </a>
+      <!-- Site Logo -->
+      <a id="play2learn-logo-home-link" class="navbar-brand" href="{% url 'pages:home' %}" 
+        alt="Play2Learn Logo: Click, tap, or press Enter to go to the home page" 
+        title="Play2Learn Logo: Click, tap, or press Enter to go to the home page">
+        <img id="play2learn-logo" 
+          class="img-fluid ms-2 float-start" 
+          src="{% static 'images/play2Learn_logo.png' %}" 
+          alt="Play2Learn Logo" 
+          aria-description="AI generated image"/>
+      </a> <!-- END Site Logo -->
 
-      <button id="main-menu-toggle-btn" class="navbar-toggler me-3" type="button" data-bs-toggle="collapse"
-        data-bs-target="#main-menu" aria-expanded="false" aria-controls="main-menu"
+      <!-- Mobile Main Menu btn -->
+      <button id="main-menu-toggle-btn" class="navbar-toggler me-3" type="button" data-bs-toggle="collapse" 
+        data-bs-target="#main-menu" aria-expanded="false" aria-controls="main-menu" 
         aria-label="Toggle Mobile Main Menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <span id="main-menu-toggle-icon" class="navbar-toggler-icon"></span>
+      </button><!-- END Mobile Main Menu btn -->
+
 
       <div id="main-menu" class="collapse navbar-collapse me-3 justify-content-end text-end">
         <ul id="main-menu-top-nav" class="navbar-nav ms-auto">
+          <li id="home-nav-item" class="nav-item active">
+            <a id="home-nav-link" class="nav-link" href="{% url 'pages:home' %}" 
+              alt="Go to the home page">Home</a> 
+          </li>
+
           <!-- Games Dropdown -->
           <li id="games-nav-dropdown" class="nav-item dropdown ms-auto">
-            <a id="games-dropdown-link" class="nav-link dropdown-toggle" href="#" role="button"
-              data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Games</a>
-            <div id="games-dropdown-menu-div" class="dropdown-menu" aria-labelledby="games-dropdown-link">
-              <a id="ah-nav-link" class="dropdown-item" href="#">Anagram Hunt</a>
-              <a id="mf-nav-link" class="dropdown-item" href="#">Math Facts</a>
-            </div>
+            <a id="games-dropdown-link" 
+              class="nav-link dropdown-toggle" 
+              href="#"  
+              role="button" data-bs-toggle="dropdown" aria-haspopup="true" 
+              aria-expanded="false">Games</a>
+              <div id="games-dropdown-menu-div" class="dropdown-menu" 
+                aria-labelledby="games-dropdown-link">
+                  <a id="ah-nav-link" class="dropdown-item" href="#">Anagram Hunt</a> 
+                  <a id="mf-nav-link" class="dropdown-item" href="#">Math Facts</a>
+              </div>
           </li><!-- END Games Dropdown -->
 
           <!-- Me/My Account Dropdown -->
           <li id="me-nav-dropdown" class="nav-item dropdown ms-auto">
-            <a id="me-dropdown-link" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">Me</a>
-            <div id="me-dropdown-menu-div" class="dropdown-menu" aria-labelledby="me-dropdown-link">
-              <a id="my-account-nav-link" class="dropdown-item" href="#">My Account</a>
-              <a id="my-games-nav-link" class="dropdown-item" href="#">My Games</a>
-              <div id="me-dropdown-divider" class="dropdown-divider"></div>
-              <form method="post" action="#">
-                {% csrf_token %}
-                <button id="logout-nav-btn" class="btn dropdown-item" name="LOG OUT" alt="Log out of your account"
-                  type="submit">Log Out</button>
-              </form>
+            <a id="me-dropdown-link" class="nav-link dropdown-toggle" 
+              href="#"  
+              role="button" data-bs-toggle="dropdown" aria-haspopup="true" 
+              aria-expanded="false">Me</a>
+            <div id="me-dropdown-menu-div" class="dropdown-menu" 
+              aria-labelledby="me-dropdown-link">
+                <a id="my-account-nav-link" class="dropdown-item" href="#">My Account</a>
+                <a id="my-games-nav-link" class="dropdown-item"href="#">My Games</a>
+                <div id="me-dropdown-divider" class="dropdown-divider"></div>
+                <form method="post" action="#">
+                  {% csrf_token %}
+                  <button id="logout-nav-btn" 
+                    class="btn dropdown-item" 
+                    name="LOG OUT" 
+                    alt="Log out of your account" 
+                    type="submit">Log Out</button>
+                </form>
             </div>
           </li><!-- END Me/My Account Dropdown -->
 
-          <li id="home-nav-item" class="nav-item active">
-            <a id="home-nav-link" class="nav-link" href="#">Home</a>
-          </li>
-          <li id="about-nav-item" class="nav-item">
-            <a id="about-nav-link" class="nav-link" href="">About</a>
-          </li>
-          <li id="contact-nav-item" class="nav-item">
-            <a id="contact-nav-link" class="nav-link" href="">Contact Us</a>
-          </li>
-
-          <!-- Sign In/Up Dropdown -->
+           <!-- Sign In/SignUp Dropdown -->
           <li id="sign-nav-dropdown" class="nav-item dropdown ms-auto">
-            <a id="sign-dropdown-link" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">Sign In/Up</a>
-            <div id="sign-dropdown-menu-div" class="dropdown-menu" aria-labelledby="sign-dropdown-link">
+            <a id="sign-dropdown-link" class="nav-link dropdown-toggle" 
+              href="#"  
+              role="button" data-bs-toggle="dropdown" aria-haspopup="true" 
+              aria-expanded="false">Sign In / Sign Up</a>
+            <div id="sign-dropdown-menu-div" class="dropdown-menu" 
+              aria-labelledby="sign-dropdown-link">
               <a id="login-nav-link" class="dropdown-item" href="#">Log in</a>
               <a id="register-nav-link" class="dropdown-item" href="#">Register</a>
             </div>
@@ -92,7 +110,33 @@
   
   {% block main %}{% endblock %} <!-- end main -->
 
-  <footer></footer>
+  <footer class="fixed-bottom bg-light row">
+    <div class="col">
+      <nav>
+        <ul class="nav float-end">
+          <li id="about-footer-item" class="nav-item">
+            <a id="about-footer-link" class="nav-link" href="{% url 'pages:about' %}" 
+              alt="Go to our About Us page">About</a>
+          </li>
+          <li id="contact-footer-item" class="nav-item">
+            <a id="contact-footer-link" class="nav-link" href="#" 
+              alt="Go to our Contact Us page">Contact Us</a>
+          </li>
+          <li id="feedback-footer-item" class="nav-item">
+            <a id="feedback-footer-link" class="nav-link" href="#" 
+              alt="Send feedback or write a review">Feedback</a>
+          </li>
+        </ul>
+      </nav>
+      <p class="m-2">
+        <cite>Website designed &amp; developed by: 
+          <a href="https://github.com/heather-cunningham" rel="noopener" target="_blank" 
+          alt="See my GitHub portfolio" title="See my GitHub portfolio">Heather I. Cunningham</a>
+        </cite>
+      </p>
+    </div>
+    </nav>
+  </footer>
 
   <!-- FONT AWESOME CDN -->
   <script src="https://kit.fontawesome.com/5edc2e2a09.js" crossorigin="anonymous"></script>
