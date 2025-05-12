@@ -4,7 +4,7 @@ module.exports = {
   
   /* Removed this indexPath for now, so Vue doesn't overwrite this template every time I
   run `npm run serve` from the Vue games sub-dir root */
-  // indexPath: '../../templates/_base_vue.html', // The path for the generated index file
+  indexPath: '../../templates/_base_vue.html', // The path for the generated index file
 
   configureWebpack: {
     devServer: {
