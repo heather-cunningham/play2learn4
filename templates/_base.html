@@ -64,8 +64,12 @@
               aria-expanded="false">Games</a>
               <div id="games-dropdown-menu-div" class="dropdown-menu" 
                 aria-labelledby="games-dropdown-link">
-                  <a id="ah-nav-link" class="dropdown-item" href="#">Anagram Hunt</a> 
-                  <a id="mf-nav-link" class="dropdown-item" href="#">Math Facts</a>
+                  <a id="ah-nav-link" class="dropdown-item" href="{% url 'games:anagram-hunt' %}">
+                    Anagram Hunt
+                  </a> 
+                  <a id="mf-nav-link" class="dropdown-item" href="{% url 'games:math-facts' %}">
+                    Math Facts
+                  </a>
               </div>
           </li><!-- END Games Dropdown -->
 
