@@ -1,6 +1,6 @@
 <template>
   <div class="container" style="width: 500px">
-    <!-- Start Screen -->
+    <!-- BEGIN MF Start Screen -->
     <div v-if="screen=='start'" class="container">
       <div class="row">
         <div class="col">
@@ -26,8 +26,9 @@
         </ol>
       </div>
       <button class="btn btn-primary w-100" @click="play">Play!</button>
-    </div>
-    <!-- Play Screen -->
+    </div><!-- END MF Start Screen -->
+    
+    <!-- BEGIN MF Play Screen -->
     <div v-else-if="screen == 'play'" class="container">
       <div class="row">
         <div class="col d-flex justify-content-between">
@@ -85,23 +86,37 @@
           </div>
         </div>
       </div>
-    </div>
-    <!-- End Screen -->
+    </div> <!-- END MF Play Screen -->
+    
+    <!-- BEGIN MF Final Screen -->
     <div v-else-if="screen == 'end'" class="container">
       <div class="row">
         <h4 class="display-4 text-center">Time's Up</h4>
       </div>
-      <div class="row d-flex flex-col text-center">
+      <div class="row d-flex flex-col text-center"><!-- Final Score Div-->
         <p>You answered</p>
         <div class="display-3">{{ score }}</div>
         <p>questions</p>
-      </div>
+      </div><!-- END Final Score Div-->
+      
+      <div><!-- Record Final Score Div-->
+        <div>
+          <label id="username_lbl" for="username_input">Username</label>
+          <input id="username_input" name="Username" />
+        </div>
+        <div>
+          <label id="score_lbl" for="score_input">Final Score</label>
+          <input id="score_input" name="FinalScore" />
+        </div>
+        <button>Record Score</button>
+      </div><!-- END  Record Final Score Div-->
+      
       <div class="row d-flex flex-col text-center">
         <button @click="play" class="btn btn-primary w-100 m-1">Play Again</button>
         <button @click="screen = 'start'" class="btn btn-secondary w-100 m-1">Back to Start Screen</button>
       </div>
     </div>
-  </div>
+  </div><!-- END MF Final Screen -->
 </template>
 
 <style scoped>
