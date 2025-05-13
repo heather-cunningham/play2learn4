@@ -1,17 +1,17 @@
 from django.db import models
 
 
-class GameFinalScore(models.Model):
-    ANAGRAM_GAME = "ANAGRAM_GAME"
-    MATH_GAME = "MATH_GAME"
+class GameScore(models.Model):
+    ANAGRAM = "ANAGRAM"
+    MATH = "MATH"
     #
     GAME_CHOICES = [
-        (ANAGRAM_GAME, "Anagram Hunt"),
-        (MATH_GAME, "Math Facts"),
+        (ANAGRAM, "Anagram Hunt"),
+        (MATH, "Math Facts"),
     ]
     #
-    username = models.TextField()
-    game_name = models.TextField(choices=GAME_CHOICES, default=ANAGRAM_GAME)
-    final_score = models.IntegerField()
-    game_datetime = models.DateTimeField(auto_now_add=True)
+    user_name = models.TextField()
+    game = models.TextField(choices=GAME_CHOICES, default=MATH)
+    score = models.IntegerField()
+    created = models.DateTimeField(auto_now_add=True)
  

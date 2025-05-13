@@ -27,6 +27,7 @@
       </div>
       <button class="btn btn-primary w-100" @click="play">Play!</button>
     </div>
+
     <!-- Play Screen -->
     <div v-else-if="screen == 'play'" class="container">
       <div class="row">
@@ -86,6 +87,7 @@
         </div>
       </div>
     </div>
+
     <!-- End Screen -->
     <div v-else-if="screen == 'end'" class="container">
       <div class="row">
@@ -100,7 +102,20 @@
         <button @click="play" class="btn btn-primary w-100 m-1">Play Again</button>
         <button @click="screen = 'start'" class="btn btn-secondary w-100 m-1">Back to Start Screen</button>
       </div>
+
+      <div id="record-score-div">
+        <div>
+          <label for="user-name">Username</label>
+          <input id="user-name" name="user-name" v-model="userName" />
+        </div>
+        <div>
+          <label for="score">Score</label>
+          <input id="score" name="score" type="number" v-model="score" />
+        </div>
+        <button @click="recordScore">Record Score</button>
+      </div>
     </div>
+
   </div>
 </template>
 
@@ -115,8 +130,10 @@ import { getRandomInteger } from '@/helpers/helpers';
 
 export default {
   name: 'MathGame',
+
   data() {
     return {
+      userName: '',
       score: 0,
       screen: "start",
       maxNumber: 30,
@@ -134,6 +151,7 @@ export default {
       timeLeft: 60,
     }
   },
+
   methods: {
     play() {
       this.screen = "play";
@@ -142,6 +160,7 @@ export default {
         this.timeLeft--;
       }, 1000)
     },
+
     getNewQuestion() {
       let num1 = getRandomInteger(0, this.maxNumber + 1);
       let num2 = getRandomInteger(0, this.maxNumber + 1);
@@ -158,11 +177,20 @@ export default {
         this.number2 = num2;
       }
     },
+
     async recordScore() {
-      // TODO: when Math Facts finishes, make an Ajax call with axios (this.axios)
-      // to record the score on the backend
+      const data = {
+        "user-name": this.userName,
+        "score": this.score,
+        "game": "MATH"
+      };
+
+      const response = (await this.axios.post("/record-score/", data)).data;
+
+      console.log(response)
     }
-  },
+  }, // END methods
+
   computed: {
     correctAnswer() {
       if (this.userInput.trim() == "") {
@@ -189,6 +217,7 @@ export default {
       return false;
     },
   },
+
   watch: {
     userInput() {
       if (this.correctAnswer) {
@@ -197,6 +226,7 @@ export default {
         this.userInput = "";
       }
     },
+
     timeLeft(newTime) {
       if (newTime === 0) {
         clearInterval(this.interval);
