@@ -1,7 +1,8 @@
 <template>
   <div class="container" style="width: 500px">
     <!-- BEGIN MF Start Screen -->
-    <div v-if="screen=='start'" class="container">
+    <!-- <div v-if="screen=='start'" class="container"> -->
+    <div v-show="screen=='start'" class="container">
       <div class="row">
         <div class="col">
           <div class="row">
@@ -29,7 +30,8 @@
     </div><!-- END MF Start Screen -->
     
     <!-- BEGIN MF Play Screen -->
-    <div v-else-if="screen == 'play'" class="container">
+    <!-- <div v-else-if="screen == 'play'" class="container"> -->
+    <div v-show="screen == 'play'" class="container">
       <div class="row">
         <div class="col d-flex justify-content-between">
           <span>Score: {{ score }}</span>
@@ -89,7 +91,8 @@
     </div> <!-- END MF Play Screen -->
     
     <!-- BEGIN MF Final Screen -->
-    <div v-else-if="screen == 'end'" class="container">
+    <!-- <div v-else-if="screen == 'end'" class="container"> -->
+    <div v-show="screen == 'end'" class="container">
       <div class="row">
         <h4 class="display-4 text-center">Time's Up</h4>
       </div>
@@ -99,17 +102,19 @@
         <p>questions</p>
       </div><!-- END Final Score Div-->
       
-      <div><!-- Record Final Score Div-->
+      <!-- Record Final Score Div-->
+      <div>
         <div>
           <label id="username_lbl" for="username_input">Username</label>
-          <input id="username_input" name="Username" />
+          <input id="username_input" name="Username" v-model="username" />
         </div>
         <div>
           <label id="score_lbl" for="score_input">Final Score</label>
-          <input id="score_input" name="FinalScore" />
+          <input id="score_input" name="FinalScore" v-model="score" />
         </div>
-        <button>Record Score</button>
-      </div><!-- END  Record Final Score Div-->
+        <button @click="recordScore()">Record Score</button>
+      </div>
+      <!-- END  Record Final Score Div-->
       
       <div class="row d-flex flex-col text-center">
         <button @click="play" class="btn btn-primary w-100 m-1">Play Again</button>
@@ -129,9 +134,11 @@
 import { getRandomInteger } from '@/helpers/helpers';
 
 export default {
-  name: 'MathGame',
+  name: 'MathFacts',
+
   data() {
     return {
+      gameName: "Math Facts",
       score: 0,
       screen: "start",
       maxNumber: 30,
@@ -147,8 +154,10 @@ export default {
       userInput: "",
       interval: null,
       timeLeft: 60,
+      username: "",
     }
-  },
+  }, // END data
+
   methods: {
     play() {
       this.screen = "play";
@@ -157,6 +166,7 @@ export default {
         this.timeLeft--;
       }, 1000)
     },
+
     getNewQuestion() {
       let num1 = getRandomInteger(0, this.maxNumber + 1);
       let num2 = getRandomInteger(0, this.maxNumber + 1);
@@ -173,11 +183,21 @@ export default {
         this.number2 = num2;
       }
     },
+
     async recordScore() {
       // TODO: when Math Facts finishes, make an Ajax call with axios (this.axios)
       // to record the score on the backend
+      const scoreData = {
+        "username": this.username,
+        "final_score": this.score,
+        "game_name": this.gameName,
+      };
+      const response = (await this.axios.post("/record-score/", scoreData)).data;
+
+      console.log(response);
     }
-  },
+  }, // END methods
+
   computed: {
     correctAnswer() {
       if (this.userInput.trim() == "") {
@@ -203,7 +223,8 @@ export default {
 
       return false;
     },
-  },
+  }, // END computed
+
   watch: {
     userInput() {
       if (this.correctAnswer) {
@@ -212,6 +233,7 @@ export default {
         this.userInput = "";
       }
     },
+
     timeLeft(newTime) {
       if (newTime === 0) {
         clearInterval(this.interval);
@@ -220,6 +242,6 @@ export default {
         this.recordScore(); // call to record score
       }
     }
-  }
+  }// END watch
 }
 </script>

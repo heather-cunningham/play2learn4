@@ -5,6 +5,7 @@ import router from './router'; // import our router
 import App from "./App";
 
 // set default Django cookies and headers
+// Set the Cross Site Request Forgery token to be sent w/ every axios req:
 axios.defaults.xsrfCookieName = 'csrftoken';
 axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
 
