@@ -136,7 +136,7 @@ export default {
       userName: '',
       score: 0,
       screen: "start",
-      maxNumber: 30,
+      maxNumber: 30, // default
       operation: "+",
       operations: {
         "Addition": "+",
@@ -148,7 +148,7 @@ export default {
       number2: 0,
       userInput: "",
       interval: null,
-      timeLeft: 60,
+      timeLeft: 10,
     }
   },
 
@@ -188,7 +188,7 @@ export default {
       const response = (await this.axios.post("/record-score/", data)).data;
 
       console.log(response)
-    }
+    },
   }, // END methods
 
   computed: {
@@ -230,7 +230,7 @@ export default {
     timeLeft(newTime) {
       if (newTime === 0) {
         clearInterval(this.interval);
-        this.timeLeft = 60;
+        this.timeLeft = 10;
         this.screen = "end";
         this.recordScore(); // call to record score
       }
