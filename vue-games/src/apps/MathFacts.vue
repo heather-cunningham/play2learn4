@@ -148,7 +148,7 @@ export default {
       number2: 0,
       userInput: "",
       interval: null,
-      timeLeft: 10,
+      timeLeft: 60,
     }
   },
 
@@ -230,7 +230,7 @@ export default {
     timeLeft(newTime) {
       if (newTime === 0) {
         clearInterval(this.interval);
-        this.timeLeft = 10;
+        this.timeLeft = 60;
         this.screen = "end";
         this.recordScore(); // call to record score
       }
