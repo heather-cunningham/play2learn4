@@ -19,6 +19,6 @@ class FinalScore(models.Model):
     #
     def __str__(self):
         """ toString() """
-        return f"{self.game_date_time} - {self.player.username} - {self.game_name} - {self.final_score}"
+        return f"Player: {self.player.username}, Game: {self.game_name}, Final Score: {self.final_score}, Game Date: {self.game_date_time}"
 ## END class
  

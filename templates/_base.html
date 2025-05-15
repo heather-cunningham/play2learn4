@@ -64,18 +64,30 @@
               aria-expanded="false">Games</a>
               <div id="games-dropdown-menu-div" class="dropdown-menu" 
                 aria-labelledby="games-dropdown-link">
-                  <a id="ah-nav-link" class="dropdown-item" href="{% url 'games:anagram-hunt' %}">
-                    Anagram Hunt
-                  </a> 
-                  <a id="mf-nav-link" class="dropdown-item" href="{% url 'games:math-facts' %}">
-                    Math Facts
-                  </a>
-                  <div id="games-dropdown-divider" class="dropdown-divider"></div>
-                  <a id="leaderboards-nav-link" class="dropdown-item" href="{% url 'games:leaderboards' %}"> 
-                    Leaderboards
-                  </a>
+                  <a id="ah-nav-link" class="dropdown-item" 
+                    href="{% url 'games:anagram-hunt' %}">Anagram Hunt</a> 
+                  <a id="mf-nav-link" class="dropdown-item" 
+                    href="{% url 'games:math-facts' %}">Math Facts</a>
               </div>
           </li><!-- END Games Dropdown -->
+
+          <!-- Leaderboards Dropdown -->
+          <li id="leaderboards-nav-dropdown" class="nav-item dropdown ms-auto">
+            <a id="leaderboards-dropdown-link" 
+              class="nav-link dropdown-toggle" 
+              href="#"  
+              role="button" data-bs-toggle="dropdown" aria-haspopup="true" 
+              aria-expanded="false">Leaderboards</a>
+            <div id="leaderboards-dropdown-menu-div" class="dropdown-menu" 
+                aria-labelledby="leaderboards-dropdown-link">
+                <a id="ah-leaderboard-nav-link" 
+                  class="dropdown-item" 
+                  href="#">Anagram Hunt Leaderboard</a> 
+                <a id="mf-leaderboard-nav-link" 
+                  class="dropdown-item" 
+                  href="{% url 'games:mf_leaderboard' %}">Math Facts Leaderboard</a>
+            </div>
+          </li><!-- END Leaderboards Dropdown -->
 
           <!-- Me/My Account Dropdown -->
           <li id="me-nav-dropdown" class="nav-item dropdown ms-auto">

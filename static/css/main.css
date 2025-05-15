@@ -25,5 +25,17 @@ cite {
 #me-dropdown-menu-div,
 #sign-dropdown-menu-div {
   min-width: 7rem;
+  font-size: .90rem;
+}
+
+#leaderboards-dropdown-menu-div {
+  font-size: .90rem;
 }
 /* End HEADER, NAV styles */
+
+/* Leaderboards TABLE styles */
+#ah-leaderboard-tbl, 
+#mf-leaderboard-tbl  {
+  width: 90%
+}
+/* End Leaderboards TABLE styles */

@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.utils.timezone import localtime
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from django.views.decorators.http import require_http_methods
-from django.views.generic import TemplateView
+from django.views.generic import ListView, TemplateView
 from games.models import FinalScore
 
 
@@ -18,18 +18,18 @@ class MathFactsView(TemplateView):
     template_name = "games/math-facts.html"
 
 
-class LeaderboardsView(TemplateView):
-    template_name = "games/leaderboards.html"
+class MFLeaderboardView(ListView): ## Math Facts Leaderboard
+    model = FinalScore
+    template_name = "games/mf_leaderboard.html"
+    context_object_name = "math_scores"
     #
-    def get_context_data(self, **kwargs):
-        context = super(LeaderboardsView, self).get_context_data(**kwargs)
-        # context['anagram_scores'] = GameScore.objects.filter(game__exact='ANAGRAM').order_by('-score')
-        math_scores = FinalScore.objects.filter(game_name__exact="math_facts").order_by("-final_score")
-         # Convert timestamps to local timezone before passing them to the template
-        for score in math_scores:
-            score.game_date_time = localtime(score.game_date_time)
-        context["math_scores"] = math_scores
-        return context
+    def get_queryset(self):
+        math_scores_qryset = FinalScore.objects.filter(game_name="math_facts").order_by("-final_score")
+        for score in math_scores_qryset:
+            localized_dt = localtime(score.game_date_time).strftime("%m/%d/%Y %I:%M %p %Z")
+            date, time, am_pm_mark, timezone = localized_dt.split(" ")
+            score.game_date_time = f"{date} {time}{am_pm_mark.lower()} {timezone}"
+        return math_scores_qryset
 
 
 ## Function-based Views
