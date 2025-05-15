@@ -47,11 +47,12 @@ def submit_final_score(request):
             if (field not in data):
                 return JsonResponse({"status": "error", "message": f"Missing field: `{field}`."}, status=400)
         # Ensure game_name is valid
-        if data["game_name"] not in dict(FinalScore.GAME_NAME_CHOICES):
+        if (data["game_name"] not in dict(FinalScore.GAME_NAME_CHOICES)):
             return JsonResponse({"status": "error", "message": "Invalid game_name."}, status=400)
         game_name = data.get("game_name")
         final_score = data.get("final_score")
-        if final_score is None:
+        # if (final_score is None):
+        if (not final_score):
             return JsonResponse(
                 {"status": "error", 
                  "message": "final_score == None, Null, or its value is otherwise missing"},
