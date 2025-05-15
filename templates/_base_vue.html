@@ -4,7 +4,9 @@
 <html lang="en">
 
 <head>
-   {% block head %}{{ block.super }}{% endblock head %}
+  {% block head %}
+    {{ block.super }}
+  {% endblock head %}
 <script defer src="http://localhost:8080/js/chunk-vendors.js"></script><script defer src="http://localhost:8080/js/app.js"></script></head>
 
 <body>
@@ -21,6 +23,8 @@
   <!-- Built files will be auto injected.  And, the Django tags/blocks in this file will be
        auto injected into _base_vue.html per the vue.config.js file.-->
   
+  {% csrf_token %}
+
   {% endblock body %}
 </body>
 

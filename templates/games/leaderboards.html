@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block main %}
-<h1>Game Scores</h1>
+<h1>Leaderboards</h1>
 
 <h2>Anagram Hunt</h2>
 <div></div>
@@ -14,7 +14,9 @@
 <div>
   <ol>
     {% for score in math_scores %}
-      <li> {{ score.score }}: ({{ score.user_name }} -- {{ score.created }}) </li>
+      <li>
+        <b>Player:</b> {{ score.player }}, <b>Final Score:</b> {{ score.final_score }}, <b>Game Date:</b> {{ score.game_date_time }}
+      </li>
     {% endfor %}
   </ol>
 </div>

@@ -1,7 +1,7 @@
 <template>
-  <div class="container" style="width: 500px">
+  <div id="math-facts-div" class="container" style="width: 500px">
     <!-- Start Screen -->
-    <div v-if="screen=='start'" class="container">
+    <div id="mf-start-screen-div" v-if="screen=='start'" class="container">
       <div class="row">
         <div class="col">
           <div class="row">
@@ -18,32 +18,37 @@
           </div>
         </div>
       </div>
-      <div class="row m-auto">
+
+      <div id="mf-directions-div" class="row m-auto">
         <ol>
-          <li>Choose Operation and Max Number</li>
+          <li>Choose an arithmetic operation and a max operand number.</li>
           <li>Press <strong>Play!</strong></li>
-          <li>How many questions can you get in a minute?</li>
+          <li>How many equations can you solve in a minute?</li>
         </ol>
       </div>
       <button class="btn btn-primary w-100" @click="play">Play!</button>
     </div>
+    <!-- END Start Screen -->
 
     <!-- Play Screen -->
-    <div v-else-if="screen == 'play'" class="container">
-      <div class="row">
+    <div id="mf-play-screen-div" v-else-if="screen == 'play'" class="container">
+      <div id="mf-score-timer-row" class="row">
         <div class="col d-flex justify-content-between">
-          <span>Score: {{ score }}</span>
-          <span>Time Left: {{ timeLeft }}</span>
+          <span id="mf-score">Score: {{ score }}</span>
+          <span id="mf-timer">Time Left: {{ timeLeft }}</span>
         </div>
         <hr>
       </div>
-      <div class="row">
+
+      <div id="mf-question-row" class="row">
         <output class="display-5 text-center">{{ number1 }} {{ operation }} {{ number2 }} = </output>
       </div>
-      <div class="row">
-        <input class="form-control m-auto" v-model="userInput" style="width: 200px">
+
+      <div id="mf-answer-input-row" class="row">
+        <input id="mf-answer-input" class="form-control m-auto" v-model="userInput" style="width: 200px">
       </div>
-      <div class="row m-auto" style="width: 300px">
+
+      <div id="mf-calculator-div" class="row m-auto" style="width: 300px">
         <div class="row gx-1">
           <div class="col-4">
             <button @click="userInput += '1'" class="btn btn-primary w-100">1</button>
@@ -87,23 +92,25 @@
         </div>
       </div>
     </div>
+    <!-- END Play Screen -->
 
     <!-- End Screen -->
-    <div v-else-if="screen == 'end'" class="container">
+    <div id="mf-end-screen-div" v-else-if="screen == 'end'" class="container">
       <div class="row">
         <h4 class="display-4 text-center">Time's Up</h4>
       </div>
-      <div class="row d-flex flex-col text-center">
+      <div id="mf-final-score-row" class="row d-flex flex-col text-center">
         <p>You answered</p>
         <div class="display-3">{{ score }}</div>
         <p>questions</p>
       </div>
-      <div class="row d-flex flex-col text-center">
-        <button @click="play" class="btn btn-primary w-100 m-1">Play Again</button>
-        <button @click="screen = 'start'" class="btn btn-secondary w-100 m-1">Back to Start Screen</button>
+      <div id="mf-end-btns-row" class="row d-flex flex-col text-center">
+        <button id="mf-play-again-btn" @click="play" class="btn btn-primary w-100 m-1">Play Again</button>
+        <button id="mf-back-2-start-btn" @click="screen = 'start'" class="btn btn-secondary w-100 m-1">
+          Back to Start Screen</button>
       </div>
 
-      <div id="record-score-div">
+      <!-- <div id="record-score-div">
         <div>
           <label for="user-name">Username</label>
           <input id="user-name" name="user-name" v-model="userName" />
@@ -113,8 +120,9 @@
           <input id="score" name="score" type="number" v-model="score" />
         </div>
         <button @click="recordScore">Record Score</button>
-      </div>
+      </div> -->
     </div>
+    <!-- END End Screen -->
 
   </div>
 </template>
@@ -126,17 +134,21 @@
 </style>
 
 <script>
+import axios from "axios";
 import { getRandomInteger } from '@/helpers/helpers';
 
 export default {
-  name: 'MathGame',
+  name: "MathFacts",
 
   data() {
     return {
-      userName: '',
+      // This name must match the `MATH` var's value, i.e.: "math_facts", in the FinalScore model.
+      gameName: "math_facts", 
+      player: "",
       score: 0,
       screen: "start",
-      maxNumber: 30, // default
+      // maxNumber: 30, // default
+      maxNumber: 5, // for testing
       operation: "+",
       operations: {
         "Addition": "+",
@@ -148,9 +160,10 @@ export default {
       number2: 0,
       userInput: "",
       interval: null,
-      timeLeft: 60,
+      // timeLeft: 60,
+      timeLeft: 10, // for testing
     }
-  },
+  }, // END methods
 
   methods: {
     play() {
@@ -178,16 +191,25 @@ export default {
       }
     },
 
-    async recordScore() {
+    async recordFinalScore() {
       const data = {
-        "user-name": this.userName,
-        "score": this.score,
-        "game": "MATH"
+        game_name: this.gameName,
+        player: this.player || "test_user",  // Use test user until auth is implemented
+        settings: {
+          operation: this.operation,
+          max_number: this.maxNumber,
+        },
+        final_score: this.score
       };
 
-      const response = (await this.axios.post("/record-score/", data)).data;
-
-      console.log(response)
+      try {
+          const response = await axios.post("/submit-final-score/", data, {
+            headers: { "Content-Type": "application/json" }
+          });
+          console.log("Success:", response.data);
+        } catch (error) {
+            console.error("AxiosError:", error.response ? error.response.data : error.message);
+        }
     },
   }, // END methods
 
@@ -216,7 +238,7 @@ export default {
 
       return false;
     },
-  },
+  }, // END computed
 
   watch: {
     userInput() {
@@ -230,11 +252,12 @@ export default {
     timeLeft(newTime) {
       if (newTime === 0) {
         clearInterval(this.interval);
-        this.timeLeft = 60;
+        // this.timeLeft = 60;
+        this.timeLeft = 10; // for testing
         this.screen = "end";
-        this.recordScore(); // call to record score
+        this.recordFinalScore(); // call to record score
       }
     }
-  }
+  } // END watch
 }
 </script>
