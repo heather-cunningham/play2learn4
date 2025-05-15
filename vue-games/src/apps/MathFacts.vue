@@ -1,32 +1,32 @@
 <template>
-  <div id="math-facts-div" class="container" style="width: 500px">
+  <div id="mf-game-container" class="container">
     <!-- Start Screen -->
     <div id="mf-start-screen-div" v-if="screen=='start'" class="container">
       <div class="row">
         <div class="col">
-          <div class="row">
-            <label for="operation" class="form-label col-3">Operation</label>
-            <select id="operation" class="form-select col" v-model="operation">
+          <div class="row justify-content-center">
+            <label for="operation" class="form-label col-3 me-1 text-end">Operation</label>
+            <select id="operation" class="form-select w-50" v-model="operation">
               <option v-for="symbol, operation in operations" :key="operation" :value="symbol">
                 {{ operation }}
               </option>
             </select>
           </div>
-          <div class="row">
-            <label for="max-number" class="form-label col-3">Max Number</label>
-            <input id="max-number" class="form-control col" type="number" min="1" max="100" v-model="maxNumber">
+          <div class="row justify-content-center">
+            <label for="max-number" class="form-label col-3 me-1 text-end">Max Operand</label>
+            <input id="max-number" class="form-control w-50" type="number" min="1" max="100" v-model="maxNumber" />
           </div>
         </div>
       </div>
 
-      <div id="mf-directions-div" class="row m-auto">
+      <div id="mf-directions-div" class="row mx-3 my-1">
         <ol>
-          <li>Choose an arithmetic operation and a max operand number.</li>
+          <li>Choose an arithmetic operation and a max operand.</li>
           <li>Press <strong>Play!</strong></li>
           <li>How many equations can you solve in a minute?</li>
         </ol>
+        <button class="btn btn-primary w-100 mb-3" @click="play">Play!</button>
       </div>
-      <button class="btn btn-primary w-100" @click="play">Play!</button>
     </div>
     <!-- END Start Screen -->
 
@@ -109,21 +109,8 @@
         <button id="mf-back-2-start-btn" @click="screen = 'start'" class="btn btn-secondary w-100 m-1">
           Back to Start Screen</button>
       </div>
-
-      <!-- <div id="record-score-div">
-        <div>
-          <label for="user-name">Username</label>
-          <input id="user-name" name="user-name" v-model="userName" />
-        </div>
-        <div>
-          <label for="score">Score</label>
-          <input id="score" name="score" type="number" v-model="score" />
-        </div>
-        <button @click="recordScore">Record Score</button>
-      </div> -->
     </div>
     <!-- END End Screen -->
-
   </div>
 </template>
 

@@ -1,12 +1,12 @@
 <template>
-  <div class="container" style="width: 500px">
+  <div id="ah-game-container" class="container">
     <!-- Start Screen -->
-    <div v-if="screen=='start'" class="container">
+    <div id="ah-start-screen-div" v-if="screen=='start'" class="container">
       <div class="row m-auto">
         <div class="col">
-          <div class="row">
-            <label for="word-length" class="form-label col">Word Length</label>
-            <select id="word-length" class="form-select col" v-model="wordLength">
+          <div class="row justify-content-center">
+            <label for="word-length" class="form-label col-3 me-1 text-end">Word Length</label>
+            <select id="word-length" class="form-select w-50" v-model="wordLength">
               <option v-for="key in Object.keys(anagrams)" :key="key" :value="key">
                 {{ key }}
               </option>
@@ -14,15 +14,17 @@
           </div>
         </div>
       </div>
-      <div class="row m-auto">
-        <ol>
-          <li>Choose Word Length</li>
+      <div id="ah-directions-div" class="row mx-3 my-1">
+        <ol class="my-1">
+          <li>Choose a word length.</li>
           <li>Press <strong>Play!</strong></li>
-          <li>How many anagrams can you make in a minute?</li>
+          <li>How many anagrams can you find in a minute?</li>
         </ol>
+        <cite class="mb-2">*Note, anagrams must include all the letters of the given word.</cite>
+        <button class="btn btn-primary w-100 mb-3" @click="play">Play!</button>
       </div>
-      <button class="btn btn-primary w-100" @click="play">Play!</button>
     </div>
+
     <!-- Play Screen -->
     <div v-else-if="screen == 'play'" class="container">
       <div class="row">
@@ -44,6 +46,7 @@
         </ol>
       </div>
     </div>
+
     <!-- End Screen -->
     <div v-else-if="screen == 'end'" class="container">
       <div class="row">

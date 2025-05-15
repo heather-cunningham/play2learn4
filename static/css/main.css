@@ -28,6 +28,7 @@ cite {
   font-size: 0.75rem;
 }
 
+
 /* HEADER, NAV styles */
 #games-dropdown-menu-div,
 #me-dropdown-menu-div,
@@ -40,6 +41,17 @@ cite {
   font-size: .90rem;
 }
 /* End HEADER, NAV styles */
+
+
+/* Game Container & Board styles */
+#ah-game-container,
+#mf-game-container {
+  width: 27.78rem;
+  height: auto;
+  margin: 0.33rem auto;
+}
+/* END Game Container & Board styles */
+
 
 /* Leaderboards TABLE styles */
 #ah-leaderboard-tbl,
