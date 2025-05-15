@@ -32,6 +32,20 @@ class MFLeaderboardView(ListView): ## Math Facts Leaderboard
         return math_scores_qryset
 
 
+class AHLeaderboardView(ListView): ## Anagram Hunt Leaderboard
+    model = FinalScore
+    template_name = "games/ah_leaderboard.html"
+    context_object_name = "anagram_scores"
+    #
+    def get_queryset(self):
+        anagram_scores_qryset = FinalScore.objects.filter(game_name="anagram_hunt").order_by("-final_score")
+        for score in anagram_scores_qryset:
+            localized_dt = localtime(score.game_date_time).strftime("%m/%d/%Y %I:%M %p %Z")
+            date, time, am_pm_mark, timezone = localized_dt.split(" ")
+            score.game_date_time = f"{date} {time}{am_pm_mark.lower()} {timezone}"
+        return anagram_scores_qryset
+
+
 ## Function-based Views
 # @login_required
 # @csrf_protect

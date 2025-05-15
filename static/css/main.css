@@ -10,6 +10,14 @@ html, body {
   font-size: 18px;
 }
 
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
 img#play2learn-logo {
   width: 3.5rem;
   height: auto;
@@ -34,8 +42,16 @@ cite {
 /* End HEADER, NAV styles */
 
 /* Leaderboards TABLE styles */
-#ah-leaderboard-tbl, 
+#ah-leaderboard-tbl,
 #mf-leaderboard-tbl  {
   width: 90%
+}
+
+p#no-scores-yet {
+  width: 50%; 
+  height:auto; 
+  margin: 11rem auto; 
+  font-size: 2rem; 
+  font-style: italic;
 }
 /* End Leaderboards TABLE styles */
