@@ -15,6 +15,7 @@
         <th id="mf-player-header">Player</th>
         <th id="mf-score-header">Final Score</th>
         <th id="mf-date-header">Date Played</th>
+        <th id="mf-settings-header">Game Settings</th>
       </tr>
     </thead>
 
@@ -22,9 +23,12 @@
       {% for score in math_scores %}
       <tr>
         <td id="mf-rank">{{ forloop.counter }}</td>  
-        <td id="mf-player">{{ score.player }}</td>
+        <td id="mf-player">{{ score.player.username }}</td>
         <td id="mf-score">{{ score.final_score }}</td>
         <td id="mf-datetime">{{ score.game_date_time }}</td>
+        <td id="mf-settings"> 
+          {{ score.game.get_mf_operation }} <br/> 
+          <b>Max Operand:</b> {{ score.game.settings.max_number }}</td>
       </tr>
       {% endfor %}
     </tbody>

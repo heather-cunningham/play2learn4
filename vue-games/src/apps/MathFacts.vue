@@ -133,7 +133,7 @@ export default {
 
   data() {
     return {
-      // This name must match the `MATH` var's value, i.e.: "math_facts", in the FinalScore model.
+      // This name must match the `MATH` var's value, i.e.: "math_facts", in the Game model.
       gameName: "math_facts", 
       player: "",
       score: 0,
@@ -158,6 +158,7 @@ export default {
 
   methods: {
     play() {
+      this.createGame();
       this.screen = "play";
       this.getNewQuestion();
       this.interval = setInterval(() => {
@@ -182,25 +183,39 @@ export default {
       }
     },
 
+
+    async createGame() {
+      const data = {
+        game_name: this.gameName,
+        settings: {
+            operation: this.operation,
+            max_number: this.maxNumber,
+        }
+      };
+
+      try {
+          const response = await axios.post("/create-game/", data);
+          console.log("Game created successfully:", response.data);
+      } catch (error) {
+          console.error("Error creating game:", error.response ? error.response.data : error.message);
+      }
+    },
+
+
     async recordFinalScore() {
       const data = {
         game_name: this.gameName,
-        player: this.player || "test_user",  // Use test user until auth is implemented
-        settings: {
-          operation: this.operation,
-          max_number: this.maxNumber,
-        },
         final_score: this.score
       };
 
       try {
-          const response = await axios.post("/submit-final-score/", data, {
-            headers: { "Content-Type": "application/json" }
-          });
-          console.log("Success:", response.data);
-        } catch (error) {
-            console.error("AxiosError:", error.response ? error.response.data : error.message);
-        }
+        const response = await axios.post("/submit-final-score/", data, {
+          headers: { "Content-Type": "application/json" }
+        });
+        console.log("Success:", response.data);
+      } catch (error) {
+          console.error("AxiosError:", error.response ? error.response.data : error.message);
+      }
     },
   }, // END methods
 
