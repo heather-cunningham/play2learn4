@@ -75,62 +75,87 @@ def create_game(request):
 
 
 
-# @login_required
-# @csrf_protect
 @csrf_exempt  # Remove this once authentication is set up properly and add `@csrf_protect`
 @require_http_methods(["POST"])
 def submit_final_score(request):
-    """ Submit/send the final score and info of a game to the backend. """
     try:
         data = json.loads(request.body.decode("utf-8"))
-        # Validate required fields
-        required_fields = ["game_name", "final_score"]
-        for field in required_fields:
-            if (field not in data):
-                return JsonResponse({"status": "error", "message": f"Missing field: `{field}`."}, status=400)
-        # Ensure game_name is valid
-        game_name = data.get("game_name")
-        if (game_name not in dict(Game.GAME_NAME_CHOICES).keys()):
-            return JsonResponse({"status": "error", "message": "Invalid game_name."}, status=400)
-        # Ensure final_score is valid
-        final_score = data.get("final_score")
-        if (not final_score):  # if final_score is None or falsy
-            return JsonResponse(
-                {"status": "error", 
-                 "message": "final_score == None, Null, or its value is otherwise missing"},
-                status=400)
-        # Retrieve the correct Game instance 
+        
+        # Find the correct game instance
         game = Game.objects.get(game_name=data["game_name"])
-        # Handle authentication - use test user for now if request.user is not authenticated.  
-        # Replace with actual authentication later.
-        player = request.user if request.user.is_authenticated else None
-        if (not player):
-            ## Get test_user for now, and if no test_user, create new one to use for now:
-            player, created = User.objects.get_or_create(username="test_user") ## Rtns a tuple 
-            if (created): ## created is True
-                player.set_password("password123")  # Assign a basic password for testing
-                player.save()
-        # Create and save the FinalScore obj
-        final_score_obj = FinalScore.objects.create(
-            player=player,
+
+        # Save the player's score for this game session
+        FinalScore.objects.create(
+            player=request.user,
             game=game,
-            final_score=final_score
-            # Do NOT include game_date_time. Django handles this automatically in the model. 
-            # Adding it here will interfere w/ that automatic date handling.  
+            final_score=data["final_score"]
         )
-        final_score_obj.save()
-        json_response = JsonResponse(
-            {"status": "Success - final score info saved successfully",
-             "id": final_score_obj.id}, 
-             status=200)
-        print(json_response) 
-        return json_response
-    except json.JSONDecodeError:
-        json_response = JsonResponse({"status": "error", "message": "Invalid JSON format."}, status=400)
-        print(json_response) 
-        return json_response
+
+        return JsonResponse({"status": "success", "message": "Score saved!"})
+
+    except Game.DoesNotExist:
+        return JsonResponse({"status": "error", "message": "Game not found."}, status=404)
+
     except Exception as e:
-        json_response = JsonResponse({"status": "Error - final score info not saved", "message": str(e)}, status=400)
-        print(json_response) 
-        return json_response
+        return JsonResponse({"status": "error", "message": str(e)}, status=400)
+
+
+# @login_required
+# @csrf_protect
+# @csrf_exempt  # Remove this once authentication is set up properly and add `@csrf_protect`
+# @require_http_methods(["POST"])
+# def submit_final_score(request):
+#     """ Submit/send the final score and info of a game to the backend. """
+#     try:
+#         data = json.loads(request.body.decode("utf-8"))
+#         # Validate required fields
+#         required_fields = ["game_name", "final_score"]
+#         for field in required_fields:
+#             if (field not in data):
+#                 return JsonResponse({"status": "error", "message": f"Missing field: `{field}`."}, status=400)
+#         # Ensure game_name is valid
+#         game_name = data.get("game_name")
+#         if (game_name not in dict(Game.GAME_NAME_CHOICES).keys()):
+#             return JsonResponse({"status": "error", "message": "Invalid game_name."}, status=400)
+#         # Ensure final_score is valid
+#         final_score = data.get("final_score")
+#         if (not final_score):  # if final_score is None or falsy
+#             return JsonResponse(
+#                 {"status": "error", 
+#                  "message": "final_score == None, Null, or its value is otherwise missing"},
+#                 status=400)
+#         # Retrieve the correct Game instance 
+#         game = Game.objects.get(game_name=data["game_name"])
+#         # Handle authentication - use test user for now if request.user is not authenticated.  
+#         # Replace with actual authentication later.
+#         player = request.user if request.user.is_authenticated else None
+#         if (not player):
+#             ## Get test_user for now, and if no test_user, create new one to use for now:
+#             player, created = User.objects.get_or_create(username="test_user") ## Rtns a tuple 
+#             if (created): ## created is True
+#                 player.set_password("password123")  # Assign a basic password for testing
+#                 player.save()
+#         # Create and save the FinalScore obj
+#         final_score_obj = FinalScore.objects.create(
+#             player=player,
+#             game=game,
+#             final_score=final_score
+#             # Do NOT include game_date_time. Django handles this automatically in the model. 
+#             # Adding it here will interfere w/ that automatic date handling.  
+#         )
+#         final_score_obj.save()
+#         json_response = JsonResponse(
+#             {"status": "Success - final score info saved successfully",
+#              "id": final_score_obj.id}, 
+#              status=200)
+#         print(json_response) 
+#         return json_response
+#     except json.JSONDecodeError:
+#         json_response = JsonResponse({"status": "error", "message": "Invalid JSON format."}, status=400)
+#         print(json_response) 
+#         return json_response
+#     except Exception as e:
+#         json_response = JsonResponse({"status": "Error - final score info not saved", "message": str(e)}, status=400)
+#         print(json_response) 
+#         return json_response
 ## END fcnal view: submit_final_score()

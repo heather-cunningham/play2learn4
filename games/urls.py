@@ -9,8 +9,8 @@ app_name = 'games'
 urlpatterns = [
     path('anagram-hunt/', AnagramHuntView.as_view(), name='anagram-hunt'),
     path('math-facts/', MathFactsView.as_view(), name='math-facts'),
-    path("create_game/", create_game, name="create-game"),
+    path("create-game/", create_game, name="create-game"),
     path("submit-final-score/", submit_final_score, name="submit-final-score"),
-    path("ah_leaderboard/", AHLeaderboardView.as_view(), name="ah_leaderboard"),
-    path("mf_leaderboard/", MFLeaderboardView.as_view(), name="mf_leaderboard"),
+    path("ah-leaderboard/", AHLeaderboardView.as_view(), name="ah-leaderboard"),
+    path("mf-leaderboard/", MFLeaderboardView.as_view(), name="mf-leaderboard"),
 ]
