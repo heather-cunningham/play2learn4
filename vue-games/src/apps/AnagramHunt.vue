@@ -5,7 +5,8 @@
       <div class="row m-auto">
         <div class="col">
           <div class="row justify-content-center">
-            <label for="word-length" class="form-label col-3 me-1 text-end">Word Length</label>
+            <label id="word-length-lbl" for="word-length" class="form-label col-3 me-1 text-end">
+              Word Length</label>
             <select id="word-length" class="form-select w-50" v-model="wordLength">
               <option v-for="key in Object.keys(anagrams)" :key="key" :value="key">
                 {{ key }}
@@ -14,54 +15,65 @@
           </div>
         </div>
       </div>
+
       <div id="ah-directions-div" class="row mx-3 my-1">
         <ol class="my-1">
           <li>Choose a word length.</li>
           <li>Press <strong>Play!</strong></li>
           <li>How many anagrams can you find in a minute?</li>
         </ol>
-        <cite class="mb-2">*Note, anagrams must include all the letters of the given word.</cite>
-        <button class="btn btn-primary w-100 mb-3" @click="play">Play!</button>
+        <cite id="ah-directions-note" 
+          class="mb-2">*Note, anagrams must include all the letters of the displayed word.</cite>
+        <button id="ah-play-btn" class="btn btn-primary w-100 mb-3" @click="play">Play!</button>
       </div>
     </div>
+    <!-- END Start Screen -->
 
     <!-- Play Screen -->
-    <div v-else-if="screen == 'play'" class="container">
-      <div class="row">
+    <div id="ah-play-screen-div" v-else-if="screen == 'play'" class="container">
+      <div id="ah-score-timer-row" class="row">
         <div class="col d-flex justify-content-between">
-          <span>Score: {{ score }}</span>
-          <span>Time Left: {{ timeLeft }}</span>
+          <span id="ah-score">Score: {{ score }}</span>
+          <span id="ah-timer">Time Left: {{ timeLeft }}</span>
         </div>
         <hr>
       </div>
-      <div class="row">
+
+      <div id="ah-question-row" class="row">
         <output class="display-5 text-center">{{ currentWord }} ({{ guessesLeft }} left)</output>
       </div>
-      <div class="row">
-        <input class="form-control" v-model="userInput">
+      
+      <div id="ah-answer-input-row" class="row">
+        <input id="ah-answer-input" class="form-control" v-model="userInput" />
       </div>
-      <div class="row text-center">
-        <ol>
+
+      <div id="ah-correct-answers-div" class="row text-center">
+        <ol id="ah-correct-answers-list">
           <li v-for="guess in correctGuesses" :key="guess">{{ guess }}</li>
         </ol>
       </div>
     </div>
+    <!-- END Play Screen -->
 
     <!-- End Screen -->
-    <div v-else-if="screen == 'end'" class="container">
+    <div id="ah-end-screen-div" v-else-if="screen == 'end'" class="container">
       <div class="row">
-        <h4 class="display-4 text-center">Time's Up</h4>
+        <h4 id="ah-times-up-msg" class="display-4 text-center">Time's Up</h4>
       </div>
-      <div class="row d-flex flex-col text-center">
+
+      <div id="ah-final-score-row" class="row d-flex flex-col text-center">
         <p>You got</p>
-        <div class="display-3">{{ score }}</div>
+        <div id="ah-final-score" class="display-3">{{ score }}</div>
         <p>Anagrams</p>
       </div>
-      <div class="row d-flex flex-col text-center">
-        <button @click="play" class="btn btn-primary w-100 m-1">Play Again</button>
-        <button @click="screen = 'start'" class="btn btn-secondary w-100 m-1">Back to Start Screen</button>
+
+      <div id="ah-end-btns-row" class="row d-flex flex-col text-center">
+        <button id="ah-play-again-btn" @click="play" class="btn btn-primary w-100 m-1">Play Again</button>
+        <button id="ah-back-2-start-btn" @click="screen = 'start'" class="btn btn-secondary w-100 m-1">
+          Back to Start</button>
       </div>
     </div>
+    <!-- END End Screen -->
   </div>
 </template>
 
@@ -72,16 +84,22 @@
 </style>
 
 <script>
+import axios from "axios";
 import anagrams from "@/helpers/anagrams";
 import {getRandomInteger} from "@/helpers/helpers";
 
 export default {
   name: 'AnagramGame',
+
   data() {
     return {
-      userName: '',
+      // This name must match the `MATH` var's value, i.e.: "anagram_hunt", in the FinalScore model.
+      gameName: "anagram_hunt", 
+      player: "",
+      // userName: '',
       score: 0,
-      timeLeft: 60,
+      // timeLeft: 60,
+      timeLeft: 10, // for testing
       anagrams: anagrams,
       currentWord: "",
       anagramList: [],
@@ -91,12 +109,14 @@ export default {
       userInput: "",
       interval: null,
     }
-  },
+  }, // END data
+
   computed: {
     guessesLeft() {
       return this.anagramList.length - this.correctGuesses.length - 1;
     }
-  },
+  }, // END computed
+
   methods: {
     play() {
       this.score = 0;
@@ -107,6 +127,7 @@ export default {
         this.timeLeft -= 1;
       }, 1000)
     },
+
     checkAnswer() {
       const input = this.userInput.toLowerCase()
       if (this.anagramList.includes(input) && !this.correctGuesses.includes(input) && this.currentWord !== input) {
@@ -119,6 +140,7 @@ export default {
         }
       }
     },
+
     newAnagramList() {
       const currentAnagramList = [...this.anagramList];
       const potentialAnagramLists = this.anagrams[this.wordLength];
@@ -129,24 +151,42 @@ export default {
       this.currentWord = this.anagramList[getRandomInteger(0, this.anagramList.length)];
       this.correctGuesses = [];
     },
-    async recordScore() {
-      // TODO: when Anagram Hunt finishes, make an Ajax call with axios (this.axios)
-      // to record the score on the backend
-    }
-  },
+
+     async recordFinalScore() {
+      const data = {
+        game_name: this.gameName,
+        player: this.player || "test_user",  // Use test user until auth is implemented
+        settings: {
+          word_length: this.wordLength,
+        },
+        final_score: this.score
+      };
+
+      try {
+          const response = await axios.post("/submit-final-score/", data, {
+            headers: { "Content-Type": "application/json" }
+          });
+          console.log("Success:", response.data);
+        } catch (error) {
+            console.error("AxiosError:", error.response ? error.response.data : error.message);
+        }
+    }, 
+  }, // END methods
+
   watch: {
     userInput() {
       // check answer when user input changes
       this.checkAnswer()
     },
+
     timeLeft(newValue) {
       if (newValue == 0) {
         this.screen = "end";
         this.timeLeft = 60;
         clearInterval(this.interval);
-        this.recordScore(); // calls recordScore
+        this.recordFinalScore(); 
       }
     }
-  }
+  } // END watch
 }
 </script>

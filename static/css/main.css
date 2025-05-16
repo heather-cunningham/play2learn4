@@ -43,12 +43,23 @@ cite {
 /* End HEADER, NAV styles */
 
 
-/* Game Container & Board styles */
+/* Game Container & Board styles 
+     ah = Anagram Hunt 
+     mf = Math Facts 
+*/
 #ah-game-container,
 #mf-game-container {
   width: 27.78rem;
   height: auto;
   margin: 0.33rem auto;
+}
+
+#mf-answer-input {
+  width: 11.11rem; /* 200px */
+}
+
+#mf-calculator-div {
+  width: 16.67rem; /* 300px */
 }
 /* END Game Container & Board styles */
 

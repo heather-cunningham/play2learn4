@@ -65,8 +65,7 @@ def submit_final_score(request):
             return JsonResponse({"status": "error", "message": "Invalid game_name."}, status=400)
         game_name = data.get("game_name")
         final_score = data.get("final_score")
-        # if (final_score is None):
-        if (not final_score):
+        if (not final_score):  # if final_score is None or falsy
             return JsonResponse(
                 {"status": "error", 
                  "message": "final_score == None, Null, or its value is otherwise missing"},

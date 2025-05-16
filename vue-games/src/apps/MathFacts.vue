@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col">
           <div class="row justify-content-center">
-            <label for="operation" class="form-label col-3 me-1 text-end">Operation</label>
+            <label id="operation-lbl" for="operation" class="form-label col-3 me-1 text-end">Operation</label>
             <select id="operation" class="form-select w-50" v-model="operation">
               <option v-for="symbol, operation in operations" :key="operation" :value="symbol">
                 {{ operation }}
@@ -13,8 +13,10 @@
             </select>
           </div>
           <div class="row justify-content-center">
-            <label for="max-number" class="form-label col-3 me-1 text-end">Max Operand</label>
-            <input id="max-number" class="form-control w-50" type="number" min="1" max="100" v-model="maxNumber" />
+            <label id="max-number-lbl" for="max-number" class="form-label col-3 me-1 text-end">
+              Max Operand</label>
+            <input id="max-number" class="form-control w-50" type="number" min="1" max="100"
+               v-model="maxNumber" />
           </div>
         </div>
       </div>
@@ -25,7 +27,7 @@
           <li>Press <strong>Play!</strong></li>
           <li>How many equations can you solve in a minute?</li>
         </ol>
-        <button class="btn btn-primary w-100 mb-3" @click="play">Play!</button>
+        <button id="mf-play-btn" class="btn btn-primary w-100 mb-3" @click="play">Play!</button>
       </div>
     </div>
     <!-- END Start Screen -->
@@ -45,10 +47,10 @@
       </div>
 
       <div id="mf-answer-input-row" class="row">
-        <input id="mf-answer-input" class="form-control m-auto" v-model="userInput" style="width: 200px">
+        <input id="mf-answer-input" class="form-control m-auto" v-model="userInput"/>
       </div>
 
-      <div id="mf-calculator-div" class="row m-auto" style="width: 300px">
+      <div id="mf-calculator-div" class="row m-auto">
         <div class="row gx-1">
           <div class="col-4">
             <button @click="userInput += '1'" class="btn btn-primary w-100">1</button>
@@ -97,17 +99,19 @@
     <!-- End Screen -->
     <div id="mf-end-screen-div" v-else-if="screen == 'end'" class="container">
       <div class="row">
-        <h4 class="display-4 text-center">Time's Up</h4>
+        <h4 id="mf-times-up-msg" class="display-4 text-center">Time's Up</h4>
       </div>
+
       <div id="mf-final-score-row" class="row d-flex flex-col text-center">
         <p>You answered</p>
-        <div class="display-3">{{ score }}</div>
+        <div id="mf-final-score" class="display-3">{{ score }}</div>
         <p>questions</p>
       </div>
+
       <div id="mf-end-btns-row" class="row d-flex flex-col text-center">
         <button id="mf-play-again-btn" @click="play" class="btn btn-primary w-100 m-1">Play Again</button>
         <button id="mf-back-2-start-btn" @click="screen = 'start'" class="btn btn-secondary w-100 m-1">
-          Back to Start Screen</button>
+          Back to Start</button>
       </div>
     </div>
     <!-- END End Screen -->
@@ -150,7 +154,7 @@ export default {
       // timeLeft: 60,
       timeLeft: 10, // for testing
     }
-  }, // END methods
+  }, // END data
 
   methods: {
     play() {
@@ -242,7 +246,7 @@ export default {
         // this.timeLeft = 60;
         this.timeLeft = 10; // for testing
         this.screen = "end";
-        this.recordFinalScore(); // call to record score
+        this.recordFinalScore(); 
       }
     }
   } // END watch
