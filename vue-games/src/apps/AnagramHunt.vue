@@ -93,13 +93,12 @@ export default {
 
   data() {
     return {
-      // This name must match the `MATH` var's value, i.e.: "anagram_hunt", in the FinalScore model.
+      gameId: -1, // Default, temp Id 'til one is assigned
+      // This name must match the `ANAGRAM` var's value, i.e.: "anagram_hunt", in the Game model.
       gameName: "anagram_hunt", 
       player: "",
       // userName: '',
       score: 0,
-      // timeLeft: 60,
-      timeLeft: 10, // for testing
       anagrams: anagrams,
       currentWord: "",
       anagramList: [],
@@ -108,6 +107,8 @@ export default {
       correctGuesses: [],
       userInput: "",
       interval: null,
+      // timeLeft: 60,
+      timeLeft: 10, // for testing
     }
   }, // END data
 
@@ -119,10 +120,10 @@ export default {
 
   methods: {
     play() {
+      this.createGame();
       this.score = 0;
       this.screen = "play";
       this.newAnagramList();
-      
       this.interval = setInterval(() => {
         this.timeLeft -= 1;
       }, 1000)
@@ -152,25 +153,42 @@ export default {
       this.correctGuesses = [];
     },
 
-     async recordFinalScore() {
+    async createGame() {
       const data = {
         game_name: this.gameName,
-        player: this.player || "test_user",  // Use test user until auth is implemented
         settings: {
-          word_length: this.wordLength,
-        },
+            word_length: this.wordLength
+        }
+      };
+
+      try {
+          const response = await axios.post("/create-game/", data);
+          console.log("Game created successfully:", response.data);
+          // Store the returned game ID in Vue's data
+          this.gameId = response.data.game_id;
+      } catch (error) {
+          console.error("Error creating game:", error.response ? error.response.data : error.message);
+      }
+    },
+
+    async recordFinalScore() {
+      const data = {
+        game_id: this.gameId,
+        game_name: this.gameName,
+         settings: {
+            word_length: this.wordLength
+        }, 
         final_score: this.score
       };
 
       try {
-          const response = await axios.post("/submit-final-score/", data, {
-            headers: { "Content-Type": "application/json" }
-          });
-          console.log("Success:", response.data);
-        } catch (error) {
-            console.error("AxiosError:", error.response ? error.response.data : error.message);
-        }
-    }, 
+        await axios.post("/submit-final-score/", data, {
+          headers: { "Content-Type": "application/json" }
+        });
+      } catch (error) {
+          console.error("AxiosError:", error.response ? error.response.data : error.message);
+      }
+    },
   }, // END methods
 
   watch: {
@@ -179,11 +197,12 @@ export default {
       this.checkAnswer()
     },
 
-    timeLeft(newValue) {
-      if (newValue == 0) {
-        this.screen = "end";
-        this.timeLeft = 60;
+    timeLeft(newTime) {
+      if (newTime == 0) {
         clearInterval(this.interval);
+        // this.timeLeft = 60;
+        this.timeLeft = 10; // for testing
+        this.screen = "end";
         this.recordFinalScore(); 
       }
     }
