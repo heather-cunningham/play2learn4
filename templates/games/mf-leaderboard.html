@@ -27,7 +27,7 @@
         <td id="mf-score">{{ score.final_score }}</td>
         <td id="mf-datetime">{{ score.game_date_time }}</td>
         <td id="mf-settings"> 
-          {{ score.game.get_mf_operation }} <br/> 
+          <b>{{ score.game.get_mf_operation }}</b> <br/> 
           <b>Max Operand:</b> {{ score.game.settings.max_number }}</td>
       </tr>
       {% endfor %}
