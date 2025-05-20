@@ -1,5 +1,7 @@
 import json
 from django.http import JsonResponse
+# from django.conf import settings
+from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
@@ -88,7 +90,7 @@ def submit_final_score(request):
         game = get_object_or_404(Game, id=int(data["game_id"]))
         # Ensure final_score is valid
         final_score = data.get("final_score")
-        if (not final_score):  
+        if (final_score is None):  
             return JsonResponse(
                 {"status": "error", 
                  "message": "final_score == None, Null, or its value is otherwise missing"},
@@ -97,6 +99,7 @@ def submit_final_score(request):
         # Replace with actual authentication later.
         player = request.user if request.user.is_authenticated else None
         if (not player):
+            User = get_user_model()
             player, created = User.objects.get_or_create(username="test_user") ## Rtns tple of (Obj, Boolean)
             if (created):
                 player.set_password("password123")  
