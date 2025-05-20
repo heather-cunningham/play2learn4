@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     ## My local apps
     "games.apps.GamesConfig",
     "pages.apps.PagesConfig",
+    "users.apps.UsersConfig",
 ]
 
 SITE_ID = 1
@@ -116,6 +117,10 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
+
+
+# AUTHENTICATION SETTINGS
+AUTH_USER_MODEL = 'users.CustomUser'
 
 
 # Internationalization
