@@ -107,8 +107,8 @@ export default {
       correctGuesses: [],
       userInput: "",
       interval: null,
-      timeLeft: 60,
-      // timeLeft: 10, // for testing
+      // timeLeft: 60,
+      timeLeft: 10, // for testing
     }
   }, // END data
 
@@ -200,8 +200,8 @@ export default {
     timeLeft(newTime) {
       if (newTime == 0) {
         clearInterval(this.interval);
-        this.timeLeft = 60;
-        // this.timeLeft = 10; // for testing
+        // this.timeLeft = 60;
+        this.timeLeft = 10; // for testing
         this.screen = "end";
         this.recordFinalScore(); 
       }
