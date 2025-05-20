@@ -62,18 +62,11 @@ def create_game(request):
             game_name=data["game_name"],
             settings=data["settings"]
         )
-        json_response = JsonResponse({"status": "success", "game_id": game.id, "message": "Game created!"})
-        print(json_response) 
-        return json_response
+        return JsonResponse({"status": "success", "game_id": game.id, "message": "Game created!"})
     except json.JSONDecodeError:
-        json_response = JsonResponse({"status": "error", "message": "Invalid JSON format."}, status=400)
-        print(json_response) 
-        return json_response
+        return JsonResponse({"status": "error", "message": "Invalid JSON format."}, status=400)
     except Exception as e:
-        json_response = JsonResponse({"status": "Error - Game not created.", "message": str(e)},
-                                      status=400)
-        print(json_response) 
-        return json_response
+        return JsonResponse({"status": "Error - Game not created.", "message": str(e)}, status=400)
 
 
 # @login_required
@@ -107,6 +100,8 @@ def submit_final_score(request):
         final_score_obj = FinalScore.objects.create(
             player=player,
             game=game,
+            # game_id=data["game_id"],
+            game_name=data["game_name"],
             final_score=final_score,
             settings=json.dumps(data["settings"])
         )

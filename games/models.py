@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.db import models
-from django.contrib.auth.models import User
+from django.utils.timezone import now
 
 
 class Game(models.Model):
@@ -13,6 +13,7 @@ class Game(models.Model):
     ]
     game_name = models.CharField(max_length=25, choices=GAME_NAME_CHOICES, default=ANAGRAM)
     settings = models.JSONField()
+    created = models.DateTimeField(auto_now_add=True)
     # for MathFacts
     MF_OP_DICTIONARY = {
         "+": "Addition",
@@ -48,7 +49,9 @@ class Game(models.Model):
 
 class FinalScore(models.Model):
     player = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    game = models.ForeignKey(Game, on_delete=models.CASCADE)        
+    game = models.ForeignKey(Game, on_delete=models.CASCADE)
+    # game_id = models.PositiveIntegerField(editable=False)
+    game_name = models.CharField(max_length=25, editable=False)         
     final_score = models.IntegerField()
     game_date_time = models.DateTimeField(auto_now_add=True)
     settings = models.JSONField(default=dict)
@@ -56,7 +59,7 @@ class FinalScore(models.Model):
     # toString()
     def __str__(self):
         """ toString(): Returns the Player's username, the game's name, final score, and date played. """
-        return (f"Player: {self.player.username}, Game: {self.game.game_name}, "
+        return (f"Player: {self.player.username}, Game: {self.game_name}, "
                 f"Game Settings: {self.game.settings}, " 
                 f"Final Score: {self.final_score}, Game Date: {self.game_date_time}")
 ## END class FinalScore(models...
