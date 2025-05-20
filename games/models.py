@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -46,7 +47,7 @@ class Game(models.Model):
 
 
 class FinalScore(models.Model):
-    player = models.ForeignKey(User, on_delete=models.CASCADE)
+    player = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     game = models.ForeignKey(Game, on_delete=models.CASCADE)        
     final_score = models.IntegerField()
     game_date_time = models.DateTimeField(auto_now_add=True)
