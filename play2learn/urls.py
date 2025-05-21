@@ -7,5 +7,6 @@ urlpatterns = [
 
     ## My Local Apps
     path("", include("games.urls")),
-    path("", include("pages.urls"))
+    path("", include("pages.urls")),
+    path("", include("reviews.urls")),
 ]
