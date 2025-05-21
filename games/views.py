@@ -100,7 +100,6 @@ def submit_final_score(request):
         final_score_obj = FinalScore.objects.create(
             player=player,
             game=game,
-            # game_id=data["game_id"],
             game_name=data["game_name"],
             final_score=final_score,
             settings=json.dumps(data["settings"])
