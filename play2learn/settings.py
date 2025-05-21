@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     ## Third-party, I installed apps
+    "crispy_forms",
+    "crispy_bootstrap5",
 
     ## My local apps
     "common.apps.CommonConfig",
