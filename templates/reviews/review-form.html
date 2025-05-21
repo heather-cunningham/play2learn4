@@ -1,0 +1,21 @@
+{% extends "_base.html" %}
+
+{% block title %}
+  Feedback: Leave a Review
+{% endblock %}
+
+{% block main %}
+  <h2 id="review-form-header" class="text-center">Feedback: Leave a Review</h2>
+
+  <div id="review-form-div" class="card border-primary m-auto mb-3 p-3" style="max-width: 40rem">
+      <form id="review-form" method="post">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+        
+        <button id="review-submit-btn" 
+          class="btn btn-success float-end" name="submit" type="submit" 
+          alt="Submit Button: Press to submit your review">Submit</button>
+      </form>
+  </div>
+{% endblock %}
