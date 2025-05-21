@@ -17,12 +17,12 @@ class ReviewFormView(FormView):
         subject = "Review submitted"
         content = f'''<p>Hey PR Manager!</p>
             <p>Play2Learn feedback received:</p>
-            <ol>'''
+            <ul>'''
         for key, value in data.items():
             label = key.replace('_', ' ').title()
             entry = html.escape(str(value), quote=False)
             content += f'<li>{label}: {entry}</li>' 
-        content += '</ol>'
+        content += '</ul>'
         send_email(to, subject, content)
         return super().form_valid(form)
 ## END class ReviewFormView

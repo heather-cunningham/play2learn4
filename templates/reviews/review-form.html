@@ -1,25 +1,31 @@
 {% extends "_base.html" %}
 
+{% load crispy_forms_tags %}
+
 {% block title %}
-Feedback: Leave a Review
+  Feedback: Leave a Review
 {% endblock %}
 
 {% block main %}
-<h2 id="review-form-header" class="m-3 text-center">Feedback: Write a Review</h2>
+<h2 id="review-form-header" class="mx-auto mt-3 mb-1 text-center">
+  Feedback: Write a Review</h2>
 
-<p id="review-disclaimer-msg" class="m-3 text-center">
-  Pleas note, your review may be published on our home page. <br />
-  If our team has questions, we may reach out to you via the email address provided.
-</p>
+<div id="review-form-container" class="container-fluid mt-1 mb-5 p-3">
+  <p id="review-disclaimer-msg" class="mx-auto mt-0 mb-4 text-center">
+    Pleas note, your review may be published on our home page. <br />
+    If our team has questions, we may reach out to you via the email address provided.
+  </p>
 
-<div id="review-form-div" class="card border-primary m-auto mb-3 p-3" style="max-width: 40rem">
-  <form id="review-form" method="post">
-    {% csrf_token %}
+  <div id="review-form-div" class="card border-primary m-auto mb-5 p-3">
+    <form id="review-form" method="post" class="form">
 
-    {{ form.as_p }}
+      {% csrf_token %}
 
-    <button id="review-submit-btn" class="btn btn-success float-end" name="submit" type="submit"
-      alt="Submit Button: Press to submit your review">Submit</button>
-  </form>
+      {{ form|crispy }}
+
+      <button id="review-submit-btn" class="btn btn-success float-end" name="submit" type="submit"
+        alt="Submit Button: Press to submit your review">Submit</button>
+    </form>
+  </div>
 </div>
 {% endblock %}

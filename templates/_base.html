@@ -111,6 +111,11 @@
             </div>
           </li><!-- END Me/My Account Dropdown -->
 
+          <li id="about-nav-item" class="nav-item">
+            <a id="about-nav-link" class="nav-link" href="{% url 'pages:about' %}" 
+              alt="Go to our About Us page">About</a>
+          </li>
+
            <!-- Sign In/SignUp Dropdown -->
           <li id="sign-nav-dropdown" class="nav-item dropdown ms-auto">
             <a id="sign-dropdown-link" class="nav-link dropdown-toggle" 
@@ -132,14 +137,10 @@
   {% block main %}{% endblock %} <!-- end main -->
   
 
-  <footer class="fixed-bottom bg-light row mt-5">
+  <footer class="fixed-bottom bg-light row clearfix">
     <div class="col">
       <nav>
         <ul class="nav float-end">
-          <li id="about-footer-item" class="nav-item">
-            <a id="about-footer-link" class="nav-link" href="{% url 'pages:about' %}" 
-              alt="Go to our About Us page">About</a>
-          </li>
           <li id="admin-footer-item" class="nav-item">
             <a id="admin-footer-link" class="nav-link" href="{% url 'admin:index' %}" 
               alt="Log in to our Admin site">Admin</a>
