@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "common.apps.CommonConfig",
     "games.apps.GamesConfig",
     "pages.apps.PagesConfig",
+    "reviews.apps.PagesConfig",
     "users.apps.UsersConfig",
 ]
 
