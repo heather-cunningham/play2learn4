@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     ## Third-party, I installed apps
 
     ## My local apps
+    "common.apps.CommonConfig",
     "games.apps.GamesConfig",
     "pages.apps.PagesConfig",
     "users.apps.UsersConfig",
