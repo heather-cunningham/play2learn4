@@ -3,13 +3,18 @@
 {% block title %}Feedback: Review Submitted{% endblock %}
 
 {% block main %}
-  <h2 id="review-submitted-header" class="text-center">Feedback: Review Submitted</h2>
+  <h2 id="review-submitted-header" class="mx-auto mt-3 mb-1 text-center">
+    Feedback: Review Submitted</h2>
 
-  <div id="review-submitted-div" class="card border-primary m-auto mb-3 p-3 text-center" style="max-width: 50rem">
-    <p id="review-submitted-msg">
-      Thanks! For writing a review. <br />
-      Your review may be published on our home page. <br />
-      If our team has questions, we may reach out to you via the email address provided.
-    </p>
+  <div id="review-thx-container" class="container-fluid mt-1 mb-5 p-3">
+    <div id="review-submitted-div" class="card border-primary mx-auto mb-3 p-3 text-center" > 
+
+      <p id="review-submitted-msg" class="m-auto">
+        Thanks! For writing a review. <br />
+        Your review may be published on our home page. <br />
+        If our team has questions, we may reach out to you via the email address provided.
+      </p>
+
+    </div>
   </div>
 {% endblock %}

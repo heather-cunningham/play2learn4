@@ -96,4 +96,8 @@ p#no-scores-yet {
   box-sizing: border-box;
   max-width: 38rem; 
 }
+
+#review-submitted-div {
+  max-width: 50rem;
+}
 /* End FORM styles */
