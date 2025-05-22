@@ -1,0 +1,31 @@
+{% extends "_base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+  Contact Us
+{% endblock %}
+
+{% block main %}
+<h2 id="contact-form-header" class="mx-auto mt-3 mb-1 text-center">
+  Contact Us</h2>
+
+<div id="contact-form-container" class="container-fluid mt-1 mb-5 p-3">
+  <p id="contact-disclaimer-msg" class="mx-auto mt-0 mb-4 text-center">
+    Pleas note, this website is a college (North Shore Community College in MA) student project.
+    While you may send us questions or comments, you will not receive a response.
+  </p>
+
+  <div id="contact-form-div" class="card border-primary m-auto mb-5 p-3">
+    <form id="contact-form" method="post" class="form" novalidate>
+
+      {% csrf_token %}
+
+      {{ form|crispy }}
+
+      <button id="contact-submit-btn" class="btn btn-success float-end" name="submit" type="submit"
+        alt="Submit Button: Press to submit">Submit</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -81,22 +81,27 @@ p#no-scores-yet {
 
 
 /* FORM styles */
+#contact-form-container,
 #review-form-container {
   box-sizing: border-box;
   max-width: 45rem; 
 }
 
+#contact-disclaimer-msg,
+#contact-form-div,
 #review-disclaimer-msg,
 #review-form-div {
   box-sizing: border-box;
   max-width: 40rem; 
 }
 
+#contact-form,
 #review-form {
   box-sizing: border-box;
   max-width: 38rem; 
 }
 
+#contact-submitted-div,
 #review-submitted-div {
   max-width: 50rem;
 }
