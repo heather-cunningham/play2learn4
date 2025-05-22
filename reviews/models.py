@@ -5,7 +5,8 @@ from django.db import models
 class Review(models.Model):
     first_name = models.TextField(max_length=100)
     last_name = models.TextField(max_length=100)
-    email = models.EmailField(help_text="Please, enter a valid email address.")
+    email = models.EmailField(max_length=250, 
+                              help_text="(Please, enter a valid email address.)")
     username = models.TextField(max_length=100, blank=True, null=True, 
                                 help_text="(Optional)")
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, 
