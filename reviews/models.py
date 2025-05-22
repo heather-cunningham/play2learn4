@@ -7,7 +7,7 @@ class Review(models.Model):
     last_name = models.TextField(max_length=100)
     email = models.EmailField(help_text="Please, enter a valid email address.")
     username = models.TextField(max_length=100, blank=True, null=True, 
-                                help_text="(Optional) Enter username")
+                                help_text="(Optional)")
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, 
                              blank=True, null=True)
     comments = models.TextField()
@@ -29,12 +29,8 @@ class Review(models.Model):
         return f"""Review submitted by:\n
         {'-' * 20}\n
         {submitted_by}, {username_info}\n
+        Email: {self.email},
         On: {self.review_date_time},
         Comments:\n
         {'-' * 10}\n
         {self.comments}"""
-    # def __str__(self):
-    #     return f""" Review submitted by: {self.first_name} {self.last_name}\n
-    #     On: {self.review_date_time}
-    #     Comments:\n{'-' * 10}\n
-    #     {self.comments}"""

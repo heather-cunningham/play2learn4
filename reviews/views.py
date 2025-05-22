@@ -36,9 +36,11 @@ class ReviewFormView(FormView):
         #  and user/Null 
         form.instance.user = user
         form.instance.username = username
+        form.instance.save()
         return super().form_valid(form)
 ## END class ReviewFormView
 
 
 class ReviewThanksView(TemplateView):
     template_name = "reviews/thanks.html"
+## END class ReviewThanksView
