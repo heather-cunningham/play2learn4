@@ -65,9 +65,23 @@ cite {
 
 
 /* Leaderboards TABLE styles */
+#ah-leaderboard-container,
+#mf-leaderboard-container {
+  box-sizing: border-box;
+  max-width: 50rem;
+}
+
 #ah-leaderboard-tbl,
 #mf-leaderboard-tbl  {
-  width: 90%
+  width: 100%;
+  table-layout: fixed;
+  font-size: 0.75rem;
+}
+
+th, td {
+  width: fit-content;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 p#no-scores-yet {
