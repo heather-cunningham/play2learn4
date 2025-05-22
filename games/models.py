@@ -50,7 +50,6 @@ class Game(models.Model):
 class FinalScore(models.Model):
     player = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
-    # game_id = models.PositiveIntegerField(editable=False)
     game_name = models.CharField(max_length=25, editable=False)         
     final_score = models.IntegerField()
     game_date_time = models.DateTimeField(auto_now_add=True)

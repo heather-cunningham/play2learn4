@@ -13,6 +13,14 @@ class ReviewFormView(FormView):
 
     def form_valid(self, form):
         data = form.cleaned_data
+        user = self.request.user if self.request.user.is_authenticated else None
+        username = data.get("username", "").strip()
+        if (not username and user):  
+            username = user.username  
+        else:
+            username = "Unregistered User"
+        data["username"] = username
+        ## Set up email to send
         to = "cunningham.heatherirene@gmail.com"
         subject = "Review submitted"
         content = f'''<p>Hey PR Manager!</p>
@@ -24,6 +32,10 @@ class ReviewFormView(FormView):
             content += f'<li>{label}: {entry}</li>' 
         content += '</ul>'
         send_email(to, subject, content)
+        # Save the review with the updated username/"Unregistered User"
+        #  and user/Null 
+        form.instance.user = user
+        form.instance.username = username
         return super().form_valid(form)
 ## END class ReviewFormView
 
