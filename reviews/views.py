@@ -4,7 +4,7 @@ from django.views.generic import FormView, TemplateView
 from common.utils.email import send_email
 from reviews.forms import ReviewForm
 
-## BEGIN class
+
 class ReviewFormView(FormView):
     template_name = "reviews/review-form.html"
     form_class = ReviewForm

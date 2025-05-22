@@ -2,6 +2,7 @@ from django.conf import settings
 from django.db import models
 
 
+## aka Feedback
 class Review(models.Model):
     first_name = models.TextField(max_length=100)
     last_name = models.TextField(max_length=100)
@@ -35,3 +36,4 @@ class Review(models.Model):
         Comments:\n
         {'-' * 10}\n
         {self.comments}"""
+## END class Review aka Feedback
