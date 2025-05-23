@@ -7,33 +7,34 @@
 {% endblock %}
 
 {% block main %}
-<div id="confirm-reg-div" class="card border-primary m-auto mb-3" style="max-width: 30rem">
-
-  <div id="confirm-reg-header" class="card-header text-center">Confirm Registration</div>
+<div id="confirm-reg-form-container" class="container-fluid mx-auto mb-5 pb-5 justify-content-center">
+  <h2 id="confirm-reg-header" class="mx-auto my-3 text-center">Confirm Registration</h2>
   
-  <div id="confirm-reg-card" class="card-body">
-    {% if confirmation %}
-      <p id="confirm-reg-msg" class="card-text text-center">Please, confirm your registration.</p>
+  <div id="confirm-reg-div" class="card border-primary m-auto mb-3">
+    <div id="confirm-reg-card" class="card-body">
+      {% if confirmation %}
+        <p id="confirm-reg-msg" class="card-text text-center">Please, confirm your registration.</p>
 
-      <form id="confirm-reg-form" method="post" 
-        action="{% url 'account_confirm_email' confirmation.key %}">
-          
-        {% csrf_token %}
+        <form id="confirm-reg-form" method="post" 
+          action="{% url 'account_confirm_email' confirmation.key %}">
+            
+          {% csrf_token %}
 
-        <button id="confirm-reg-btn" type="submit" name="Confirm" value="confirm"
-          class="form-control btn btn-primary" 
-          alt="Press to confirm your account registration.">Confirm</button>
-      </form>
-    
-    {% else %}
+          <button id="confirm-reg-btn" type="submit" name="Confirm" value="confirm"
+            class="form-control btn btn-primary" 
+            alt="Press to confirm your account registration.">Confirm</button>
+        </form>
+      
+      {% else %}
 
-      <p id="confirmation-expired-msg" class="card-text">
-        This confirmation link has expired or is invalid. Please, try
-        <a id="login-link" href="{% url 'account_email' %}">logging in again</a>.
-        You will be sent a new confirmation link.
-      </p>
-    
-      {% endif %}
+        <p id="confirmation-expired-msg" class="card-text text-center">
+          This confirmation link has expired or is invalid. Please, try
+          <a id="login-link" href="{% url 'account_email' %}">logging in again</a>.
+          You will be sent a new confirmation link.
+        </p>
+      
+        {% endif %}
+    </div>
   </div>
 </div>
 {% endblock %}

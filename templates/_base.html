@@ -61,13 +61,15 @@
               class="nav-link dropdown-toggle" 
               href="#"  
               role="button" data-bs-toggle="dropdown" aria-haspopup="true" 
-              aria-expanded="false">Games</a>
+              aria-expanded="false" alt="Games menu">Games</a>
               <div id="games-dropdown-menu-div" class="dropdown-menu" 
                 aria-labelledby="games-dropdown-link">
                   <a id="ah-nav-link" class="dropdown-item" 
-                    href="{% url 'games:anagram-hunt' %}">Anagram Hunt</a> 
+                    href="{% url 'games:anagram-hunt' %}" 
+                    alt="Go to the Anagram Hunt game">Anagram Hunt</a> 
                   <a id="mf-nav-link" class="dropdown-item" 
-                    href="{% url 'games:math-facts' %}">Math Facts</a>
+                    href="{% url 'games:math-facts' %}"
+                    alt="Go to the Math Facts game">Math Facts</a>
               </div>
           </li><!-- END Games Dropdown -->
 
@@ -77,15 +79,17 @@
               class="nav-link dropdown-toggle" 
               href="#"  
               role="button" data-bs-toggle="dropdown" aria-haspopup="true" 
-              aria-expanded="false">Leaderboards</a>
+              aria-expanded="false" alt="Leaderboards Menu">Leaderboards</a>
             <div id="leaderboards-dropdown-menu-div" class="dropdown-menu" 
                 aria-labelledby="leaderboards-dropdown-link">
                 <a id="ah-leaderboard-nav-link" 
                   class="dropdown-item" 
-                  href="{% url 'games:ah-leaderboard' %}">Anagram Hunt Leaderboard</a> 
+                  href="{% url 'games:ah-leaderboard' %}"
+                  alt="Go to the Anagram Hunt leaderboard">Anagram Hunt Leaderboard</a> 
                 <a id="mf-leaderboard-nav-link" 
                   class="dropdown-item" 
-                  href="{% url 'games:mf-leaderboard' %}">Math Facts Leaderboard</a>
+                  href="{% url 'games:mf-leaderboard' %}"
+                  alt="Go to the Math Facts leaderboard">Math Facts Leaderboard</a>
             </div>
           </li><!-- END Leaderboards Dropdown -->
 
@@ -94,11 +98,15 @@
             <a id="me-dropdown-link" class="nav-link dropdown-toggle" 
               href="#"  
               role="button" data-bs-toggle="dropdown" aria-haspopup="true" 
-              aria-expanded="false">Me</a>
+              aria-expanded="false" alt="Me, My Account menu">Me</a>
             <div id="me-dropdown-menu-div" class="dropdown-menu" 
               aria-labelledby="me-dropdown-link">
-                <a id="my-account-nav-link" class="dropdown-item" href="#">My Account</a>
-                <a id="my-games-nav-link" class="dropdown-item"href="#">My Games</a>
+                <a id="my-account-nav-link" class="dropdown-item" 
+                  href="#" 
+                  alt="Go to your My Account page">My Account</a>
+                <a id="my-games-nav-link" class="dropdown-item"
+                  href="#" 
+                  alt="Go to your My Games page">My Games</a>
                 <div id="me-dropdown-divider" class="dropdown-divider"></div>
                 <form method="post" action="#">
                   {% csrf_token %}
@@ -121,12 +129,16 @@
             <a id="sign-dropdown-link" class="nav-link dropdown-toggle" 
               href="#"  
               role="button" data-bs-toggle="dropdown" aria-haspopup="true" 
-              aria-expanded="false">Sign In/Sign Up</a>
+              aria-expanded="false"
+              alt="Login or Sign-up menu">Sign In/Sign Up</a>
             <div id="sign-dropdown-menu-div" class="dropdown-menu" 
               aria-labelledby="sign-dropdown-link">
-              <a id="login-nav-link" class="dropdown-item" href="{% url 'account_login' %}" 
-                alt="Log in">Log in</a>
-              <a id="register-nav-link" class="dropdown-item" href="#">Register</a>
+              <a id="login-nav-link" class="dropdown-item" 
+                href="{% url 'account_login' %}" 
+                alt="Log in to your account">Log in</a>
+              <a id="register-nav-link" class="dropdown-item" 
+                href="{% url 'account_signup' %}"  
+                alt="Register for an account">Register</a>
             </div>
           </li><!-- END Sign In/Up Dropdown -->
         </ul>

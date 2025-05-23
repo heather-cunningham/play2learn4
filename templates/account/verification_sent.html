@@ -7,15 +7,18 @@
 {% endblock %}
 
 {% block main %}
-<div id="verify-email-div" class="card border-primary m-auto mb-3" style="max-width: 30rem">
-  
-  <div id="verify-email-header" class="card-header text-center">Verify Your Email Address</div>
-  
-  <div id="verify-email-card" class="card-body">
-    <p id="verify-email-msg" class="card-text">
-      We have sent an email to you for verification.
-      Follow the link provided to finalize the registration process.
-    </p>
+<div id="verify-email-container" class="container-fluid mx-auto mb-5 pb-5 justify-content-center">
+  <h2 id="verify-email-header" class="mx-auto my-3 text-center">Verify Your Email Address</h2>
+
+  <div id="verify-email-div" class="card border-primary m-auto mb-3">
+    <div id="verify-email-card" class="card-body">
+      
+      <p id="verify-email-msg" class="card-text text-center">
+        We have sent an email to you for verification.
+        Please, follow the link enclosed to finalize your registration.
+      </p>
+    
+    </div>
   </div>
 </div>
 {% endblock %}

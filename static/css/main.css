@@ -123,4 +123,14 @@ p#no-scores-yet {
 #review-submitted-div {
   max-width: 50rem;
 }
+
+#change-pswd-div,
+#confirm-reg-div,
+#log-in-div,
+#pswd-changed-div,
+#register-div,
+#reset-pswd-div,
+#verify-email-div {
+  max-width: 30rem;
+}
 /* End FORM styles */

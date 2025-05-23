@@ -7,24 +7,27 @@
 {% endblock %}
 
 {% block main %}
-<div id="register-div" class="card border-primary m-auto mb-3" style="max-width: 30rem">
+<div id="register-form-container" class="container-fluid mx-auto mb-5 pb-5 justify-content-center">
+  <h2 id="register-header" class="mx-auto my-3 text-center">Register</h2>
 
-  <div id="register-header" class="card-header text-center">Register</div>
+  <div id="register-div" class="card border-primary m-auto mb-3">
+    <div id="register-card" class="card-body">
+      <form id="register-form" method="post" class="m-auto mb-2">
+        {% csrf_token %}
 
-  <div id="register-card" class="card-body">
-    <form id="register-form" method="post" class="m-auto mb-2">
-      {% csrf_token %}
-
-      {{ form|crispy }}
-      
-      <button id="register-btn" type="submit" name="Register" value="register" 
-        class="form-control btn btn-primary" 
-        alt="Press to register your user account">Register</button>
-    </form>
-  </div>
-  
-  <div class="card-footer">
-    Already have an account? <a href="{% url 'account_login' %}">Log in</a>
+        {{ form|crispy }}
+        
+        <button id="register-btn" type="submit" name="Register" value="register" 
+          class="form-control btn btn-primary" 
+          alt="Press to register your user account">Register</button>
+      </form>
+    </div>
+    
+    <div class="card-footer text-center">
+      <p id="links-para" class="mt-3">
+        Already have an account? <a href="{% url 'account_login' %}">Log in</a>
+      </p>
+    </div>
   </div>
 </div>
 {% endblock %}
