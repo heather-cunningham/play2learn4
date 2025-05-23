@@ -1,5 +1,5 @@
 <template>
-  <div id="ah-game-container" class="container">
+  <div id="ah-game-container" class="container-fluid">
     <!-- Start Screen -->
     <div id="ah-start-screen-div" v-if="screen=='start'" class="container">
       <div class="row m-auto">
@@ -23,8 +23,8 @@
           <li>How many anagrams can you find in a minute?</li>
         </ol>
         <cite id="ah-directions-note" 
-          class="mb-2">*Note, anagrams must include all the letters of the displayed word.</cite>
-        <button id="ah-play-btn" class="btn btn-primary w-100 mb-3" @click="play">Play!</button>
+          class="my-2">* Note, anagrams must include all the letters of the displayed word.</cite>
+        <button id="ah-play-btn" class="btn btn-primary w-100 my-3" @click="play">Play!</button>
       </div>
     </div>
     <!-- END Start Screen -->

@@ -28,6 +28,9 @@ cite {
   font-size: 0.75rem;
 }
 
+footer ul {
+  font-size: 0.85rem;
+}
 
 /* HEADER, NAV styles */
 #games-dropdown-menu-div,
@@ -49,7 +52,7 @@ cite {
 */
 #ah-game-container,
 #mf-game-container {
-  width: 27.78rem;
+  max-width: 27.78rem;
   height: auto;
   margin: 0.33rem auto;
 }
@@ -69,6 +72,7 @@ cite {
 #mf-leaderboard-container {
   box-sizing: border-box;
   max-width: 50rem;
+  min-height: 100vh;
 }
 
 #ah-leaderboard-tbl,

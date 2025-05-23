@@ -1,5 +1,5 @@
 <template>
-  <div id="mf-game-container" class="container">
+  <div id="mf-game-container" class="container-fluid">
     <!-- Start Screen -->
     <div id="mf-start-screen-div" v-if="screen=='start'" class="container">
       <div class="row">
