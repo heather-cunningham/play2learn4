@@ -41,8 +41,12 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     ## Third-party, I installed apps
-    "crispy_forms",
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     "crispy_bootstrap5",
+    "crispy_forms",
+    
 
     ## My local apps
     "common.apps.CommonConfig",
@@ -61,6 +65,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 
 MIDDLEWARE = [
+    "allauth.account.middleware.AccountMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -108,6 +113,12 @@ DATABASES = {
     #     "NAME": BASE_DIR / "db.sqlite3",
     # }
 }
+
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend', 
+    'allauth.account.auth_backends.AuthenticationBackend', 
+)
 
 
 # Password validation
