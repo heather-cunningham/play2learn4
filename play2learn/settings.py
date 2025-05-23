@@ -65,7 +65,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 
 MIDDLEWARE = [
-    "allauth.account.middleware.AccountMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -115,6 +114,19 @@ DATABASES = {
 }
 
 
+# EMAIL
+SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+DEFAULT_FROM_EMAIL = 'cunningham.heatherirene@gmail.com'
+
+
+AUTH_USER_MODEL = 'users.CustomUser'
+
+
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend', 
     'allauth.account.auth_backends.AuthenticationBackend', 
@@ -141,7 +153,22 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # AUTHENTICATION SETTINGS
-AUTH_USER_MODEL = 'users.CustomUser'
+LOGIN_URL = 'account_login'
+LOGIN_REDIRECT_URL = 'pages:home'
+
+
+## django-allauth settings
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email' ## Options == 'email', 'username' (the default), or 'username_email'
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3 
+ACCOUNT_EMAIL_REQUIRED = True 
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory' # Default: 'optional'
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5 
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 300 
+ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login' 
+ACCOUNT_USERNAME_REQUIRED = True # Default: True
+ACCOUNT_USER_MODEL_USERNAME_FIELD = "username"  # Defines the username field
+ACCOUNT_UNIQUE_USERNAME = True  # Ensures usernames are unique
 
 
 # Internationalization
