@@ -1,0 +1,12 @@
+Hello!
+
+You are receiving this email because someone (hopefully you) has registered for {{ current_site.name }} using this email address.
+
+To confirm your registration, go to {{ activate_url }}.
+
+Thank you!
+
+
+Sincerely, 
+
+Play2Learn Staff
