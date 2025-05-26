@@ -93,82 +93,83 @@
             </div>
           </li><!-- END Leaderboards Dropdown -->
 
-          <!-- Me/My Account Dropdown -->
-          <li id="me-nav-dropdown" class="nav-item dropdown ms-auto">
-            <a id="me-dropdown-link" class="nav-link dropdown-toggle" 
-              href="#"  
-              role="button" data-bs-toggle="dropdown" aria-haspopup="true" 
-              aria-expanded="false" alt="Me, My Account menu">Me</a>
-            <div id="me-dropdown-menu-div" class="dropdown-menu" 
-              aria-labelledby="me-dropdown-link">
-                <a id="my-account-nav-link" class="dropdown-item" 
-                  href="#" 
-                  alt="Go to your My Account page">My Account</a>
-                <a id="my-games-nav-link" class="dropdown-item"
-                  href="#" 
-                  alt="Go to your My Games page">My Games</a>
-                <div id="me-dropdown-divider" class="dropdown-divider"></div>
-                <form method="post" action="#">
-                  {% csrf_token %}
-                  <button id="logout-nav-btn" 
-                    class="btn dropdown-item" 
-                    name="LOG OUT" 
-                    alt="Log out of your account" 
-                    type="submit">Log Out</button>
-                </form>
-            </div>
-          </li><!-- END Me/My Account Dropdown -->
-
-          <li id="about-nav-item" class="nav-item">
-            <a id="about-nav-link" class="nav-link" href="{% url 'pages:about' %}" 
-              alt="Go to our About Us page">About</a>
-          </li>
-
-           <!-- Sign In/SignUp Dropdown -->
-          <li id="sign-nav-dropdown" class="nav-item dropdown ms-auto">
-            <a id="sign-dropdown-link" class="nav-link dropdown-toggle" 
-              href="#"  
-              role="button" data-bs-toggle="dropdown" aria-haspopup="true" 
-              aria-expanded="false"
-              alt="Login or Sign-up menu">Sign In/Sign Up</a>
-            <div id="sign-dropdown-menu-div" class="dropdown-menu" 
-              aria-labelledby="sign-dropdown-link">
-              <a id="login-nav-link" class="dropdown-item" 
-                href="{% url 'account_login' %}" 
-                alt="Log in to your account">Log in</a>
-              <a id="register-nav-link" class="dropdown-item" 
-                href="{% url 'account_signup' %}"  
-                alt="Register for an account">Register</a>
-            </div>
-          </li><!-- END Sign In/Up Dropdown -->
+          
+          {% if not user.is_authenticated %}
+            <!-- Sign In/SignUp Dropdown -->
+            <li id="sign-nav-dropdown" class="nav-item dropdown ms-auto">
+              <a id="sign-dropdown-link" class="nav-link dropdown-toggle" 
+                href="#"  
+                role="button" data-bs-toggle="dropdown" aria-haspopup="true" 
+                aria-expanded="false"
+                alt="Login or Sign-up menu">Sign In/Sign Up</a>
+              <div id="sign-dropdown-menu-div" class="dropdown-menu" 
+                aria-labelledby="sign-dropdown-link">
+                <a id="login-nav-link" class="dropdown-item" 
+                  href="{% url 'account_login' %}" 
+                  alt="Log in to your account">Log in</a>
+                <a id="register-nav-link" class="dropdown-item" 
+                  href="{% url 'account_signup' %}"  
+                  alt="Register for an account">Register</a>
+              </div>
+            </li><!-- END Sign In/Up Dropdown -->
+          {% else %}
+            <!-- Me/My Account Dropdown -->
+            <li id="me-nav-dropdown" class="nav-item dropdown ms-auto">
+              <a id="me-dropdown-link" class="nav-link dropdown-toggle" 
+                href="#"  
+                role="button" data-bs-toggle="dropdown" aria-haspopup="true" 
+                aria-expanded="false" alt="Me, My Account menu">Me</a>
+              <div id="me-dropdown-menu-div" class="dropdown-menu" 
+                aria-labelledby="me-dropdown-link">
+                  <a id="my-account-nav-link" class="dropdown-item" 
+                    href="#" 
+                    alt="Go to your My Account page">My Account</a>
+                  <a id="my-games-nav-link" class="dropdown-item"
+                    href="#" 
+                    alt="Go to your My Games page">My Games</a>
+                  <div id="me-dropdown-divider" class="dropdown-divider"></div>
+                  <form id="logout-nav-form" method="post" action="{% url 'account_logout' %}">
+                    {% csrf_token %}
+                    <button id="logout-nav-btn" 
+                      class="btn dropdown-item" 
+                      name="LOG OUT" 
+                      alt="Log out of your account" 
+                      type="submit">Log Out</button>
+                  </form>
+              </div>
+            </li><!-- END Me/My Account Dropdown -->
+          {% endif %} 
         </ul>
       </div>
     </nav>
   </header>
   
+  {% block main %}{% endblock %} <!-- end main -->
   
-  {% block main %}
-  {% endblock %} <!-- end main -->
-  
-
   <footer class="fixed-bottom bg-light row clearfix">
     <div class="row pe-0">
       <nav class="navbar navbar-light bg-light px-2">
         <ul class="nav">
-          <li id="admin-footer-item" class="nav-item">
-            <a id="admin-footer-link" class="nav-link" href="{% url 'admin:index' %}" 
-              alt="Log in to our Admin site">Admin</a>
+          <li id="about-footer-item" class="nav-item">
+            <a id="about-footer-link" class="nav-link" href="{% url 'pages:about' %}" 
+              alt="Go to our About Us page">About</a>
           </li>
+          {% if user.is_authenticated and user.is_staff %}
+            <li id="admin-footer-item" class="nav-item">
+              <a id="admin-footer-link" class="nav-link" href="{% url 'admin:index' %}" 
+                alt="Log in to our Admin site">Admin</a>
+            </li>
+          {% endif %}
           <li id="contact-footer-item" class="nav-item">
             <a id="contact-footer-link" class="nav-link" href="{% url 'pages:contact-us' %}" 
               alt="Go to our Contact Us page">Contact Us</a>
           </li>
           <li id="feedback-footer-item" class="nav-item">
             <a id="feedback-footer-link" class="nav-link" href="{% url 'reviews:feedback' %}" 
-              alt="Send feedback or write a review">Feedback/Reviews</a>
+              alt="Send feedback or write a review">Feedback</a>
           </li>
         </ul>
-        <p class="ms-3 me-2 mt-2 mb-2">
+        <p class="ms-3 me-3 mt-2 mb-2">
           <cite>Website designed &amp; developed by: 
             <a href="https://github.com/heather-cunningham" rel="noopener" target="_blank" 
             alt="See my GitHub portfolio" title="See my GitHub portfolio">Heather I. Cunningham</a>
