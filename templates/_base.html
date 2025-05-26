@@ -138,7 +138,11 @@
                   </form>
               </div>
             </li><!-- END Me/My Account Dropdown -->
-          {% endif %} 
+          {% endif %}
+            <li id="about-nav-item" class="nav-item">
+            <a id="about-nav-link" class="nav-link" href="{% url 'pages:about' %}" 
+              alt="Go to our About Us page">About</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -150,10 +154,6 @@
     <div class="row pe-0">
       <nav class="navbar navbar-light bg-light px-2">
         <ul class="nav">
-          <li id="about-footer-item" class="nav-item">
-            <a id="about-footer-link" class="nav-link" href="{% url 'pages:about' %}" 
-              alt="Go to our About Us page">About</a>
-          </li>
           {% if user.is_authenticated and user.is_staff %}
             <li id="admin-footer-item" class="nav-item">
               <a id="admin-footer-link" class="nav-link" href="{% url 'admin:index' %}" 
@@ -166,7 +166,7 @@
           </li>
           <li id="feedback-footer-item" class="nav-item">
             <a id="feedback-footer-link" class="nav-link" href="{% url 'reviews:feedback' %}" 
-              alt="Send feedback or write a review">Feedback</a>
+              alt="Send feedback or write a review">Feedback/Reviews</a>
           </li>
         </ul>
         <p class="ms-3 me-3 mt-2 mb-2">
