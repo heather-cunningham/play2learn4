@@ -171,6 +171,9 @@ ACCOUNT_USER_MODEL_USERNAME_FIELD = "username"  # Defines the username field
 ACCOUNT_UNIQUE_USERNAME = True  # Ensures usernames are unique
 
 
+ACCOUNT_SIGNUP_FORM_CLASS = 'users.forms.SignupForm'
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 LANGUAGE_CODE = "en-us"
