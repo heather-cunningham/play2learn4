@@ -17,6 +17,28 @@
 
   <script defer src="http://localhost:8080/js/chunk-vendors.js"></script>
   <script defer src="http://localhost:8080/js/app.js"></script>
+  <script>
+    /* Function to return to the game's page after playing a game when not logged in. */
+    window.addEventListener("load", function() {
+      const returnToGame = localStorage.getItem("returnToGame");
+
+      if (returnToGame) {
+        setTimeout(
+          () => {
+            fetch("/check-auth-status/")
+              .then(response => response.json())
+              .then(data => {
+                if (data.is_authenticated) {
+                  localStorage.removeItem("returnToGame"); // Clear stored data
+                  window.location.href = returnToGame; // Redirect back to the game page
+                }
+              });
+          }, 
+          500
+        ); 
+      }
+    });
+  </script>
 
   <!-- All images and graphics used in this web app are free clip art, unless otherwise indicated
       it was created free with an AI tool, like DALL-E. -->

@@ -107,10 +107,6 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': 5432
     }
-    # "default": {
-    #     "ENGINE": "django.db.backends.sqlite3",
-    #     "NAME": BASE_DIR / "db.sqlite3",
-    # }
 }
 
 
@@ -154,7 +150,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # AUTHENTICATION SETTINGS
 LOGIN_URL = 'account_login'
-LOGIN_REDIRECT_URL = 'pages:home'
+LOGIN_REDIRECT_URL = "/"
 
 
 ## django-allauth settings

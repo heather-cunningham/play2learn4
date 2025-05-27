@@ -183,10 +183,28 @@ export default {
 
       try {
         await axios.post("/submit-final-score/", data, {
-          headers: { "Content-Type": "application/json" }
+          headers: { 
+            "Content-Type": "application/json",
+            "X-CSRFToken": document.cookie.match(/csrftoken=([^;]+)/)[1],  
+          }
         });
+
+        alert("Score saved successfully!");
+
       } catch (error) {
-          console.error("AxiosError:", error.response ? error.response.data : error.message);
+        if (error.response && error.response.status === 401) {
+          const login_url = error.response.data.login_url;
+
+          if (confirm("Please, log in or register to save your score!")) {
+            // Save game data in localStorage first, before redirecting to login page.
+            localStorage.setItem("pendingScore", JSON.stringify(data));  
+            localStorage.setItem("returnToGame", window.location.href);
+            // Then, redirect to login
+            window.location.href = login_url;  
+          }
+        } else {
+          console.error("Error saving score:", error.response ? error.response.data : error.message);
+        }
       }
     },
   }, // END methods
@@ -206,6 +224,24 @@ export default {
         this.recordFinalScore(); 
       }
     }
-  } // END watch
+  }, // END watch
+
+  // Lifecycle Hook Overrides & Methods
+  mounted() {
+    // Retry submitting the score after login
+    const pendingScore = localStorage.getItem("pendingScore");
+
+    if (pendingScore) {
+      localStorage.removeItem("pendingScore");  // Remove stored data
+
+      axios.post("/submit-final-score/", JSON.parse(pendingScore), {
+          headers: { "Content-Type": "application/json" }
+      }).then(() => {
+          alert("Thanks for logging in!  Score saved successfully.");
+      }).catch(error => {
+          console.error("Error saving score after login:", error.response ? error.response.data : error.message);
+      });
+    }
+  }, // END mounted()
 }
 </script>

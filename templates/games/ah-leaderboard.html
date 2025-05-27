@@ -24,11 +24,12 @@
         {% for score in anagram_scores %}
         <tr>
           <td id="ah-rank">{{ forloop.counter }}</td>  
-          <td id="ah-player">{{ score.player }}</td>
+          <td id="ah-player">{{ score.player.username }}</td>
           <td id="ah-score">{{ score.final_score }}</td>
           <td id="ah-datetime">{{ score.game_date_time }}</td>
           <td id="ah-settings">  
-            <b>Word Length:</b> {{ score.game.settings.word_length }}</td>
+            <b>Word Length:</b> {{ score.game.settings.word_length }}
+          </td>
         </tr>
         {% endfor %}
       </tbody>

@@ -1,18 +1,16 @@
 import json
 from django.http import JsonResponse
-# from django.conf import settings
-from django.contrib.auth import get_user_model
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
+from django.urls import reverse
 from django.utils.timezone import localtime
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from django.views.decorators.http import require_http_methods
 from django.views.generic import ListView, TemplateView
 from games.models import FinalScore, Game
 
-
+## ---------------------------------------------------------------------------------------------------
 ## CBVs: Class-based Views
+## ---------------------------------------------------------------------------------------------------
 class AnagramHuntView(TemplateView):
     template_name = "games/anagram-hunt.html"
 
@@ -51,9 +49,10 @@ class MFLeaderboardView(ListView): ## Math Facts Leaderboard
         return math_scores_qryset
 
 
+## ---------------------------------------------------------------------------------------------------
 ## Function-based Views
-## --------------------
-@csrf_exempt  # Remove this once authentication is set up properly and add `@csrf_protect`. Players will have to log in to play games.
+## ---------------------------------------------------------------------------------------------------
+@csrf_protect  
 @require_http_methods(["POST"])
 def create_game(request):
     try:
@@ -67,11 +66,14 @@ def create_game(request):
         return JsonResponse({"status": "error", "message": "Invalid JSON format."}, status=400)
     except Exception as e:
         return JsonResponse({"status": "Error - Game not created.", "message": str(e)}, status=400)
+    
+    
+@csrf_protect
+def check_auth_status(request):
+    return JsonResponse({"is_authenticated": request.user.is_authenticated})
 
 
-# @login_required
-# @csrf_protect
-@csrf_exempt  # Remove this once authentication is set up properly and add `@csrf_protect`
+@csrf_protect
 @require_http_methods(["POST"])
 def submit_final_score(request):
     try:
@@ -88,17 +90,18 @@ def submit_final_score(request):
                 {"status": "error", 
                  "message": "final_score == None, Null, or its value is otherwise missing"},
                 status=400)
-        ## Handle authentication - use test user for now if request.user is not authenticated.  
-        # Replace with actual authentication later.
+        # Check if the user is authenticated
         player = request.user if request.user.is_authenticated else None
-        if (not player):
-            User = get_user_model()
-            player, created = User.objects.get_or_create(username="test_user") ## Rtns tple of (Obj, Boolean)
-            if (created):
-                player.set_password("password123")  
-                player.save()
+        if (player is None):
+            return JsonResponse({
+                "status": "error",
+                "message": "Please, log in or register to save your score!",
+                "login_url": reverse("account_login"),  
+                "signup_url": reverse("account_signup"), 
+            }, status=401)
+        ## Save score
         final_score_obj = FinalScore.objects.create(
-            player=player,
+            player=request.user,
             game=game,
             game_name=data["game_name"],
             final_score=final_score,
