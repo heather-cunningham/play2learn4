@@ -128,10 +128,17 @@ p#no-scores-yet {
 #change-pswd-div,
 #confirm-reg-div,
 #log-in-div,
+#my-accnt-div,
 #pswd-changed-div,
 #register-div,
 #reset-pswd-div,
 #verify-email-div {
   max-width: 30rem;
+}
+
+#div_id_birthdate select {
+  display: inline-block;
+  width: 31%;
+  margin: 0 1%;
 }
 /* End FORM styles */

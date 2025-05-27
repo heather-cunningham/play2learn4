@@ -1,0 +1,41 @@
+{% extends '_base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+  My Account
+{% endblock title %}
+
+{% block main %}
+<div id="my-accnt-form-container" class="container-fluid mx-auto mb-5 pb-5 justify-content-center">
+  <h2 id="my-accnt-header" class="mx-auto my-3 text-center">My Account</h2>
+
+  <div id="my-accnt-div" class="card border-primary m-auto mb-3">
+    <div id="my-accnt-card" class="card-body">
+
+      {% if user.avatar and not form.avatar.errors %}
+        <img id="my-accnt-avatar-pic" src="{{ user.avatar.url }}" class="img-thumbnail mx-auto d-block" 
+          alt="Avatar or profile picture"/>
+      {% endif %}
+
+      <form id="my-accnt-form" method="post" class="m-auto">
+        {% csrf_token %}
+
+        {{ form|crispy }}
+        
+        <button id="my-accnt-update-btn" name="update" value="Update" type="submit" 
+          class="form-control btn btn-primary" 
+          alt="Press to update your My Account info">Update</button>
+      </form>
+    </div>
+    
+    <div id="my-accnt-footer" class="card-footer text-center">
+      <p>
+        <a id="change-pswd-link" href="{% url 'account_change_password' %}" 
+          alt="Press, tap, or click to change your password.">Change Password</a>
+      </p>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
