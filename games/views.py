@@ -2,11 +2,24 @@ import json
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.timezone import localtime
-from django.views.decorators.csrf import csrf_exempt, csrf_protect
+from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.http import require_http_methods
 from django.views.generic import ListView, TemplateView
 from games.models import FinalScore, Game
+
+
+## ---------------------------------------------------------------------------------------------------
+## Helper Fcns
+## ---------------------------------------------------------------------------------------------------
+def format_time_in_scores(scores_qryset):
+    for score in scores_qryset:
+        localized_dt = localtime(score.game_date_time).strftime("%m/%d/%Y %I:%M %p %Z")
+        date, time, am_pm_mark, timezone = localized_dt.split(" ")
+        score.game_date_time = f"{date} {time}{am_pm_mark.lower()} {timezone}"
+    return scores_qryset
+
 
 ## ---------------------------------------------------------------------------------------------------
 ## CBVs: Class-based Views
@@ -23,10 +36,7 @@ class AHLeaderboardView(ListView): ## Anagram Hunt Leaderboard
     #
     def get_queryset(self):
         anagram_scores_qryset = FinalScore.objects.filter(game__game_name="anagram_hunt").order_by("-final_score")
-        for score in anagram_scores_qryset:
-            localized_dt = localtime(score.game_date_time).strftime("%m/%d/%Y %I:%M %p %Z")
-            date, time, am_pm_mark, timezone = localized_dt.split(" ")
-            score.game_date_time = f"{date} {time}{am_pm_mark.lower()} {timezone}"
+        anagram_scores_qryset = format_time_in_scores(anagram_scores_qryset)
         return anagram_scores_qryset
 
 
@@ -42,13 +52,32 @@ class MFLeaderboardView(ListView): ## Math Facts Leaderboard
     #
     def get_queryset(self):
         math_scores_qryset = FinalScore.objects.filter(game__game_name="math_facts").order_by("-final_score")
-        for score in math_scores_qryset:
-            localized_dt = localtime(score.game_date_time).strftime("%m/%d/%Y %I:%M %p %Z")
-            date, time, am_pm_mark, timezone = localized_dt.split(" ")
-            score.game_date_time = f"{date} {time}{am_pm_mark.lower()} {timezone}"
+        math_scores_qryset = format_time_in_scores(math_scores_qryset)
         return math_scores_qryset
+    
 
-
+class MyGamesView(LoginRequiredMixin, ListView):
+    model = FinalScore
+    template_name = "games/my-games.html"
+    context_object_name = "my_scores"
+    #
+    #
+    ## @override
+    def get_queryset(self):
+        my_scores = FinalScore.objects.filter(player=self.request.user).order_by("-final_score")
+        my_scores = format_time_in_scores(my_scores)
+        return my_scores
+    #
+    #
+    ## @override
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Separate scores by game type
+        context["my_ah_scores"] = context["my_scores"].filter(game__game_name="anagram_hunt")
+        context["my_mf_scores"] = context["my_scores"].filter(game__game_name="math_facts")
+        return context
+    
+    
 ## ---------------------------------------------------------------------------------------------------
 ## Function-based Views
 ## ---------------------------------------------------------------------------------------------------

@@ -1,6 +1,6 @@
 from django.urls import path
-from games.views import (AnagramHuntView, AHLeaderboardView, MathFactsView, MFLeaderboardView, create_game,
-                          check_auth_status, submit_final_score)
+from games.views import (AnagramHuntView, AHLeaderboardView, MathFactsView, MFLeaderboardView, MyGamesView,
+                         create_game, check_auth_status, submit_final_score)
 
 
 app_name = 'games'
@@ -14,4 +14,6 @@ urlpatterns = [
     path("submit-final-score/", submit_final_score, name="submit-final-score"),
     path("ah-leaderboard/", AHLeaderboardView.as_view(), name="ah-leaderboard"),
     path("mf-leaderboard/", MFLeaderboardView.as_view(), name="mf-leaderboard"),
+    path("mf-leaderboard/", MFLeaderboardView.as_view(), name="mf-leaderboard"),
+    path("my-games/", MyGamesView.as_view(), name="my-games"),
 ]

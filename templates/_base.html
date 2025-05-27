@@ -134,6 +134,7 @@
                   alt="Register for an account">Register</a>
               </div>
             </li><!-- END Sign In/Up Dropdown -->
+
           {% else %}
             <!-- Me/My Account Dropdown -->
             <li id="me-nav-dropdown" class="nav-item dropdown ms-auto">
@@ -147,7 +148,7 @@
                     href="{% url 'my-account' %}" 
                     alt="Go to your My Account page">My Account</a>
                   <a id="my-games-nav-link" class="dropdown-item"
-                    href="#" 
+                    href="{% url 'games:my-games' %}" 
                     alt="Go to your My Games page">My Games</a>
                   <div id="me-dropdown-divider" class="dropdown-divider"></div>
                   <form id="logout-nav-form" method="post" action="{% url 'account_logout' %}">

@@ -18,6 +18,10 @@ h2 {
   font-size: 2rem;
 }
 
+h3 {
+  font-size: 1.25rem;
+}
+
 img#play2learn-logo {
   width: 3.5rem;
   height: auto;
@@ -67,16 +71,19 @@ footer ul {
 /* END Game Container & Board styles */
 
 
-/* Leaderboards TABLE styles */
+/* Leaderboards & MyGames TABLE styles */
 #ah-leaderboard-container,
-#mf-leaderboard-container {
+#mf-leaderboard-container,
+#my-games-container {
   box-sizing: border-box;
   max-width: 50rem;
   min-height: 100vh;
 }
 
 #ah-leaderboard-tbl,
-#mf-leaderboard-tbl  {
+#mf-leaderboard-tbl,
+#my-ah-scores-tbl,
+#my-mf-scores-tbl  {
   width: 100%;
   table-layout: fixed;
   font-size: 0.75rem;
@@ -93,6 +100,15 @@ p#no-scores-yet {
   height:auto; 
   margin: 3rem auto; 
   font-size: 2rem; 
+  font-style: italic;
+}
+
+p#no-my-ah-scores-yet, 
+p#no-my-mf-scores-yet {
+  width: 50%; 
+  height:auto; 
+  margin: 0 auto 3rem auto; 
+  font-size: 1.25rem; 
   font-style: italic;
 }
 /* End Leaderboards TABLE styles */
