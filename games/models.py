@@ -22,6 +22,7 @@ class Game(models.Model):
         "/": "Division",
     }
     #
+    #
     def get_mf_operation(self):
         """ Returns the full word, in title-case or Pascal-case, for the operation
           based on its stored operator. """
