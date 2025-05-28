@@ -111,6 +111,23 @@ p#no-my-mf-scores-yet {
   font-size: 1.25rem; 
   font-style: italic;
 }
+
+#my-ah-scrollable-table,
+#my-mf-scrollable-table {
+  display: block;
+  max-height: 18rem; 
+  overflow-y: auto;
+}
+
+#my-mf-scrollable-table {
+  margin-bottom: 3rem;  
+}
+
+.sticky-table-thead {
+  position: sticky;
+  top: 0;
+  z-index: 2; 
+}
 /* End Leaderboards TABLE styles */
 
 
