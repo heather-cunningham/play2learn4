@@ -27,9 +27,9 @@
         <tbody>
           {% for score in my_ah_scores %}
             <tr>
-              <td id="my-ah-score">{{ score.final_score }}</td>
-              <td id="my-ah-datetime">{{ score.game_date_time }}</td>
-              <td id="my-ah-settings">  
+              <td id="my-ah-score-{{score.id}}">{{ score.final_score }}</td>
+              <td id="my-ah-datetime-{{score.id}}">{{ score.game_date_time }}</td>
+              <td id="my-ah-settings-{{score.id}}">  
                 <b>Word Length:</b> {{ score.game.settings.word_length }}
               </td>
             </tr>
@@ -62,9 +62,9 @@
         <tbody>
           {% for score in my_mf_scores %}
           <tr>
-            <td id="my-mf-score">{{ score.final_score }}</td>
-            <td id="my-mf-datetime">{{ score.game_date_time }}</td>
-            <td id="my-mf-settings"> 
+            <td id="my-mf-score-{{score.id}}">{{ score.final_score }}</td>
+            <td id="my-mf-datetime-{{score.id}}">{{ score.game_date_time }}</td>
+            <td id="my-mf-settings-{{score.id}}"> 
               <b>{{ score.game.get_mf_operation }}</b> <br/> 
               <b>Max Operand:</b> {{ score.game.settings.max_number }}</td>
           </tr>
