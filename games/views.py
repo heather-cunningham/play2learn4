@@ -3,6 +3,7 @@ from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.paginator import Paginator
 from django.utils.timezone import localtime
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.http import require_http_methods
@@ -75,10 +76,18 @@ class MyGamesView(LoginRequiredMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # Separate scores by game type
-        context["my_ah_scores"] = context["my_scores"].filter(game__game_name="anagram_hunt")
-        context["my_mf_scores"] = context["my_scores"].filter(game__game_name="math_facts")
+        ah_scores_list = context["my_scores"].filter(game__game_name="anagram_hunt")
+        mf_scores_list = context["my_scores"].filter(game__game_name="math_facts")
+        # Pagination for Anagram Hunt Scores
+        ah_paginator = Paginator(ah_scores_list, 10)  
+        ah_page_number = self.request.GET.get("ah_page", 1)
+        context["my_ah_scores"] = ah_paginator.get_page(ah_page_number)
+        # Pagination for Math Facts Scores
+        mf_paginator = Paginator(mf_scores_list, 10)  
+        mf_page_number = self.request.GET.get("mf_page", 1)
+        context["my_mf_scores"] = mf_paginator.get_page(mf_page_number)
         return context
-    
+
     
 ## ---------------------------------------------------------------------------------------------------
 ## Function-based Views

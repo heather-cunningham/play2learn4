@@ -119,10 +119,6 @@ p#no-my-mf-scores-yet {
   overflow-y: auto;
 }
 
-#my-mf-scrollable-table {
-  margin-bottom: 3rem;  
-}
-
 .sticky-table-thead {
   position: sticky;
   top: 0;

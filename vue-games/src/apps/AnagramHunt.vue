@@ -217,6 +217,7 @@ export default {
 
     timeLeft(newTime) {
       if (newTime == 0) {
+        this.userInput = ""
         clearInterval(this.interval);
         // this.timeLeft = 60;
         this.timeLeft = 10; // for testing
