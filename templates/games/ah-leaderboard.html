@@ -5,39 +5,44 @@
 {% endblock %}
 
 {% block main %}
-<h2 id="ah-leaderboard-heading" class="mx-auto mt-3 mb-0 text-center">Anagram Hunt Leaderboard</h2>
-
 <div id="ah-leaderboard-container" class="container-fluid mx-auto mt-0 mb-5 p-3">
-  {% if anagram_scores %}
-    <table id="ah-leaderboard-tbl" class="table table-striped table-hover mx-auto my-2 border">
-      <thead class="table-primary">
-        <tr>
-          <th id="ah-rank-header">Rank</th>
-          <th id="ah-player-header">Player</th>
-          <th id="ah-score-header">Final Score</th>
-          <th id="ah-date-header">Date Played</th>
-          <th id="ah-settings-header">Game Settings</th>
-        </tr>
-      </thead>
+  <h2 id="ah-leaderboard-heading" class="mx-auto mt-3 mb-0 text-center">Anagram Hunt Leaderboard</h2>
 
-      <tbody>
-        {% for score in anagram_scores %}
-        <tr>
-          <td id="ah-rank">{{ forloop.counter }}</td>  
-          <td id="ah-player">{{ score.player.username }}</td>
-          <td id="ah-score">{{ score.final_score }}</td>
-          <td id="ah-datetime">{{ score.game_date_time }}</td>
-          <td id="ah-settings">  
-            <b>Word Length:</b> {{ score.game.settings.word_length }}
-          </td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  {% else %}
-    <p id="no-scores-yet" class="text-primary text-center">
-      No scores yet. Be the first to set a record!
-    </p>
-  {% endif %}
+    {% if anagram_scores %}
+      <table id="ah-leaderboard-tbl" class="table table-striped table-hover mx-auto my-2 border">
+        <thead class="table-primary">
+          <tr>
+            <th id="ah-rank-header">Rank</th>
+            <th id="ah-player-header">Player</th>
+            <th id="ah-score-header">Final Score</th>
+            <th id="ah-date-header">Date Played</th>
+            <th id="ah-settings-header">Game Settings</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for score in anagram_scores %}
+          <tr>
+            <td id="ah-rank-{{forloop.counter0|add:page_obj.start_index}}">
+              {{ forloop.counter0|add:page_obj.start_index }}</td>   
+            <td id="ah-player-rank-{{forloop.counter0|add:page_obj.start_index}}">
+              {{ score.player.username }}</td>
+            <td id="ah-score-num-{{score.id}}">{{ score.final_score }}</td>
+            <td id="ah-datetime-{{score.id}}">{{ score.game_date_time }}</td>
+            <td id="ah-settings-{{score.id}}">  
+              <b>Word Length:</b> {{ score.game.settings.word_length }}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p id="no-scores-yet" class="text-primary text-center">
+        No scores yet. Be the first to set a record!
+      </p>
+    {% endif %}
+  
+  {% include 'includes/pagination.html' %}
+
 </div>
 {% endblock %} <!-- END main -->

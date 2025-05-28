@@ -32,6 +32,7 @@ class AHLeaderboardView(ListView): ## Anagram Hunt Leaderboard
     model = FinalScore
     template_name = "games/ah-leaderboard.html"
     context_object_name = "anagram_scores"
+    paginate_by = 10
     #
     #
     def get_queryset(self):
@@ -48,6 +49,7 @@ class MFLeaderboardView(ListView): ## Math Facts Leaderboard
     model = FinalScore
     template_name = "games/mf-leaderboard.html"
     context_object_name = "math_scores"
+    paginate_by = 10
     #
     #
     def get_queryset(self):
