@@ -1,4 +1,4 @@
-/* Global Styles, Homepage Styles */
+/* Global Styles */
 * {
   box-sizing: border-box;
 }
@@ -48,6 +48,14 @@ footer ul {
   font-size: .90rem;
 }
 /* End HEADER, NAV styles */
+
+
+/* Primary page styles */
+#about-us-container {
+  box-sizing: border-box;
+  max-width: 45rem; 
+}
+/* END Primary page styles */
 
 
 /* Game Container & Board styles 

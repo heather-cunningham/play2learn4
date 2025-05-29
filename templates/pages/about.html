@@ -5,9 +5,29 @@
 {% endblock %}
 
 {% block main %}
-  <h2 class="text-center">About Us</h2>
-  <p>
-    Have feedback for us? <br />
-    <a href="{% url 'reviews:feedback' %}">Leave a review</a>.
-  </p>
+<div id="about-us-container" class="container-fluid mx-auto mb-5 pb-5 justify-content-center">
+  <h2 id="about-us-header" class="mx-auto my-3 text-center">About Us</h2>
+
+  <div id="about-us-div" class="card border-primary mx-auto my-3 justify-content-center">
+		<div id="about-us-card" class="card-body">
+      This project is for my enrollment in <strong>North Shore Community College's</strong> (Danvers, MA) 
+      <strong>Full Stack Developer Certificate</strong> program.  While the math and literacy games on this 
+      site are actual functioning games, they have not been developed by a curriculum designer, teacher, academic,
+      or professor.  All claims to their educational efficacy are made-up data (by me) to populate this website 
+      project with content.
+    </div>
+    
+    <div id="about-us-footer" class="card-footer">
+      <p id="links-para" class="text-center mt-3">
+        Have feedback for us? <br />
+        Write a 
+        <a id="about-us-rev-feedback-link" 
+          href="{% url 'reviews:feedback' %}" 
+          alt="Write a review of Play2Learn or send us feedback.">review</a>
+        or <a id="about-us-contact-us-link" 
+          href="{% url 'pages:contact-us' %}" alt="Email Play2Learn">contact us</a>.
+      </p>
+    </div>
+  </div>
+</div>
 {% endblock %} 
