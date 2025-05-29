@@ -80,7 +80,8 @@ footer ul {
 
 #about-us-container {
   box-sizing: border-box;
-  max-width: 50rem; 
+  max-width: 50rem;
+  min-height: 100vh; 
 }
 /* END Primary page styles */
 
@@ -122,6 +123,7 @@ footer ul {
   width: 100%;
   table-layout: fixed;
   font-size: 0.75rem;
+  border: 1px solid gray;
 }
 
 th, td {
@@ -164,9 +166,11 @@ p#no-my-mf-scores-yet {
 
 /* FORM styles */
 #contact-form-container,
+#contact-thx-container,
 #review-form-container {
   box-sizing: border-box;
   max-width: 45rem; 
+  min-height: 100vh;
 }
 
 #my-accnt-form-container {

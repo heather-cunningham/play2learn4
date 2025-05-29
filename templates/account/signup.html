@@ -10,9 +10,9 @@
 <div id="register-form-container" class="container-fluid mx-auto mb-5 pb-5 justify-content-center">
   <h2 id="register-header" class="mx-auto my-3 text-center">Register</h2>
 
-  <div id="register-div" class="card border-primary m-auto mb-3">
+  <div id="register-div" class="card border-primary mx-auto mb-3">
     <div id="register-card" class="card-body">
-      <form id="register-form" method="post" class="m-auto mb-2">
+      <form id="register-form" method="post" class="mx-auto mb-2">
         {% csrf_token %}
 
         {{ form|crispy }}

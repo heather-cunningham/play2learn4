@@ -8,16 +8,16 @@
 
 {% block main %}
 <div id="my-games-container" class="container-fluid mx-auto mt-0 mb-5 p-3">
-  <h2 id="my-games-heading" class="mx-auto mt-3 mb-0 text-center">My Games</h2>
+  <h2 id="my-games-heading" class="mx-auto my-3 text-center">My Games</h2>
 
     {% if my_ah_scores %}
     <h3 id="my-ah-scores-heading" class="mx-auto mt-1 mb-3 text-center">
        <a href="javascript:void(0);" onclick="toggleVisibility('my-ah-tbl-container')">
         My Anagram Hunt Scores</a>
     </h3>
-    <div id="my-ah-tbl-container">
-      <div id="my-ah-scrollable-table">
-        <table id="my-ah-scores-tbl" class="table table-striped table-hover mx-auto my-2 border">
+    <div id="my-ah-tbl-container" class="mx-3">
+      <div id="my-ah-scrollable-table" class="mb-3">
+        <table id="my-ah-scores-tbl" class="table table-striped table-hover mx-auto my-2">
           <thead class="table-primary sticky-table-thead">
             <tr>
               <th id="my-ah-score-header">Final Score</th>
@@ -78,9 +78,9 @@
       <a href="javascript:void(0);" onclick="toggleVisibility('my-mf-tbl-container')">
         My Math Facts Scores</a>
     </h3>
-    <div id="my-mf-tbl-container">
-      <div id="my-mf-scrollable-table">
-        <table id="my-mf-scores-tbl" class="table table-striped table-hover mx-auto my-2 border">
+    <div id="my-mf-tbl-container" class="mx-3">
+      <div id="my-mf-scrollable-table" class="mb-3">
+        <table id="my-mf-scores-tbl" class="table table-striped table-hover mx-auto my-2">
           <thead class="table-primary sticky-table-thead">
             <tr>
               <th id="my-mf-score-header">Final Score</th>
