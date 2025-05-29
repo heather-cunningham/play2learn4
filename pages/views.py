@@ -1,12 +1,15 @@
 import html
 from django.urls import reverse_lazy
-from django.views.generic import FormView, TemplateView
+from django.views.generic import FormView, ListView, TemplateView
 from common.utils.email import send_email
 from pages.forms import ContactUsForm
+from reviews.models import Review
 
 
-class HomePageView(TemplateView):
+class HomePageView(ListView):
+    model = Review
     template_name = "pages/home.html"
+    context_object_name = "reviews"
 
 
 class AboutUsView(TemplateView):

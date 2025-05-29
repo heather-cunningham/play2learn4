@@ -53,7 +53,29 @@ footer ul {
 /* Primary page styles */
 #homepg-container {
   box-sizing: border-box;
-  max-width: 75rem; 
+  max-width: 75rem;
+  min-height: 100vh; 
+}
+
+#homepg-header,
+#review-carousel-comments,
+#review-carousel-reviewer {
+  color: darkblue;
+}
+
+#homepg-subheader {
+  color: rgb(224, 18, 128); /* hot pink */
+}
+
+#review-carousel-header {
+  color: orangered;
+}
+
+#review-carousel-card {
+  box-sizing: border-box;
+  max-width: 70rem;
+  border-width: 2px;
+  border-radius: 4rem;
 }
 
 #about-us-container {
@@ -145,6 +167,10 @@ p#no-my-mf-scores-yet {
 #review-form-container {
   box-sizing: border-box;
   max-width: 45rem; 
+}
+
+#my-accnt-form-container {
+  min-height: 100vh;
 }
 
 #contact-disclaimer-msg,

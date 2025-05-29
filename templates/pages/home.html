@@ -1,7 +1,7 @@
 {% extends "_base.html" %}
 
 {% block title %}
-Home
+  Home
 {% endblock %}
 
 {% block main %}
@@ -13,20 +13,19 @@ Home
     Your Gateway to Fun Learning
   </h2>
 
-  <div id="games-cards-row" class="row justify-content-center">
+  <div id="games-cards-row" class="row mx-auto mb-5 justify-content-center">
     <div id="ah-col" class="col-md-5 mb-2">
       <div id="ah-card" class="card border-primary">
         <div id="ah-header" class="card-header text-center">
           <h3>
-            <a id="ah-game-link" 
-              href="anagram-hunt.html" 
-              alt="Go to the Anagram Hunt game">Anagram Hunt</a>
+            <a id="ah-game-link" href="anagram-hunt.html" alt="Go to the Anagram Hunt game">Anagram Hunt</a>
           </h3>
         </div>
 
         <div id="ah-descrip" class="card-body">
           <p class="card-text">
-            A simple anagram game to challenge your word skills.  How many anagrams can you find in a minute?
+            A simple anagram game to challenge your word skills. 
+            How many anagrams can you find in a minute?
           </p>
         </div>
       </div>
@@ -36,23 +35,54 @@ Home
       <div id="mf-card" class="card border-primary">
         <div id="mf-header" class="card-header text-center">
           <h3>
-            <a id="mf-game-link" 
-              href="math-facts.html" 
-              alt="Go to the Math Facts game">Math Facts</a>
+            <a id="mf-game-link" href="math-facts.html" alt="Go to the Math Facts game">Math Facts</a>
           </h3>
         </div>
 
         <div id="mf-descrip" class="card-body">
           <p class="card-text">
-            A simple arithmetic game to sharpen your math skills.  How many equations can you solve in a minute?
+            A simple arithmetic game to sharpen your math skills. 
+            How many equations can you solve in a minute?
           </p>
         </div>
       </div>
     </div>
   </div> <!-- END games-cards-row -->
 
+  
+  <h3 id="review-carousel-header" 
+    class="mx-auto my-3 text-center">Wow! Our Reviews</h3>
 
+  <!-- Review Carousel -->
+  <div id="review-carousel-container" class="container mx-auto mb-5 pb-5 text-center"> 
+    <div id="review-carousel" class="carousel slide" data-bs-ride="carousel">
+      <div id="review-carousel-inner" class="carousel-inner">
+
+        {% for review in reviews %}
+          <div id="review-carousel-item" class="carousel-item {% if forloop.first %}active{% endif %}">
+            <div id="review-carousel-card" class="card mx-auto border-info">
+              <div id="review-carousel-card-body" class="card-body">
+                <h5 id="review-carousel-comments" 
+                  class="card-title mx-auto my-2">"{{ review.comments }}"</h5>
+                <cite id="review-carousel-reviewer" 
+                  class="card-text">-- {{ review.user.first_name }} {{ review.user.last_name }}</cite>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <button id="carousel-prev-btn" class="carousel-control-prev" type="button" 
+        data-bs-target="#review-carousel" data-bs-slide="prev" name="prev" value="Previous" 
+        aria-label="Previous"><span class="carousel-control-prev-icon" 
+        aria-hidden="true"></span></button>
+
+      <button id="carousel-next-btn" class="carousel-control-next" type="button" 
+        data-bs-target="#review-carousel" data-bs-slide="next" name="next" value="Next" 
+        aria-label="Next"><span class="carousel-control-next-icon" 
+        aria-hidden="true"></span></button>
+    </div>
+  </div> <!-- END Review Carousel -->
 
 </div>
-
 {% endblock %}
