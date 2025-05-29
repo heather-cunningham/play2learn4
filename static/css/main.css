@@ -16,6 +16,7 @@ h1 {
 
 h2 {
   font-size: 2rem;
+  color: darkblue;
 }
 
 h3 {
@@ -41,6 +42,10 @@ footer ul {
 #me-dropdown-menu-div,
 #sign-dropdown-menu-div {
   min-width: 7rem;
+  font-size: .90rem;
+}
+
+#logout-nav-btn {
   font-size: .90rem;
 }
 
