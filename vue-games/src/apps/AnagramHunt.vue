@@ -97,7 +97,6 @@ export default {
       // This name must match the `ANAGRAM` var's value, i.e.: "anagram_hunt", in the Game model.
       gameName: "anagram_hunt", 
       player: "",
-      // userName: '',
       score: 0,
       anagrams: anagrams,
       currentWord: "",
@@ -107,8 +106,7 @@ export default {
       correctGuesses: [],
       userInput: "",
       interval: null,
-      // timeLeft: 60,
-      timeLeft: 10, // for testing
+      timeLeft: 60,
     }
   }, // END data
 
@@ -219,8 +217,7 @@ export default {
       if (newTime == 0) {
         this.userInput = ""
         clearInterval(this.interval);
-        // this.timeLeft = 60;
-        this.timeLeft = 10; // for testing
+        this.timeLeft = 60;
         this.screen = "end";
         this.recordFinalScore(); 
       }

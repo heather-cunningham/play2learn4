@@ -137,11 +137,9 @@ export default {
       // This name must match the `MATH` var's value, i.e.: "math_facts", in the Game model.
       gameName: "math_facts", 
       player: "",
-      // userName: '',
       score: 0,
       screen: "start",
-      // maxNumber: 30, // default
-      maxNumber: 5, // for testing
+      maxNumber: 10, // default
       operation: "+",
       operations: {
         "Addition": "+",
@@ -153,8 +151,7 @@ export default {
       number2: 0,
       userInput: "",
       interval: null,
-      // timeLeft: 60,
-      timeLeft: 10, // for testing
+      timeLeft: 60,
     }
   }, // END data
 
@@ -284,8 +281,7 @@ export default {
       if (newTime === 0) {
         this.userInput = ""
         clearInterval(this.interval);
-        // this.timeLeft = 60;
-        this.timeLeft = 10; // for testing
+        this.timeLeft = 60;
         this.screen = "end";
         this.recordFinalScore(); 
       }
