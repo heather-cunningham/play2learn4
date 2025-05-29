@@ -32,8 +32,8 @@ class ReviewFormView(FormView):
             content += f'<li>{label}: {entry}</li>' 
         content += '</ul>'
         send_email(to, subject, content)
-        # Save the review with the updated username/"Unregistered User"
-        #  and user/Null 
+        # Save the review with the updated username||"Unregistered User"
+        #  and user||Null 
         form.instance.user = user
         form.instance.username = username
         form.instance.save()
