@@ -18,12 +18,13 @@
       <div id="ah-card" class="card border-primary">
         <div id="ah-header" class="card-header text-center">
           <h3>
-            <a id="ah-game-link" href="anagram-hunt.html" alt="Go to the Anagram Hunt game">Anagram Hunt</a>
+            <a id="ah-game-link" href="{% url 'games:anagram-hunt' %}" 
+              alt="Go to the Anagram Hunt game">Anagram Hunt</a>
           </h3>
         </div>
 
         <div id="ah-descrip" class="card-body">
-          <p class="card-text">
+          <p class="card-text text-center">
             A simple anagram game to challenge your word skills. 
             How many anagrams can you find in a minute?
           </p>
@@ -35,13 +36,14 @@
       <div id="mf-card" class="card border-primary">
         <div id="mf-header" class="card-header text-center">
           <h3>
-            <a id="mf-game-link" href="math-facts.html" alt="Go to the Math Facts game">Math Facts</a>
+            <a id="mf-game-link" href="{% url 'games:math-facts' %}"  
+              alt="Go to the Math Facts game">Math Facts</a>
           </h3>
         </div>
 
         <div id="mf-descrip" class="card-body">
-          <p class="card-text">
-            A simple arithmetic game to sharpen your math skills. 
+          <p class="card-text text-center">
+            A simple arithmetic game to sharpen your math skills.
             How many equations can you solve in a minute?
           </p>
         </div>
