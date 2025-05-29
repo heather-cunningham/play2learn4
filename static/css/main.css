@@ -11,7 +11,7 @@ html, body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 h2 {
@@ -51,9 +51,14 @@ footer ul {
 
 
 /* Primary page styles */
+#homepg-container {
+  box-sizing: border-box;
+  max-width: 75rem; 
+}
+
 #about-us-container {
   box-sizing: border-box;
-  max-width: 45rem; 
+  max-width: 50rem; 
 }
 /* END Primary page styles */
 

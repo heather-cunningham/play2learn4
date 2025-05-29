@@ -1,11 +1,58 @@
 {% extends "_base.html" %}
 
 {% block title %}
-  Home
+Home
 {% endblock %}
 
 {% block main %}
-  <h1 class="text-center">Play2Learn</h1>
-  <h2 class="text-center">Home</h2>
-  
-{% endblock %} 
+<div id="homepg-container" class="container-fluid mx-auto mb-5 pb-5 justify-content-center">
+  <h1 id="homepg-header" class="mx-auto my-3 text-center">
+    Welcome to Play2Learn!
+  </h1>
+  <h2 id="homepg-subheader" class="mx-auto mt-3 mb-4 text-center">
+    Your Gateway to Fun Learning
+  </h2>
+
+  <div id="games-cards-row" class="row justify-content-center">
+    <div id="ah-col" class="col-md-5 mb-2">
+      <div id="ah-card" class="card border-primary">
+        <div id="ah-header" class="card-header text-center">
+          <h3>
+            <a id="ah-game-link" 
+              href="anagram-hunt.html" 
+              alt="Go to the Anagram Hunt game">Anagram Hunt</a>
+          </h3>
+        </div>
+
+        <div id="ah-descrip" class="card-body">
+          <p class="card-text">
+            A simple anagram game to challenge your word skills.  How many anagrams can you find in a minute?
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="mf-col" class="col-md-5 mb-2">
+      <div id="mf-card" class="card border-primary">
+        <div id="mf-header" class="card-header text-center">
+          <h3>
+            <a id="mf-game-link" 
+              href="math-facts.html" 
+              alt="Go to the Math Facts game">Math Facts</a>
+          </h3>
+        </div>
+
+        <div id="mf-descrip" class="card-body">
+          <p class="card-text">
+            A simple arithmetic game to sharpen your math skills.  How many equations can you solve in a minute?
+          </p>
+        </div>
+      </div>
+    </div>
+  </div> <!-- END games-cards-row -->
+
+
+
+</div>
+
+{% endblock %}

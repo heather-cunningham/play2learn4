@@ -51,10 +51,10 @@
 
       <div id="main-menu" class="collapse navbar-collapse me-3 justify-content-end text-end">
         <ul id="main-menu-top-nav" class="navbar-nav ms-auto me-3">
-          <li id="home-nav-item" class="nav-item active">
+          <!-- <li id="home-nav-item" class="nav-item active">
             <a id="home-nav-link" class="nav-link" href="{% url 'pages:home' %}" 
               alt="Go to the home page">Home</a> 
-          </li>
+          </li> -->
 
           <!-- Games Dropdown -->
           <li id="games-nav-dropdown" class="nav-item dropdown ms-auto">
@@ -141,10 +141,14 @@
               </div>
             </li><!-- END Me/My Account Dropdown -->
           {% endif %}
+            <li id="home-nav-item" class="nav-item active">
+              <a id="home-nav-link" class="nav-link" href="{% url 'pages:home' %}" 
+                alt="Go to the home page">Home</a> 
+            </li>
             <li id="about-nav-item" class="nav-item">
-            <a id="about-nav-link" class="nav-link" href="{% url 'pages:about' %}" 
-              alt="Go to our About Us page">About</a>
-          </li>
+              <a id="about-nav-link" class="nav-link" href="{% url 'pages:about' %}" 
+                alt="Go to our About Us page">About</a>
+            </li>
         </ul>
       </div>
     </nav>
