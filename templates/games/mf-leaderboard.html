@@ -8,6 +8,14 @@
 <div id="mf-leaderboard-container" class="container-fluid mx-auto mt-0 mb-5 p-3">
   <h2 id="mf-leaderboard-heading" class="mx-auto my-3 text-center">Math Facts Leaderboard</h2>
 
+    <div id="mf-leaderboard-sorting-controls" class="sorting-controls mb-2">
+      <a id="mf-leaderboard-reset-sort-btn" 
+        href="?order=-final_score" 
+        class="reset-sort-btn btn btn-primary btn-sm" 
+        alt="Reset the sort order of Math Facts' Leaderboard">Reset Sort order
+        <span class="sorting-arrows">&olarr;</span></a> 
+    </div>
+
     {% if math_scores %}
       <table id="mf-leaderboard-tbl" class="table table-striped table-hover mx-auto my-2">
         <thead class="table-primary">
