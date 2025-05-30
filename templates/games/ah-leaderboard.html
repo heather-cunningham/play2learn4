@@ -1,5 +1,7 @@
 {% extends "_base.html" %}
 
+{% load static %}
+
 {% block title %}
   Anagram Hunt Leaderboard
 {% endblock %}
@@ -77,6 +79,9 @@
     {% endif %}
   
   {% include 'includes/pagination.html' %}
-
 </div>
+
+  {% block scripts %}
+    <script src="{% static 'js/preserveScroll.js' %}"></script>
+  {% endblock %}
 {% endblock %} <!-- END main -->
