@@ -55,12 +55,13 @@ class FinalScore(models.Model):
     final_score = models.IntegerField()
     game_date_time = models.DateTimeField(auto_now_add=True)
     settings = models.JSONField(default=dict)
+    rank = models.PositiveIntegerField(null=True, blank=True)
     #
     # toString()
     def __str__(self):
         """ toString(): Returns the Player's username, the game's name, final score, and date played. """
         return (f"Player: {self.player.username}, Game: {self.game_name}, "
-                f"Game Settings: {self.game.settings}, " 
+                f"Game Settings: {self.game.settings}, Rank: {self.rank}," 
                 f"Final Score: {self.final_score}, Game Date: {self.game_date_time}")
 ## END class FinalScore(models...
  

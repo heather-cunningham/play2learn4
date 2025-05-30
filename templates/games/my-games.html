@@ -21,6 +21,7 @@
           <thead class="table-primary sticky-table-thead">
             <tr>
               <th id="my-ah-score-header">Final Score</th>
+              <th id="my-ah-rank-header">Rank</th>
               <th id="my-ah-date-header">Date Played</th>
               <th id="my-ah-settings-header">Game Settings</th>
             </tr>
@@ -29,6 +30,7 @@
             {% for score in my_ah_scores %}
               <tr>
                 <td id="my-ah-score-{{score.id}}">{{ score.final_score }}</td>
+                <td id="my-ah-rank-{{score.rank}}">{{ score.rank }}</td>
                 <td id="my-ah-datetime-{{score.id}}">{{ score.game_date_time }}</td>
                 <td id="my-ah-settings-{{score.id}}">  
                   <b>Word Length:</b> {{ score.game.settings.word_length }}
@@ -84,6 +86,7 @@
           <thead class="table-primary sticky-table-thead">
             <tr>
               <th id="my-mf-score-header">Final Score</th>
+              <th id="my-mf-rank-header">Rank</th>
               <th id="my-mf-date-header">Date Played</th>
               <th id="my-mf-settings-header">Game Settings</th>
             </tr>
@@ -92,6 +95,7 @@
             {% for score in my_mf_scores %}
             <tr>
               <td id="my-mf-score-{{score.id}}">{{ score.final_score }}</td>
+              <td id="my-mf-rank-{{score.rank}}">{{ score.rank }}</td>
               <td id="my-mf-datetime-{{score.id}}">{{ score.game_date_time }}</td>
               <td id="my-mf-settings-{{score.id}}"> 
                 <b>{{ score.game.get_mf_operation }}</b> <br/> 

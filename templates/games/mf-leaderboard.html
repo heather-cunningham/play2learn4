@@ -23,10 +23,9 @@
         <tbody>
           {% for score in math_scores %}
           <tr>
-            <td id="mf-rank-{{forloop.counter0|add:page_obj.start_index}}">
-              {{ forloop.counter0|add:page_obj.start_index }}</td> 
-            <td id="mf-player-rank-{{forloop.counter0|add:page_obj.start_index}}">
-              {{ score.player.username }}</td>
+            <!-- forloop.counter0|add:page_obj.start_index -->
+            <td id="mf-rank-{{score.rank}}">{{ score.rank }}</td> 
+            <td id="mf-player-rank-{{score.rank}}">{{ score.player.username }}</td>
             <td id="mf-score-num-{{score.id}}">{{ score.final_score }}</td>
             <td id="mf-datetime-{{score.id}}">{{ score.game_date_time }}</td>
             <td id="mf-settings-{{score.id}}"> 

@@ -22,6 +22,13 @@ def format_time_in_scores(scores_qryset):
     return scores_qryset
 
 
+def update_rankings(game_name):
+    scores = FinalScore.objects.filter(game__game_name=game_name).order_by("-final_score")
+    for index, score in enumerate(scores, start=1):
+        score.rank = index
+        score.save(update_fields=["rank"])
+
+
 ## ---------------------------------------------------------------------------------------------------
 ## CBVs: Class-based Views
 ## ---------------------------------------------------------------------------------------------------
@@ -108,9 +115,9 @@ def create_game(request):
         return JsonResponse({"status": "Error - Game not created.", "message": str(e)}, status=400)
     
     
-@csrf_protect
-def check_auth_status(request):
-    return JsonResponse({"is_authenticated": request.user.is_authenticated})
+# @csrf_protect
+# def check_auth_status(request):
+#     return JsonResponse({"is_authenticated": request.user.is_authenticated})
 
 
 @csrf_protect
@@ -139,16 +146,19 @@ def submit_final_score(request):
                 "login_url": reverse("account_login"),  
                 "signup_url": reverse("account_signup"), 
             }, status=401)
+        game_name = data.get("game_name")
         ## Save score
         final_score_obj = FinalScore.objects.create(
             player=request.user,
             game=game,
-            game_name=data["game_name"],
+            game_name=game_name,
             final_score=final_score,
             settings=json.dumps(data["settings"])
         )
         if (final_score_obj):
             final_score_obj.save()
+        ## Set rank
+        update_rankings(game_name)
         return JsonResponse({"status": "success", "message": "Score saved!"})
     except json.JSONDecodeError as e:
         return JsonResponse({"status": "error", "message": f"Invalid JSON format: {str(e)}"}, status=400)
