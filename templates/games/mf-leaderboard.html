@@ -10,7 +10,7 @@
 
     <div id="mf-leaderboard-sorting-controls" class="sorting-controls mb-2">
       <a id="mf-leaderboard-reset-sort-btn" 
-        href="?order=-final_score" 
+        href="?order=rank" 
         class="reset-sort-btn btn btn-primary btn-sm" 
         alt="Reset the sort order of Math Facts' Leaderboard">Reset Sort order
         <span class="sorting-arrows">&olarr;</span></a> 
@@ -52,7 +52,7 @@
                   <span class="sorting-arrows">&UpTeeArrow;</span></th>
             {% endif %}
             
-            <th id="mf-settings-header">Game Settings</th>
+            <th id="mf-settings-header" colspan="2" class="text-center">Game Settings</th>
           </tr>
         </thead>
 
@@ -63,9 +63,13 @@
             <td id="mf-player-rank-{{score.rank}}">{{ score.player.username }}</td>
             <td id="mf-score-num-{{score.id}}">{{ score.final_score }}</td>
             <td id="mf-datetime-{{score.id}}">{{ score.game_date_time }}</td>
-            <td id="mf-settings-{{score.id}}"> 
-              <b>{{ score.game.get_mf_operation }}</b> <br/> 
-              <b>Max Operand:</b> {{ score.game.settings.max_number }}</td>
+            <td id="mf-operation-{{score.id}}" class="text-center">
+              <b>{{ score.game.get_mf_operation }}</b>
+            </td> 
+            <td id="mf-max-num-{{score.id}}">
+              <b>Max Operand:</b>
+              &nbsp;{{ score.game.settings.max_number }}
+            </td>
           </tr>
           {% endfor %}
         </tbody>

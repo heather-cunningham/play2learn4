@@ -12,7 +12,7 @@ from games.models import FinalScore, Game
 
 
 ## ---------------------------------------------------------------------------------------------------
-## Helper Fcns
+## Helper Fcns & Vars
 ## ---------------------------------------------------------------------------------------------------
 def format_time_in_scores(scores_qryset):
     for score in scores_qryset:
@@ -28,7 +28,7 @@ def update_rankings(game_name):
         score.rank = index
         score.save(update_fields=["rank"])
 
-
+default_order = "rank"
 def get_order_fields():
     return ["rank", "-rank", "player__username", "-player__username",
             "final_score", "-final_score", "game_date_time", "-game_date_time"]
@@ -49,8 +49,8 @@ class AHLeaderboardView(ListView): ## Anagram Hunt Leaderboard
     #
     # @override
     def get_ordering(self):
-        ordering = self.request.GET.get('order', '-final_score')
-        return ordering if ordering in get_order_fields() else "-final_score"
+        ordering = self.request.GET.get("order", default_order)
+        return ordering if ordering in get_order_fields() else default_order
     #
     # @override
     def get_queryset(self):
@@ -72,8 +72,8 @@ class MFLeaderboardView(ListView): ## Math Facts Leaderboard
     #
     # @override
     def get_ordering(self):
-        ordering = self.request.GET.get('order', '-final_score')
-        return ordering if ordering in get_order_fields() else "-final_score"
+        ordering = self.request.GET.get("order", default_order)
+        return ordering if ordering in get_order_fields() else default_order
     #
     # @override
     def get_queryset(self):
@@ -90,7 +90,7 @@ class MyGamesView(LoginRequiredMixin, ListView):
     #
     # @override
     def get_ordering(self, table_type):
-        default_order = "-final_score"  
+        # default_order = "-final_score"  
         ordering = self.request.GET.get(f"{table_type}_order", default_order)
         return ordering if ordering in get_order_fields() else default_order
     #
@@ -110,11 +110,11 @@ class MyGamesView(LoginRequiredMixin, ListView):
         ah_scores_list = context["my_scores"].filter(game__game_name="anagram_hunt").order_by(ah_ordering)
         mf_scores_list = context["my_scores"].filter(game__game_name="math_facts").order_by(mf_ordering)
         # Pagination for Anagram Hunt Scores
-        ah_paginator = Paginator(ah_scores_list, 10)  
+        ah_paginator = Paginator(ah_scores_list, 5)  
         ah_page_number = self.request.GET.get("ah_page", 1)
         context["my_ah_scores"] = ah_paginator.get_page(ah_page_number)
         # Pagination for Math Facts Scores
-        mf_paginator = Paginator(mf_scores_list, 10)  
+        mf_paginator = Paginator(mf_scores_list, 5)  
         mf_page_number = self.request.GET.get("mf_page", 1)
         context["my_mf_scores"] = mf_paginator.get_page(mf_page_number)
         return context

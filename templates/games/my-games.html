@@ -18,7 +18,7 @@
   <div id="my-ah-tbl-container" class="mx-3">
     <div id="my-ah-sorting-controls" class="sorting-controls mb-2">
       <a id="my-ah-reset-sort-btn" 
-        href="?ah_order=-final_score&mf_page={{ my_ah_scores.number }}&mf_page={{ my_mf_scores.number }}" 
+        href="?ah_order=rank&mf_page={{ my_ah_scores.number }}&mf_page={{ my_mf_scores.number }}" 
         class="reset-sort-btn btn btn-primary btn-sm" 
         alt="Reset the sort order of My Games Anagram Hunt table">Reset Sort order
         <span class="sorting-arrows">&olarr;</span></a> 
@@ -129,7 +129,7 @@
   <div id="my-mf-tbl-container" class="mx-3">
     <div id="my-mf-sorting-controls" class="sorting-controls mb-2">
       <a id="my-mf-reset-sort-btn" 
-        href="?mf_order=-final_score&mf_page={{ my_mf_scores.number }}&ah_page={{ my_ah_scores.number }}" 
+        href="?mf_order=rank&mf_page={{ my_mf_scores.number }}&ah_page={{ my_ah_scores.number }}" 
         class="reset-sort-btn btn btn-primary btn-sm" 
         alt="Reset the sort order of My Games Math Facts table">Reset Sort Order
         <span class="sorting-arrows">&olarr;</span></a> 
@@ -179,7 +179,7 @@
             </th>
             {% endif %}
 
-            <th id="my-mf-settings-header">Game Settings</th>
+            <th id="my-mf-settings-header" colspan="2" class="text-center">Game Settings</th>
           </tr>
         </thead>
 
@@ -189,9 +189,12 @@
             <td id="my-mf-rank-{{score.rank}}">{{ score.rank }}</td>
             <td id="my-mf-score-{{score.id}}">{{ score.final_score }}</td>
             <td id="my-mf-datetime-{{score.id}}">{{ score.game_date_time }}</td>
-            <td id="my-mf-settings-{{score.id}}">
-              <b>{{ score.game.get_mf_operation }}</b> <br />
-              <b>Max Operand:</b> {{ score.game.settings.max_number }}
+            <td id="my-mf-operation-{{score.id}}" class="text-center">
+              <b>{{ score.game.get_mf_operation }}</b>
+            </td>
+            <td id="my-mf-max-num-{{score.id}}">
+              <b>Max Operand:</b>
+              &nbsp;{{ score.game.settings.max_number }}
             </td>
           </tr>
           {% endfor %}
