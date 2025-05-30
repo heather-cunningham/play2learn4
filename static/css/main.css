@@ -167,6 +167,10 @@ p#no-my-mf-scores-yet {
   z-index: 2; 
 }
 
+.reset-sort-btn {
+  color: white;
+}
+
 .sorting-arrows {
   padding: 0.16rem;
 }

@@ -31,7 +31,7 @@ def update_rankings(game_name):
 
 def get_order_fields():
     return ["rank", "-rank", "player__username", "-player__username",
-                "final_score", "-final_score", "game_date_time", "-game_date_time",]
+            "final_score", "-final_score", "game_date_time", "-game_date_time"]
 
 
 ## ---------------------------------------------------------------------------------------------------
@@ -49,7 +49,6 @@ class AHLeaderboardView(ListView): ## Anagram Hunt Leaderboard
     #
     # @override
     def get_ordering(self):
-        # Get order parameter from the request; default to '-final_score'
         ordering = self.request.GET.get('order', '-final_score')
         return ordering if ordering in get_order_fields() else "-final_score"
     #
@@ -73,7 +72,6 @@ class MFLeaderboardView(ListView): ## Math Facts Leaderboard
     #
     # @override
     def get_ordering(self):
-        # Get order parameter from the request; default to '-final_score'
         ordering = self.request.GET.get('order', '-final_score')
         return ordering if ordering in get_order_fields() else "-final_score"
     #
@@ -90,20 +88,27 @@ class MyGamesView(LoginRequiredMixin, ListView):
     template_name = "games/my-games.html"
     context_object_name = "my_scores"
     #
+    # @override
+    def get_ordering(self, table_type):
+        default_order = "-final_score"  
+        ordering = self.request.GET.get(f"{table_type}_order", default_order)
+        return ordering if ordering in get_order_fields() else default_order
     #
     ## @override
     def get_queryset(self):
-        my_scores = FinalScore.objects.filter(player=self.request.user).order_by("-final_score")
+        my_scores = FinalScore.objects.filter(player=self.request.user)
         my_scores = format_time_in_scores(my_scores)
         return my_scores
-    #
     #
     ## @override
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # Separate scores by game type
-        ah_scores_list = context["my_scores"].filter(game__game_name="anagram_hunt")
-        mf_scores_list = context["my_scores"].filter(game__game_name="math_facts")
+        # Separate scores by game type, applying independent sorting
+        ah_ordering = self.get_ordering("ah")
+        mf_ordering = self.get_ordering("mf")
+        #
+        ah_scores_list = context["my_scores"].filter(game__game_name="anagram_hunt").order_by(ah_ordering)
+        mf_scores_list = context["my_scores"].filter(game__game_name="math_facts").order_by(mf_ordering)
         # Pagination for Anagram Hunt Scores
         ah_paginator = Paginator(ah_scores_list, 10)  
         ah_page_number = self.request.GET.get("ah_page", 1)
@@ -134,11 +139,6 @@ def create_game(request):
         return JsonResponse({"status": "Error - Game not created.", "message": str(e)}, status=400)
     
     
-# @csrf_protect
-# def check_auth_status(request):
-#     return JsonResponse({"is_authenticated": request.user.is_authenticated})
-
-
 @csrf_protect
 @require_http_methods(["POST"])
 def submit_final_score(request):

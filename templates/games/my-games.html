@@ -10,134 +10,225 @@
 <div id="my-games-container" class="container-fluid mx-auto mt-0 mb-5 p-3">
   <h2 id="my-games-heading" class="mx-auto my-3 text-center">My Games</h2>
 
-    {% if my_ah_scores %}
-    <h3 id="my-ah-scores-heading" class="mx-auto mt-1 mb-3 text-center">
-       <a href="javascript:void(0);" onclick="toggleVisibility('my-ah-tbl-container')">
-        My Anagram Hunt Scores</a>
-    </h3>
-    <div id="my-ah-tbl-container" class="mx-3">
-      <div id="my-ah-scrollable-table" class="mb-3">
-        <table id="my-ah-scores-tbl" class="table table-striped table-hover mx-auto my-2">
-          <thead class="table-primary sticky-table-thead">
-            <tr>
-              <th id="my-ah-score-header">Final Score</th>
-              <th id="my-ah-rank-header">Rank</th>
-              <th id="my-ah-date-header">Date Played</th>
-              <th id="my-ah-settings-header">Game Settings</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for score in my_ah_scores %}
-              <tr>
-                <td id="my-ah-score-{{score.id}}">{{ score.final_score }}</td>
-                <td id="my-ah-rank-{{score.rank}}">{{ score.rank }}</td>
-                <td id="my-ah-datetime-{{score.id}}">{{ score.game_date_time }}</td>
-                <td id="my-ah-settings-{{score.id}}">  
-                  <b>Word Length:</b> {{ score.game.settings.word_length }}
-                </td>
-              </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-      <!-- Anagram Hunt Pagination -->
-      <nav id="my-ah-pagination" class="mx-auto p-1" aria-label="Anagram Hunt Pagination">
-        <ul class="pagination justify-content-center">
-          {% if my_ah_scores.has_previous %}
-            <li id="my-ah-prev-page-item" class="page-item">
-              <a id="my-ah-prev-page-link" class="page-link" 
-                href="?ah_page={{ my_ah_scores.previous_page_number }}&mf_page={{ my_mf_scores.number }}" 
-                alt="Go to the previous table page of your Anagram Hunt scores">
-                &laquo; Prev</a>
-            </li>
-          {% endif %}
-          <li class="page-item active">
-            <span class="page-link">{{ my_ah_scores.number }}</span>
-          </li>
-          {% if my_ah_scores.has_next %}
-            <li id="my-ah-next-page-item" class="page-item">
-              <a id="my-ah-next-page-link" class="page-link" 
-                href="?ah_page={{ my_ah_scores.next_page_number }}&mf_page={{ my_mf_scores.number }}" 
-                alt="Go to the next table page of your Anagram Hunt scores">
-                Next &raquo;</a>
-            </li>
-          {% endif %}
-        </ul>
-      </nav>
-      <!-- END Anagram Hunt Pagination -->
-    </div> <!-- END my-ah-tbl-container -->
-    {% else %}
-      <h3 id="my-ah-scores-heading" class="mx-auto mt-1 mb-3 text-center">
-        My Anagram Hunt Scores</h3>
-      <p id="no-my-ah-scores-yet" class="text-primary text-center">
-        No Anagram Hunt scores saved yet! Play and save your scores.
-      </p>
-    {% endif %}
+  {% if my_ah_scores %}
+  <h3 id="my-ah-scores-heading" class="mx-auto mt-1 mb-3 text-center">
+    <a href="javascript:void(0);" onclick="toggleVisibility('my-ah-tbl-container')">
+      My Anagram Hunt Scores</a>
+  </h3>
+  <div id="my-ah-tbl-container" class="mx-3">
+    <div id="my-ah-sorting-controls" class="sorting-controls mb-2">
+      <a id="my-ah-reset-sort-btn" 
+        href="?ah_order=-final_score&mf_page={{ my_ah_scores.number }}&mf_page={{ my_mf_scores.number }}" 
+        class="reset-sort-btn btn btn-primary btn-sm">
+          Reset Sort Order<span class="sorting-arrows">&olarr;</span></a> 
+    </div>
+
+    <div id="my-ah-scrollable-table" class="mb-3">
+      <table id="my-ah-scores-tbl" class="table table-striped table-hover mx-auto my-2">
+        <thead id="my-ah-scores-thead" class="table-primary sticky-table-thead">
+          <tr>
+            {% if request.GET.ah_order == "rank" %}
+            <th id="my-ah-rank-header">
+              <a href="?ah_order=-rank&ah_page={{ my_ah_scores.number }}&mf_page={{ my_mf_scores.number }}">Rank</a>
+              <span class="sorting-arrows">&DownTeeArrow;</span>
+            </th>
+            {% else %}
+            <th id="my-ah-rank-header">
+              <a href="?ah_order=rank&ah_page={{ my_ah_scores.number }}&mf_page={{ my_mf_scores.number }}">Rank</a>
+              <span class="sorting-arrows">&UpTeeArrow;</span>
+            </th>
+            {% endif %}
+
+            {% if request.GET.ah_order == "final_score" %}
+            <th id="my-ah-score-header">
+              <a href="?ah_order=-final_score&ah_page={{ my_ah_scores.number }}&mf_page={{ my_mf_scores.number }}">Final
+                Score</a>
+              <span class="sorting-arrows">&DownTeeArrow;</span>
+            </th>
+            {% else %}
+            <th id="my-ah-score-header">
+              <a href="?ah_order=final_score&ah_page={{ my_ah_scores.number }}&mf_page={{ my_mf_scores.number }}">Final
+                Score</a>
+              <span class="sorting-arrows">&UpTeeArrow;</span>
+            </th>
+            {% endif %}
+
+            {% if request.GET.ah_order == "game_date_time" %}
+            <th id="my-ah-date-header">
+              <a href="?ah_order=-game_date_time&ah_page={{ my_ah_scores.number }}&mf_page={{ my_mf_scores.number }}">Date
+                Played</a>
+              <span class="sorting-arrows">&DownTeeArrow;</span>
+            </th>
+            {% else %}
+            <th id="my-ah-date-header">
+              <a href="?ah_order=game_date_time&ah_page={{ my_ah_scores.number }}&mf_page={{ my_mf_scores.number }}">Date
+                Played</a>
+              <span class="sorting-arrows">&UpTeeArrow;</span>
+            </th>
+            {% endif %}
+
+            <th id="my-ah-settings-header">Game Settings</th>
+          </tr>
+        </thead>
+
+        <tbody id="my-ah-scores-tbody">
+          {% for score in my_ah_scores %}
+          <tr>
+            <td id="my-ah-rank-{{score.rank}}">{{ score.rank }}</td>
+            <td id="my-ah-score-{{score.id}}">{{ score.final_score }}</td>
+            <td id="my-ah-datetime-{{score.id}}">{{ score.game_date_time }}</td>
+            <td id="my-ah-settings-{{score.id}}">
+              <b>Word Length:</b> {{ score.game.settings.word_length }}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <!-- Anagram Hunt Pagination -->
+    <nav id="my-ah-pagination" class="mx-auto p-1" aria-label="Anagram Hunt Pagination">
+      <ul class="pagination justify-content-center">
+        {% if my_ah_scores.has_previous %}
+        <li id="my-ah-prev-page-item" class="page-item">
+          <a id="my-ah-prev-page-link" class="page-link"
+            href="?order={{ request.GET.order }}&ah_page={{ my_ah_scores.previous_page_number }}&mf_page={{ my_mf_scores.number }}"
+            alt="Go to the previous table page of your Anagram Hunt scores">
+            &laquo; Prev</a>
+        </li>
+        {% endif %}
+        <li class="page-item active">
+          <span class="page-link">{{ my_ah_scores.number }}</span>
+        </li>
+        {% if my_ah_scores.has_next %}
+        <li id="my-ah-next-page-item" class="page-item">
+          <a id="my-ah-next-page-link" class="page-link"
+            href="?order={{ request.GET.order }}&ah_page={{ my_ah_scores.next_page_number }}&mf_page={{ my_mf_scores.number }}"
+            alt="Go to the next table page of your Anagram Hunt scores">
+            Next &raquo;</a>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+    <!-- END Anagram Hunt Pagination -->
+  </div> <!-- END my-ah-tbl-container -->
+  {% else %}
+  <h3 id="my-ah-scores-heading" class="mx-auto mt-1 mb-3 text-center">
+    My Anagram Hunt Scores</h3>
+  <p id="no-my-ah-scores-yet" class="text-primary text-center">
+    No Anagram Hunt scores saved yet! Play and save your scores.
+  </p>
+  {% endif %}
 
 
-    {% if my_mf_scores %}
-    <h3 id="my-mf-scores-heading" class="mx-auto mt-2 mb-3 text-center">
-      <a href="javascript:void(0);" onclick="toggleVisibility('my-mf-tbl-container')">
-        My Math Facts Scores</a>
-    </h3>
-    <div id="my-mf-tbl-container" class="mx-3">
-      <div id="my-mf-scrollable-table" class="mb-3">
-        <table id="my-mf-scores-tbl" class="table table-striped table-hover mx-auto my-2">
-          <thead class="table-primary sticky-table-thead">
-            <tr>
-              <th id="my-mf-score-header">Final Score</th>
-              <th id="my-mf-rank-header">Rank</th>
-              <th id="my-mf-date-header">Date Played</th>
-              <th id="my-mf-settings-header">Game Settings</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for score in my_mf_scores %}
-            <tr>
-              <td id="my-mf-score-{{score.id}}">{{ score.final_score }}</td>
-              <td id="my-mf-rank-{{score.rank}}">{{ score.rank }}</td>
-              <td id="my-mf-datetime-{{score.id}}">{{ score.game_date_time }}</td>
-              <td id="my-mf-settings-{{score.id}}"> 
-                <b>{{ score.game.get_mf_operation }}</b> <br/> 
-                <b>Max Operand:</b> {{ score.game.settings.max_number }}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-      <!-- Math Facts Pagination -->
-        <nav id="my-mf-pagination" class="mx-auto mt-2 mb-5 p-1" aria-label="Math Facts Pagination">
-          <ul class="pagination justify-content-center">
-            {% if my_mf_scores.has_previous %}
-              <li id="my-mf-prev-page-item" class="page-item">
-                <a id="my-mf-prev-page-link" class="page-link" 
-                  href="?mf_page={{ my_mf_scores.previous_page_number }}&ah_page={{ my_ah_scores.number }}"
-                  alt="Go to the previous table page of your Math Facts scores">
-                  &laquo; Prev</a>
-              </li>
+  {% if my_mf_scores %}
+  <h3 id="my-mf-scores-heading" class="mx-auto mt-2 mb-3 text-center">
+    <a href="javascript:void(0);" onclick="toggleVisibility('my-mf-tbl-container')">
+      My Math Facts Scores</a>
+  </h3>
+  <div id="my-mf-tbl-container" class="mx-3">
+    <div id="my-mf-sorting-controls" class="sorting-controls mb-2">
+      <a id="my-mf-reset-sort-btn" 
+        href="?mf_order=-final_score&mf_page={{ my_mf_scores.number }}&ah_page={{ my_ah_scores.number }}" 
+        class="reset-sort-btn btn btn-primary btn-sm">
+          Reset Sort Order<span class="sorting-arrows">&olarr;</span></a> 
+    </div>
+    
+    <div id="my-mf-scrollable-table" class="mb-3">
+      <table id="my-mf-scores-tbl" class="table table-striped table-hover mx-auto my-2">
+        <thead id="my-mf-scores-thead" class="table-primary sticky-table-thead">
+          <tr>
+            {% if request.GET.mf_order == "rank" %}
+            <th id="my-mf-rank-header">
+              <a href="?mf_order=-rank&mf_page={{ my_mf_scores.number }}&ah_page={{ my_ah_scores.number }}">Rank</a>
+              <span class="sorting-arrows">&DownTeeArrow;</span>
+            </th>
+            {% else %}
+            <th id="my-mf-rank-header">
+              <a href="?mf_order=rank&mf_page={{ my_mf_scores.number }}&ah_page={{ my_ah_scores.number }}">Rank</a>
+              <span class="sorting-arrows">&UpTeeArrow;</span>
+            </th>
             {% endif %}
-            <li class="page-item active">
-              <span class="page-link">{{ my_mf_scores.number }}</span>
-            </li>
-            {% if my_mf_scores.has_next %}
-              <li id="my-mf-next-page-item" class="page-item">
-                <a id="my-mf-next-page-link" class="page-link" 
-                  href="?mf_page={{ my_mf_scores.next_page_number }}&ah_page={{ my_ah_scores.number }}"
-                  alt="Go to the next table page of your Math Facts scores">
-                  Next &raquo;</a>
-              </li>
+
+            {% if request.GET.mf_order == "final_score" %}
+            <th id="my-mf-score-header">
+              <a href="?mf_order=-final_score&mf_page={{ my_mf_scores.number }}&ah_page={{ my_ah_scores.number }}">Final
+                Score</a>
+              <span class="sorting-arrows">&DownTeeArrow;</span>
+            </th>
+            {% else %}
+            <th id="my-mf-score-header">
+              <a href="?mf_order=final_score&mf_page={{ my_mf_scores.number }}&ah_page={{ my_ah_scores.number }}">Final
+                Score</a>
+              <span class="sorting-arrows">&UpTeeArrow;</span>
+            </th>
             {% endif %}
-          </ul>
-        </nav>
-        <!-- END Math Facts Pagination -->
-    </div> <!-- END my-mf-tbl-container -->
-    {% else %}
-      <h3 id="my-mf-scores-heading" class="mx-auto mt-4 mb-3 text-center">
-        My Math Facts Scores</h3>
-      <p id="no-my-mf-scores-yet" class="text-primary text-center">
-        No Math Facts scores saved yet! Play and save your scores.
-      </p>
-    {% endif %}
+
+            {% if request.GET.mf_order == "game_date_time" %}
+            <th id="my-mf-date-header">
+              <a href="?mf_order=-game_date_time&mf_page={{ my_mf_scores.number }}&ah_page={{ my_ah_scores.number }}">Date
+                Played</a>
+              <span class="sorting-arrows">&DownTeeArrow;</span>
+            </th>
+            {% else %}
+            <th id="my-mf-date-header">
+              <a href="?mf_order=game_date_time&mf_page={{ my_mf_scores.number }}&ah_page={{ my_ah_scores.number }}">Date
+                Played</a>
+              <span class="sorting-arrows">&UpTeeArrow;</span>
+            </th>
+            {% endif %}
+
+            <th id="my-mf-settings-header">Game Settings</th>
+          </tr>
+        </thead>
+
+        <tbody id="my-mf-scores-tbody">
+          {% for score in my_mf_scores %}
+          <tr>
+            <td id="my-mf-rank-{{score.rank}}">{{ score.rank }}</td>
+            <td id="my-mf-score-{{score.id}}">{{ score.final_score }}</td>
+            <td id="my-mf-datetime-{{score.id}}">{{ score.game_date_time }}</td>
+            <td id="my-mf-settings-{{score.id}}">
+              <b>{{ score.game.get_mf_operation }}</b> <br />
+              <b>Max Operand:</b> {{ score.game.settings.max_number }}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <!-- Math Facts Pagination -->
+    <nav id="my-mf-pagination" class="mx-auto mt-2 mb-5 p-1" aria-label="Math Facts Pagination">
+      <ul class="pagination justify-content-center">
+        {% if my_mf_scores.has_previous %}
+        <li id="my-mf-prev-page-item" class="page-item">
+          <a id="my-mf-prev-page-link" class="page-link"
+            href="?order={{ request.GET.order }}&mf_page={{ my_mf_scores.previous_page_number }}&ah_page={{ my_ah_scores.number }}"
+            alt="Go to the previous table page of your Math Facts scores">
+            &laquo; Prev</a>
+        </li>
+        {% endif %}
+        <li class="page-item active">
+          <span class="page-link">{{ my_mf_scores.number }}</span>
+        </li>
+        {% if my_mf_scores.has_next %}
+        <li id="my-mf-next-page-item" class="page-item">
+          <a id="my-mf-next-page-link" class="page-link"
+            href="?order={{ request.GET.order }}&mf_page={{ my_mf_scores.next_page_number }}&ah_page={{ my_ah_scores.number }}"
+            alt="Go to the next table page of your Math Facts scores">
+            Next &raquo;</a>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+    <!-- END Math Facts Pagination -->
+  </div> <!-- END my-mf-tbl-container -->
+  {% else %}
+  <h3 id="my-mf-scores-heading" class="mx-auto mt-4 mb-3 text-center">
+    My Math Facts Scores</h3>
+  <p id="no-my-mf-scores-yet" class="text-primary text-center">
+    No Math Facts scores saved yet! Play and save your scores.
+  </p>
+  {% endif %}
 
 </div> <!-- END container -->
 
