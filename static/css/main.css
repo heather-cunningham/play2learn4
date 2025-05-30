@@ -91,7 +91,7 @@ footer ul {
 /* END Primary page styles */
 
 
-/* Game Container & Board styles 
+/* Game Container & Gameboard styles 
      ah = Anagram Hunt 
      mf = Math Facts 
 */
@@ -165,6 +165,10 @@ p#no-my-mf-scores-yet {
   position: sticky;
   top: 0;
   z-index: 2; 
+}
+
+.sorting-arrows {
+  padding: 0.16rem;
 }
 /* End Leaderboards TABLE styles */
 

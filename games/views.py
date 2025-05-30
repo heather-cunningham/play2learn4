@@ -29,6 +29,11 @@ def update_rankings(game_name):
         score.save(update_fields=["rank"])
 
 
+def get_order_fields():
+    return ["rank", "-rank", "player__username", "-player__username",
+                "final_score", "-final_score", "game_date_time", "-game_date_time",]
+
+
 ## ---------------------------------------------------------------------------------------------------
 ## CBVs: Class-based Views
 ## ---------------------------------------------------------------------------------------------------
@@ -42,9 +47,16 @@ class AHLeaderboardView(ListView): ## Anagram Hunt Leaderboard
     context_object_name = "anagram_scores"
     paginate_by = 10
     #
+    # @override
+    def get_ordering(self):
+        # Get order parameter from the request; default to '-final_score'
+        ordering = self.request.GET.get('order', '-final_score')
+        return ordering if ordering in get_order_fields() else "-final_score"
     #
+    # @override
     def get_queryset(self):
-        anagram_scores_qryset = FinalScore.objects.filter(game__game_name="anagram_hunt").order_by("-final_score")
+        ordering = self.get_ordering()
+        anagram_scores_qryset = FinalScore.objects.filter(game__game_name="anagram_hunt").order_by(ordering)
         anagram_scores_qryset = format_time_in_scores(anagram_scores_qryset)
         return anagram_scores_qryset
 
@@ -59,9 +71,16 @@ class MFLeaderboardView(ListView): ## Math Facts Leaderboard
     context_object_name = "math_scores"
     paginate_by = 10
     #
+    # @override
+    def get_ordering(self):
+        # Get order parameter from the request; default to '-final_score'
+        ordering = self.request.GET.get('order', '-final_score')
+        return ordering if ordering in get_order_fields() else "-final_score"
     #
+    # @override
     def get_queryset(self):
-        math_scores_qryset = FinalScore.objects.filter(game__game_name="math_facts").order_by("-final_score")
+        ordering = self.get_ordering()
+        math_scores_qryset = FinalScore.objects.filter(game__game_name="math_facts").order_by(ordering)
         math_scores_qryset = format_time_in_scores(math_scores_qryset)
         return math_scores_qryset
     

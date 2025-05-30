@@ -6,16 +6,44 @@
 
 {% block main %}
 <div id="mf-leaderboard-container" class="container-fluid mx-auto mt-0 mb-5 p-3">
-  <h2 id="mf-leaderboard-heading" class="mx-auto mt-3 mb-0 text-center">Math Facts Leaderboard</h2>
+  <h2 id="mf-leaderboard-heading" class="mx-auto my-3 text-center">Math Facts Leaderboard</h2>
 
     {% if math_scores %}
       <table id="mf-leaderboard-tbl" class="table table-striped table-hover mx-auto my-2">
         <thead class="table-primary">
           <tr>
-            <th id="mf-rank-header">Rank</th>
-            <th id="mf-player-header">Player</th>
-            <th id="mf-score-header">Final Score</th>
-            <th id="mf-date-header">Date Played</th>
+             {% if request.GET.order == "rank" %}
+              <th id="mf-rank-header"><a href="?order=-rank">Rank</a>
+                <span class="sorting-arrows">&DownTeeArrow;</span></th>
+            {% else %}
+              <th id="mf-rank-header"><a href="?order=rank">Rank</a>
+                <span class="sorting-arrows">&UpTeeArrow;</span></th>
+            {% endif %}
+
+            {% if request.GET.order == "player__username" %}
+              <th id="mf-player-header"><a href="?order=-player__username">Player</a>
+                <span class="sorting-arrows">&DownTeeArrow;</span></th>
+            {% else %}
+                <th id="mf-player-header"><a href="?order=player__username">Player</a>
+                  <span class="sorting-arrows">&UpTeeArrow;</span></th>
+            {% endif %}
+
+            {% if request.GET.order == "final_score" %}
+              <th id="mf-score-header"><a href="?order=-final_score">Final Score</a>
+                <span class="sorting-arrows">&DownTeeArrow;</span></th>
+            {% else %}
+              <th id="mf-score-header"><a href="?order=final_score">Final Score</a>
+                <span class="sorting-arrows">&UpTeeArrow;</span></th>
+            {% endif %}
+
+            {% if request.GET.order == "game_date_time" %}
+              <th id="mf-date-header"><a href="?order=-game_date_time">Date Played</a>
+                <span class="sorting-arrows">&DownTeeArrow;</span></th>
+            {% else %}
+                <th id="mf-date-header"><a href="?order=game_date_time">Date Played</a>
+                  <span class="sorting-arrows">&UpTeeArrow;</span></th>
+            {% endif %}
+            
             <th id="mf-settings-header">Game Settings</th>
           </tr>
         </thead>
@@ -23,7 +51,6 @@
         <tbody>
           {% for score in math_scores %}
           <tr>
-            <!-- forloop.counter0|add:page_obj.start_index -->
             <td id="mf-rank-{{score.rank}}">{{ score.rank }}</td> 
             <td id="mf-player-rank-{{score.rank}}">{{ score.player.username }}</td>
             <td id="mf-score-num-{{score.id}}">{{ score.final_score }}</td>
