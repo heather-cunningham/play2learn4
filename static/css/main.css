@@ -219,6 +219,7 @@ p#no-my-mf-scores-yet {
 #confirm-reg-div,
 #log-in-div,
 #my-accnt-div,
+#my-accnt-msgs-div,
 #pswd-changed-div,
 #register-div,
 #reset-pswd-div,
@@ -230,5 +231,31 @@ p#no-my-mf-scores-yet {
   display: inline-block;
   width: 31%;
   margin: 0 1%;
+}
+
+.msg-error,
+.msg-success {
+  display: block;
+  height: 3.22rem;
+  color: white;
+  list-style: none;
+  border-radius: 0.5rem;
+}
+
+.msg-error {
+  background-color: red;
+}
+
+.msg-success {
+  background-color: green;
+}
+
+.btn-close {
+  width: 0.167rem;
+  height: 0.167rem;
+  margin: 0.167rem;
+  padding: 0.167rem;
+  color: white;
+  background-color: white;
 }
 /* End FORM styles */

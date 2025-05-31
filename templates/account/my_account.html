@@ -10,6 +10,31 @@
 <div id="my-accnt-form-container" class="container-fluid mx-auto mb-5 pb-5 justify-content-center">
   <h2 id="my-accnt-header" class="mx-auto my-3 text-center">My Account</h2>
 
+  {% if messages %}
+  <div id="my-accnt-msgs-div" class="mx-auto justify-content-center">
+    <ul id="my-accnt-msgs-list" class="messages p-0 text-center justify-content-center">
+      {% for message in messages %}
+        {% if message.tags == "success" and message.message == "Account/profile updated successfully!" %}
+          <li id="my-accnt-msg" 
+            class="msg-success {{ message.tags }} alert alert-success alert-dismissible"
+            >{{ message }}
+            <button id="close-msg-btn" type="button" class="btn-close" 
+              data-bs-dismiss="alert" aria-label="Close"></button>
+          </li>
+        {% endif %}
+        {% if message.tags == "error" %}
+          <li id="my-accnt-msg" 
+            class="msg-error {{ message.tags }} alert alert-danger alert-dismissible"
+            >{{ message }}
+            <button id="close-msg-btn" type="button" class="btn-close" 
+              data-bs-dismiss="alert" aria-label="Close"></button>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
   <div id="my-accnt-div" class="card border-primary m-auto mb-5">
     <div id="my-accnt-card" class="card-body">
       
