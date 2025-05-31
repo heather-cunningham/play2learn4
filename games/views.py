@@ -2,6 +2,7 @@ import json
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
 from django.utils.timezone import localtime
@@ -21,12 +22,13 @@ def format_time_in_scores(scores_qryset):
         score.game_date_time = f"{date} {time}{am_pm_mark.lower()} {timezone}"
     return scores_qryset
 
-
+@login_required
 def update_rankings(game_name):
     scores = FinalScore.objects.filter(game__game_name=game_name).order_by("-final_score")
     for index, score in enumerate(scores, start=1):
         score.rank = index
         score.save(update_fields=["rank"])
+
 
 default_order = "rank"
 def get_order_fields():
