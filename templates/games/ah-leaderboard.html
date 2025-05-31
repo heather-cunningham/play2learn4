@@ -34,8 +34,8 @@
               <th id="ah-player-header"><a href="?order=-player__username">Player</a>
                 <span class="sorting-arrows">&DownTeeArrow;</span></th>
             {% else %}
-                <th id="ah-player-header"><a href="?order=player__username">Player</a>
-                  <span class="sorting-arrows">&UpTeeArrow;</span></th>
+              <th id="ah-player-header"><a href="?order=player__username">Player</a>
+                <span class="sorting-arrows">&UpTeeArrow;</span></th>
             {% endif %}
 
             {% if request.GET.order == "final_score" %}
@@ -61,8 +61,16 @@
         <tbody>
           {% for score in anagram_scores %}
           <tr>
-            <td id="ah-rank-{{score.rank}}">{{ score.rank }}</td>   
-            <td id="ah-player-rank-{{score.rank}}">{{ score.player.username }}</td>
+            <td id="ah-rank-{{score.id}}">{{ score.rank }}</td>
+            <td id="ah-player-{{score.id}}">
+              {% if score.player.avatar %}
+                <img id="ah-player-avatar-{{score.id}}" 
+                  src="{{score.player.avatar.url}}" 
+                  class="player-avatar rounded"  
+                  alt="Player's avatar"  />
+              {% endif %}
+              <span id="ah-player-username-{{score.id}}">{{ score.player.username }}</span>
+            </td>
             <td id="ah-score-num-{{score.id}}">{{ score.final_score }}</td>
             <td id="ah-datetime-{{score.id}}">{{ score.game_date_time }}</td>
             <td id="ah-settings-{{score.id}}">  

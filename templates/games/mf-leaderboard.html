@@ -61,8 +61,16 @@
         <tbody>
           {% for score in math_scores %}
           <tr>
-            <td id="mf-rank-{{score.rank}}">{{ score.rank }}</td> 
-            <td id="mf-player-rank-{{score.rank}}">{{ score.player.username }}</td>
+            <td id="mf-rank-{{score.id}}">{{ score.rank }}</td> 
+            <td id="mf-player-{{score.id}}">
+              {% if score.player.avatar %}
+                <img id="mf-player-avatar-{{score.id}}" 
+                  src="{{score.player.avatar.url}}" 
+                  class="player-avatar rounded"  
+                  alt="Player's avatar"  />
+              {% endif %}
+              <span id="ah-player-username-{{score.id}}">{{ score.player.username }}</span>
+            </td>
             <td id="mf-score-num-{{score.id}}">{{ score.final_score }}</td>
             <td id="mf-datetime-{{score.id}}">{{ score.game_date_time }}</td>
             <td id="mf-operation-{{score.id}}" class="text-center">
