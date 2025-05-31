@@ -2,7 +2,6 @@ import json
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
 from django.utils.timezone import localtime
@@ -22,12 +21,12 @@ def format_time_in_scores(scores_qryset):
         score.game_date_time = f"{date} {time}{am_pm_mark.lower()} {timezone}"
     return scores_qryset
 
-@login_required
+
 def update_rankings(game_name):
-    scores = FinalScore.objects.filter(game__game_name=game_name).order_by("-final_score")
+    scores = list(FinalScore.objects.filter(game__game_name=game_name).order_by("-final_score"))
     for index, score in enumerate(scores, start=1):
         score.rank = index
-        score.save(update_fields=["rank"])
+    FinalScore.objects.bulk_update(scores, ["rank"])
 
 
 default_order = "rank"
@@ -57,7 +56,8 @@ class AHLeaderboardView(ListView): ## Anagram Hunt Leaderboard
     # @override
     def get_queryset(self):
         ordering = self.get_ordering()
-        anagram_scores_qryset = FinalScore.objects.filter(game__game_name="anagram_hunt").order_by(ordering)
+        anagram_scores_qryset = FinalScore.objects.filter(game__game_name=Game.ANAGRAM).order_by(ordering)
+        anagram_scores_qryset = anagram_scores_qryset.select_related("game", "player")
         anagram_scores_qryset = format_time_in_scores(anagram_scores_qryset)
         return anagram_scores_qryset
 
@@ -80,7 +80,8 @@ class MFLeaderboardView(ListView): ## Math Facts Leaderboard
     # @override
     def get_queryset(self):
         ordering = self.get_ordering()
-        math_scores_qryset = FinalScore.objects.filter(game__game_name="math_facts").order_by(ordering)
+        math_scores_qryset = FinalScore.objects.filter(game__game_name=Game.MATH).order_by(ordering)
+        math_scores_qryset = math_scores_qryset.select_related("game", "player")
         math_scores_qryset = format_time_in_scores(math_scores_qryset)
         return math_scores_qryset
     
@@ -92,13 +93,12 @@ class MyGamesView(LoginRequiredMixin, ListView):
     #
     # @override
     def get_ordering(self, table_type):
-        # default_order = "-final_score"  
         ordering = self.request.GET.get(f"{table_type}_order", default_order)
         return ordering if ordering in get_order_fields() else default_order
     #
     ## @override
     def get_queryset(self):
-        my_scores = FinalScore.objects.filter(player=self.request.user)
+        my_scores = FinalScore.objects.filter(player=self.request.user).prefetch_related("game")
         my_scores = format_time_in_scores(my_scores)
         return my_scores
     #
@@ -109,16 +109,13 @@ class MyGamesView(LoginRequiredMixin, ListView):
         ah_ordering = self.get_ordering("ah")
         mf_ordering = self.get_ordering("mf")
         #
-        ah_scores_list = context["my_scores"].filter(game__game_name="anagram_hunt").order_by(ah_ordering)
-        mf_scores_list = context["my_scores"].filter(game__game_name="math_facts").order_by(mf_ordering)
+        my_scores = context["my_scores"]
+        ah_scores_list = my_scores.filter(game__game_name=Game.ANAGRAM).order_by(ah_ordering)
+        mf_scores_list = my_scores.filter(game__game_name=Game.MATH).order_by(mf_ordering)
         # Pagination for Anagram Hunt Scores
-        ah_paginator = Paginator(ah_scores_list, 5)  
-        ah_page_number = self.request.GET.get("ah_page", 1)
-        context["my_ah_scores"] = ah_paginator.get_page(ah_page_number)
+        context["my_ah_scores"] = Paginator(ah_scores_list, 5).get_page(self.request.GET.get("ah_page", 1))
         # Pagination for Math Facts Scores
-        mf_paginator = Paginator(mf_scores_list, 5)  
-        mf_page_number = self.request.GET.get("mf_page", 1)
-        context["my_mf_scores"] = mf_paginator.get_page(mf_page_number)
+        context["my_mf_scores"] = Paginator(mf_scores_list, 5).get_page(self.request.GET.get("mf_page", 1))
         return context
 
     
@@ -139,6 +136,11 @@ def create_game(request):
         return JsonResponse({"status": "error", "message": "Invalid JSON format."}, status=400)
     except Exception as e:
         return JsonResponse({"status": "Error - Game not created.", "message": str(e)}, status=400)
+
+    
+@csrf_protect
+def check_auth_status(request):
+    return JsonResponse({"is_authenticated": request.user.is_authenticated})
     
     
 @csrf_protect
