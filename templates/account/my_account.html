@@ -12,15 +12,13 @@
 
   <div id="my-accnt-div" class="card border-primary m-auto mb-5">
     <div id="my-accnt-card" class="card-body">
-
-      <!-- Commenting out Avatar code for now because it's not part of the Final Project instructions. 
-           If I have time, I'll add it back in. -->
-       <!-- if user.avatar and not form.avatar.errors 
+      
+       {% if user.avatar and not form.avatar.errors %}
         <img id="my-accnt-avatar-pic" src="{{ user.avatar.url }}" class="img-thumbnail mx-auto d-block" 
           alt="Avatar or profile picture"/>
-       endif  -->
+       {% endif %}
 
-      <form id="my-accnt-form" method="post" class="m-auto">
+      <form id="my-accnt-form" method="post" enctype="multipart/form-data" class="m-auto" novalidate>
         {% csrf_token %}
 
         {{ form|crispy }}
