@@ -1,4 +1,5 @@
 import json
+from django.contrib import messages
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
@@ -182,7 +183,9 @@ def submit_final_score(request):
             final_score_obj.save()
         ## Set rank
         update_rankings(game_name)
-        return JsonResponse({"status": "success", "message": "Score saved!"})
+        success_msg = "Score saved successfully!"
+        messages.success(request, success_msg)
+        return JsonResponse({"status": "success", "message": success_msg})
     except json.JSONDecodeError as e:
         return JsonResponse({"status": "error", "message": f"Invalid JSON format: {str(e)}"}, status=400)
     except Exception as e:

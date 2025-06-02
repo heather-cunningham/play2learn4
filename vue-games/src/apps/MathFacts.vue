@@ -1,5 +1,14 @@
 <template>
   <div id="mf-game-container" class="container-fluid">
+    <div id="msgs-div">
+      <div  v-if="successMessage" 
+        class="msg-success success alert alert-success alert-dismissible text-center">
+        <div id="success-msg" class="p-2">{{ successMessage }}</div>
+        <button id="close-msg-btn" @click="successMessage = ''" type="button" 
+          class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </div>
+
     <!-- Start Screen -->
     <div id="mf-start-screen-div" v-if="screen=='start'" class="container">
       <div class="row">
@@ -151,7 +160,9 @@ export default {
       number2: 0,
       userInput: "",
       interval: null,
-      timeLeft: 60,
+      // timeLeft: 60,
+      timeLeft: 10,
+      successMessage: "",
     }
   }, // END data
 
@@ -194,7 +205,6 @@ export default {
 
       try {
           const response = await axios.post("/create-game/", data);
-          // Store the returned game ID in Vue's data
           this.gameId = response.data.game_id;
       } catch (error) {
           console.error("Error creating game:", error.response ? error.response.data : error.message);
@@ -213,28 +223,28 @@ export default {
       };
 
       try {
-        await axios.post("/submit-final-score/", data, {
+        const response = await axios.post("/submit-final-score/", data, {
           headers: { 
             "Content-Type": "application/json",
              "X-CSRFToken": document.cookie.match(/csrftoken=([^;]+)/)[1],
           }
         });
 
-        alert("Score saved successfully!");
+        if (response.data.status === "success") {
+          this.successMessage = response.data.message; 
+        }
 
       } catch (error) {
         if (error.response && error.response.status === 401) {
             const login_url = error.response.data.login_url;
 
             if (confirm("Please, log in or register to save your score!")) {
-              // Save game data in localStorage first, before redirecting to login page.
               localStorage.setItem("pendingScore", JSON.stringify(data));  
               localStorage.setItem("returnToGame", window.location.href);
-              // Then, redirect to login
               window.location.href = login_url;  
             }
         } else {
-            console.error("Error saving score:", error.response ? error.response.data : error.message);
+          console.error("Error saving score:", error.response ? error.response.data : error.message);
         }
       }
     },
@@ -281,7 +291,8 @@ export default {
       if (newTime === 0) {
         this.userInput = ""
         clearInterval(this.interval);
-        this.timeLeft = 60;
+        // this.timeLeft = 60;
+        this.timeLeft = 10;
         this.screen = "end";
         this.recordFinalScore(); 
       }
@@ -294,7 +305,7 @@ export default {
     const pendingScore = localStorage.getItem("pendingScore");
 
     if (pendingScore) {
-      localStorage.removeItem("pendingScore");  // Remove stored data
+      localStorage.removeItem("pendingScore");
 
       axios.post("/submit-final-score/", JSON.parse(pendingScore), {
           headers: { "Content-Type": "application/json" }
