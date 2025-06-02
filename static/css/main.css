@@ -234,6 +234,7 @@ p#no-my-mf-scores-yet {
 }
 
 .msg-error,
+.msg-info,
 .msg-success {
   display: block;
   height: 3.22rem;
@@ -250,12 +251,24 @@ p#no-my-mf-scores-yet {
   background-color: green;
 }
 
-.btn-close {
-  width: 0.167rem;
-  height: 0.167rem;
-  margin: 0.167rem;
-  padding: 0.167rem;
+.msg-info {
+  background-color: rgb(0, 87, 128); /* light slate blue*/
+}
+
+#mf-login-score-msg-div {
+  height: 3.5rem;
+}
+
+#error-msg, #close-err-msg-btn {
+  display: inline-block;
+}
+
+#login-score-msg {
+  font-size: .81rem;
+}
+
+#mf-login-score-link {
   color: white;
-  background-color: white;
+  font-size: .85rem;
 }
 /* End FORM styles */

@@ -1,13 +1,33 @@
 <template>
   <div id="mf-game-container" class="container-fluid">
-    <div id="msgs-div">
-      <div  v-if="successMessage" 
+    <!-- BE Msgs -->
+    <div id="mf-msgs-div">
+      <div id="mf-success-msg-div" v-if="successMessage" 
         class="msg-success success alert alert-success alert-dismissible text-center">
         <div id="success-msg" class="p-2">{{ successMessage }}</div>
-        <button id="close-msg-btn" @click="successMessage = ''" type="button" 
+        <button id="close-success-msg-btn" @click="successMessage = ''" type="button" 
+          class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+      <div id="mf-login-score-msg-div" v-if="errorMessage && loginUrl"  
+        class="msg-info info alert alert-info alert-dismissible text-center">
+        <div id="login-score-msg" class="px-0">
+          {{ errorMessage }} <br />
+          <a id="mf-login-score-link" v-if="loginUrl" :href="loginUrl" 
+            class="m-0 p-0">Log in/Register</a>
+        </div>
+        <button id="close-score-msg-btn" @click="errorMessage = ''" type="button" 
+          class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      
+      <div id="mf-err-msg-div" v-if="errorMessage && !loginUrl"  
+        class="msg-error error alert alert-danger alert-dismissible text-center">
+        <div id="error-msg" class="p-2">{{ errorMessage }}</div>
+        <button id="close-err-msg-btn" @click="errorMessage = ''" type="button" 
           class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
     </div>
+    <!-- END BE Msgs -->
 
     <!-- Start Screen -->
     <div id="mf-start-screen-div" v-if="screen=='start'" class="container">
@@ -142,8 +162,7 @@ export default {
 
   data() {
     return {
-      gameId: -1, // Default, temp Id 'til one is assigned
-      // This name must match the `MATH` var's value, i.e.: "math_facts", in the Game model.
+      gameId: -1, // Default
       gameName: "math_facts", 
       player: "",
       score: 0,
@@ -160,8 +179,9 @@ export default {
       number2: 0,
       userInput: "",
       interval: null,
-      // timeLeft: 60,
-      timeLeft: 10,
+      timeLeft: 60,
+      errorMessage: "",
+      loginUrl: "",
       successMessage: "",
     }
   }, // END data
@@ -236,19 +256,17 @@ export default {
 
       } catch (error) {
         if (error.response && error.response.status === 401) {
-            const login_url = error.response.data.login_url;
+            this.loginUrl = error.response.data.login_url;
+            this.errorMessage = "Please, sign in/up to save your score!";
 
-            if (confirm("Please, log in or register to save your score!")) {
-              localStorage.setItem("pendingScore", JSON.stringify(data));  
-              localStorage.setItem("returnToGame", window.location.href);
-              window.location.href = login_url;  
-            }
+            sessionStorage.setItem("pendingScore", JSON.stringify(data));
+            localStorage.setItem("returnToGame", window.location.href);
         } else {
+          this.errorMessage = "Error saving score, not saved.";
           console.error("Error saving score:", error.response ? error.response.data : error.message);
         }
       }
     },
-
   }, // END methods
 
   computed: {
@@ -291,8 +309,7 @@ export default {
       if (newTime === 0) {
         this.userInput = ""
         clearInterval(this.interval);
-        // this.timeLeft = 60;
-        this.timeLeft = 10;
+        this.timeLeft = 60;
         this.screen = "end";
         this.recordFinalScore(); 
       }
@@ -301,18 +318,20 @@ export default {
 
   // Lifecycle Hook Overrides & Methods
   mounted() {
-    // Retry submitting the score after login
-    const pendingScore = localStorage.getItem("pendingScore");
+    const pendingScore = sessionStorage.getItem("pendingScore")
 
     if (pendingScore) {
-      localStorage.removeItem("pendingScore");
+      sessionStorage.removeItem("pendingScore");
 
       axios.post("/submit-final-score/", JSON.parse(pendingScore), {
           headers: { "Content-Type": "application/json" }
       }).then(() => {
-          alert("Thanks for logging in!  Score saved successfully.");
+        // CANNOT get this Django message to work, no matter what I do.
+        // this.successMessage = "Thanks for logging in! Score saved successfully.";
+        alert("Thanks for logging in! Score saved successfully."); // Turned this one back into a JS alert instead. 
       }).catch(error => {
-          console.error("Error saving score after login:", error.response ? error.response.data : error.message);
+        this.errorMessage = "Error saving score, not saved.";
+        console.error("Error saving score after login:", error.response ? error.response.data : error.message);
       });
     }
   }, // END mounted()

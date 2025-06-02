@@ -189,5 +189,6 @@ def submit_final_score(request):
     except json.JSONDecodeError as e:
         return JsonResponse({"status": "error", "message": f"Invalid JSON format: {str(e)}"}, status=400)
     except Exception as e:
+        messages.error(request, "Error saving score, not saved.")
         return JsonResponse({"status": "error", "message": str(e)}, status=400)
 ## END fcnal view: submit_final_score()
