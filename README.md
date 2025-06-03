@@ -1,31 +1,36 @@
-# django-vue-play2learn-template
-A template for starting the final Play2Learn project with Django and Vue.
+# Play2learn4
+This last Play2Learn project was started with this GitHub template: django-vue-play2learn-template, 
+created by my Webucator instructors, for the Final for the Full Stack Dev program at 
+North Shore Community College in MA.
 
-## How to use this template?
-1. If you don't have a [GitHub](https://github.com/) account, create a new account. Otherwise, log in. 
-2. Go to **Use this template** and select **Create a new repository**. 
-![use template](static/read-me-images/use-template.png)
-3. In the **Create a new repository** menu, name your repository, add a short description, make sure your repo is **Public** if you plan to share your work, and select **Create repository**.
-![create repo](static/read-me-images/create-repo.png)
-4. You will now need to clone this repository so that you can work with it in Visual Studio Code:
-![clone repo](static/read-me-images/clone-repo.png)
-5. Open Visual Studio Code, go to **Source Control** and select **Clone Repository**.
-![vs-code-clone](static/read-me-images/vs-code-clone.png)
-6. Paste in the copied URL and select **Clone from URL**
-![clone from url](static/read-me-images/clone-from-url.png)
-7. After you select a folder location for your new repo, open the repo in Visual Studio Code.
-![open repo](static/read-me-images/open-repo.png)
+## Project Instructions
+For this project, create the backend for the Play2Learn website with Django and Python. The website should allow users to log in to the site, play games, track their progress, see leaderboards, manage their account, and leave reviews. Administrators may run reports and manage users. Any visitor to the site may fill out a Contact-Us form or write a review. The reviews should rotate in a slideshow on the homepage. 
 
-## How to set up the repo?
-1. Create a Python virtual environment and install requirements.txt.
-2. Go to vue-games and run `npm install`.
+Add tracking history for both games, which stores the time the user finished the game, the game's name, 
+game settings (e.g., operation: multiplication and max number: 20, or word-length: 5), and the 
+final score for each game.  Also, add leaderboards for both games. These leaderboards should look similar to the game tracking, but they should display scores for all users.
 
-## How to run the project?
-1. Run `python manage.py runserver` at the root to start the Django server.
-2. Run `npm run serve` at the vue-games folder to start the Vue server.
-3. The Vue games will be working at:
-    1. Anagram Hunt - [http://127.0.0.1:8000/anagram-hunt/](http://127.0.0.1:8000/anagram-hunt).
-    2. Math Facts - [http://127.0.0.1:8000/math-facts/](http://127.0.0.1:8000/math-facts).
+## Tech stack for this Final
+* Python - Written by me
+* Django -  Written by me
+* Postgresql - For the database
+* Node.js - Written by my instructors in the GitHub template
+* Vue.js - Part of the GitHub template written by my instructors with bug fixes by me
+* JavaScript - Some written by me, some from the template written by my instructors
+* Bootstrap.js - For style, some written by me, some from the template written by my instructors
+* HTML & CSS - Written by me
+* Honcho - For process management to run the Python Django server and the Vue server at the same time
+* Venv - For Python virtual environment, see requirements.txt for dependencies
+* Npm - For Vue and Node, see package.json for dependencies   
+    
+## How to run this project?
+1. Open a terminal or console at the project root.
+2. Run `honcho start`.
+3. Open a browser (a modern browser is best, e.g. Chrome, Edge, Firefox) and navigate to:
+http://127.0.0.1:8000/
 
-## More
-If you want to learn more about how we integrated Vue and Django in this template, see [Connecting Django and Vue](https://www.webucator.com/article/connecting-django-and-vue/). 
+## How to run this project w/o Honcho?
+1. Open a terminal or console at the project root and run `python manage.py runserver`.
+2. Open a terminal or console at the root directory of the games: `vue-games` and run `npm run serve`.
+3. Open a browser (a modern browser is best, e.g. Chrome, Edge, Firefox) and navigate to:
+http://127.0.0.1:8000/
