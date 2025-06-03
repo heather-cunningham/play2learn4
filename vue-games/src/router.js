@@ -1,5 +1,4 @@
 import { createWebHistory, createRouter } from "vue-router";
-
 import AnagramHunt from "./apps/AnagramHunt";
 import MathFacts from "./apps/MathFacts";
 

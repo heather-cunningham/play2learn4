@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
-import router from './router'; // import our router
+import router from './router'; 
 import App from "./App";
 
 // set default Django cookies and headers
@@ -9,10 +9,18 @@ import App from "./App";
 axios.defaults.xsrfCookieName = 'csrftoken';
 axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
 
-const app = createApp(App); // create our app instance
+// Unmount any previously mounted Vue instance before mounting the new one
+const previousApp = document.getElementById("app");
+if (previousApp && previousApp.__vue__) {
+  previousApp.__vue__.unmount();
+}
 
-app.use(router); // tell our app to use our router
+if (!window.__VUE_INSTANCE__) {
+  const app = createApp(App);
+  app.use(router);
+  app.use(VueAxios, axios);
+  app.mount("#app");
 
-app.use(VueAxios, axios); // tell our app to use axios
-
-app.mount("#app"); // mount our app on the div#app element in our template
+  // Flag to prevent duplicate mounting
+  window.__VUE_INSTANCE__ = true;
+}
