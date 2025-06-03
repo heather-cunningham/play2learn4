@@ -1,5 +1,34 @@
 <template>
   <div id="ah-game-container" class="container-fluid">
+    <!-- BE Msgs -->
+    <div id="ah-msgs-div">
+      <div id="ah-success-msg-div" v-if="successMessage" 
+        class="msg-success success alert alert-success alert-dismissible text-center">
+        <div id="success-msg" class="p-2">{{ successMessage }}</div>
+        <button id="close-success-msg-btn" @click="successMessage = ''" type="button" 
+          class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+      <div id="ah-login-score-msg-div" v-if="errorMessage && loginUrl"  
+        class="msg-info info alert alert-info alert-dismissible text-center">
+        <div id="login-score-msg" class="px-0">
+          {{ errorMessage }} <br />
+          <a id="ah-login-score-link" v-if="loginUrl" :href="loginUrl" 
+            class="m-0 p-0">Log in/Register</a>
+        </div>
+        <button id="close-score-msg-btn" @click="errorMessage = ''" type="button" 
+          class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      
+      <div id="ah-err-msg-div" v-if="errorMessage && !loginUrl"  
+        class="msg-error error alert alert-danger alert-dismissible text-center">
+        <div id="error-msg" class="p-2">{{ errorMessage }}</div>
+        <button id="close-err-msg-btn" @click="errorMessage = ''" type="button" 
+          class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </div>
+    <!-- END BE Msgs -->
+
     <!-- Start Screen -->
     <div id="ah-start-screen-div" v-if="screen=='start'" class="container">
       <div class="row m-auto">
@@ -93,20 +122,22 @@ export default {
 
   data() {
     return {
-      gameId: -1, // Default, temp Id 'til one is assigned
-      // This name must match the `ANAGRAM` var's value, i.e.: "anagram_hunt", in the Game model.
+      gameId: -1, // Default
       gameName: "anagram_hunt", 
       player: "",
       score: 0,
       anagrams: anagrams,
       currentWord: "",
       anagramList: [],
-      wordLength: 5,
+      wordLength: 5, // Default
       screen: "start",
       correctGuesses: [],
       userInput: "",
       interval: null,
       timeLeft: 60,
+      errorMessage: "",
+      loginUrl: "",
+      successMessage: "",
     }
   }, // END data
 
@@ -161,8 +192,8 @@ export default {
 
       try {
           const response = await axios.post("/create-game/", data);
+
           console.log("Game created successfully:", response.data);
-          // Store the returned game ID in Vue's data
           this.gameId = response.data.game_id;
       } catch (error) {
           console.error("Error creating game:", error.response ? error.response.data : error.message);
@@ -180,27 +211,26 @@ export default {
       };
 
       try {
-        await axios.post("/submit-final-score/", data, {
+        const response = await axios.post("/submit-final-score/", data, {
           headers: { 
             "Content-Type": "application/json",
             "X-CSRFToken": document.cookie.match(/csrftoken=([^;]+)/)[1],  
           }
         });
 
-        alert("Score saved successfully!");
+        if (response.data.status === "success") {
+          this.successMessage = response.data.message; 
+        }
 
       } catch (error) {
         if (error.response && error.response.status === 401) {
-          const login_url = error.response.data.login_url;
+          this.loginUrl = error.response.data.login_url;
+          this.errorMessage = "Please, sign in/up to save your score!";
 
-          if (confirm("Please, log in or register to save your score!")) {
-            // Save game data in localStorage first, before redirecting to login page.
-            localStorage.setItem("pendingScore", JSON.stringify(data));  
-            localStorage.setItem("returnToGame", window.location.href);
-            // Then, redirect to login
-            window.location.href = login_url;  
-          }
+          sessionStorage.setItem("pendingScore", JSON.stringify(data));
+          localStorage.setItem("returnToGame", window.location.href);
         } else {
+          this.errorMessage = "Error saving score, not saved.";
           console.error("Error saving score:", error.response ? error.response.data : error.message);
         }
       }
@@ -226,15 +256,15 @@ export default {
 
   // Lifecycle Hook Overrides & Methods
   mounted() {
-    // Retry submitting the score after login
-    const pendingScore = localStorage.getItem("pendingScore");
+    const pendingScore = sessionStorage.getItem("pendingScore");
 
     if (pendingScore) {
-      localStorage.removeItem("pendingScore");  // Remove stored data
+      sessionStorage.removeItem("pendingScore");
 
       axios.post("/submit-final-score/", JSON.parse(pendingScore), {
           headers: { "Content-Type": "application/json" }
       }).then(() => {
+        // CANNOT get this alert to work as a Django message, no matter what I do.
           alert("Thanks for logging in!  Score saved successfully.");
       }).catch(error => {
           console.error("Error saving score after login:", error.response ? error.response.data : error.message);
