@@ -1,7 +1,7 @@
 <template>
-  <div id="ah-game-container" class="container-fluid">
+  <div id="ah-game-container" class="container-fluid" :key="gameInstanceId">
     <!-- BE Msgs -->
-    <div id="ah-msgs-div">
+    <div id="ah-msgs-div" v-if="screen=='end'">
       <div id="ah-success-msg-div" v-if="successMessage" 
         class="msg-success success alert alert-success alert-dismissible text-center">
         <div id="success-msg" class="p-2">{{ successMessage }}</div>
@@ -123,6 +123,7 @@ export default {
   data() {
     return {
       gameId: -1, // Default
+      gameInstanceId: 0, // To force component refresh
       gameName: "anagram_hunt", 
       player: "",
       score: 0,
@@ -150,8 +151,15 @@ export default {
   methods: {
     play() {
       this.createGame();
+      this.$nextTick(() => {
+        this.screen = "play";
+      });
+      if (this.interval) {
+        clearInterval(this.interval);
+      }
+      this.gameInstanceId++; // To force Vue to re-render
+      this.timeLeft = 60; 
       this.score = 0;
-      this.screen = "play";
       this.newAnagramList();
       this.interval = setInterval(() => {
         this.timeLeft -= 1;
@@ -246,7 +254,9 @@ export default {
     timeLeft(newTime) {
       if (newTime == 0) {
         this.userInput = ""
-        clearInterval(this.interval);
+        if (this.interval) {
+          clearInterval(this.interval);
+        }
         this.timeLeft = 60;
         this.screen = "end";
         this.recordFinalScore(); 
