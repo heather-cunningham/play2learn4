@@ -1,14 +1,34 @@
 function toggleVisibility(tableId) {
     let table = document.getElementById(tableId);
-    if (table.style.display === "none") {
-        table.style.display = "block";
+    if (table) {
+        if (table.style.display === "none") {
+            table.style.display = "table";
+        } else {
+            table.style.display = "none";
+        }
     } else {
-        table.style.display = "none";
+        console.error("Element with ID '" + tableId + "' not found.");
     }
 }
 
-// Hide tables initially when the page loads
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("my-ah-tbl-container").style.display = "table";
-    document.getElementById("my-mf-tbl-container").style.display = "block";
-});
+window.onload = function () {
+    let ahTable = document.getElementById("my-ah-tbl-container");
+    let mfTable = document.getElementById("my-mf-tbl-container");
+
+    if (ahTable) {
+        ahTable.style.display = "table";
+    } else {
+        console.warn("Warning: Table 'my-ah-tbl-container' not found.");
+    }
+
+    if (mfTable) {
+        mfTable.style.display = "table";
+    } else {
+        console.warn("Warning: Table 'my-mf-tbl-container' not found.");
+    }
+};
+
+// Catch unexpected errors
+window.onerror = function (message, source, lineno, colno, error) {
+    console.error("Caught error:", message,  error, "Line #:", lineno);
+};
