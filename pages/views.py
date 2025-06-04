@@ -33,11 +33,10 @@ class ContactUsFormView(FormView):
     def form_valid(self, form):
         data = form.cleaned_data
         user = self.request.user if self.request.user.is_authenticated else None
-        username = data.get("username", "").strip()
-        if (not username and user):  
+        if (user):  
             username = user.username  
         else:
-            username = "Unregistered User"
+            username = data.get("username", "").strip() or "Unregistered User"
         data["username"] = username
         ## Set up email to send
         to = "cunningham.heatherirene@gmail.com"
