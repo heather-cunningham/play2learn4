@@ -26,12 +26,14 @@ final score for each game.  Also, add leaderboards for both games. These leaderb
     
 ## How to run this project?
 1. Open a terminal or console at the project root.
-2. Run `honcho start`.
-3. Open a browser (a modern browser is best, e.g. Chrome, Edge, Firefox) and navigate to:
+2. If the Python virtual environment does not start automatically, activate it. 
+3. Run `honcho start`.
+4. Open a browser (a modern browser is best, e.g. Chrome, Edge, Firefox) and navigate to:
 http://127.0.0.1:8000/
 
 ## How to run this project w/o Honcho?
 1. Open a terminal or console at the project root and run `python manage.py runserver`.
-2. Open a terminal or console at the root directory of the games: `vue-games` and run `npm run serve`.
-3. Open a browser (a modern browser is best, e.g. Chrome, Edge, Firefox) and navigate to:
+2. If the Python virtual environment does not start automatically, activate it.
+3. Open a terminal or console at the root directory of the games: `vue-games` and run `npm run serve`.
+4. Open a browser (a modern browser is best, e.g. Chrome, Edge, Firefox) and navigate to:
 http://127.0.0.1:8000/
