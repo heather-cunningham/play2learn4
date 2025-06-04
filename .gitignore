@@ -162,3 +162,6 @@ cython_debug/
 # My additions
 vue-games/package-lock.json
 .vscode/
+static/images/daphne_profile_pic.png
+static/images/heather_flowers.jpg
+static/images/purple_flower_sml.jpg
