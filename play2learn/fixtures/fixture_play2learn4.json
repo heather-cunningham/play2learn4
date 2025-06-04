@@ -1,0 +1,6144 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2025-05-20T16:44:55.959Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "hcunningham",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"User permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2025-05-23T18:46:00.305Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "heatherirene2",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Username\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2025-05-23T18:47:15.814Z",
+    "user": 2,
+    "content_type": 11,
+    "object_id": "1",
+    "object_repr": "heatherirene2@msn.com",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Verified\", \"Primary\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2025-05-23T18:51:59.124Z",
+    "user": 2,
+    "content_type": 11,
+    "object_id": "2",
+    "object_repr": "cunningham.heatherirene@gmail.com",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Verified\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2025-05-23T18:52:44.735Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "hcunningham",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Staff status\", \"Superuser status\", \"User permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2025-05-23T18:53:13.919Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "heatherirene2",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2025-05-26T16:51:30.518Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "hcunningham",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2025-05-26T17:54:50.104Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "hcunningham",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2025-05-26T18:01:00.150Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "5",
+    "object_repr": "hcunningham",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Staff status\", \"Superuser status\", \"User permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2025-05-26T18:01:33.163Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "test_user",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2025-05-26T18:31:19.060Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "test_user",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2025-05-26T18:33:20.982Z",
+    "user": 2,
+    "content_type": 11,
+    "object_id": "5",
+    "object_repr": "cunningham.heatherirene@gmail.com",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Verified\", \"Primary\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2025-05-27T22:10:52.074Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "6",
+    "object_repr": "Heather Cunningham, Username: heathercom, Date Joined: 2025-05-27 19:17:10.049153+00:00",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2025-05-27T22:13:18.328Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "HeatherIrene2 Cunningham, Username: heatherirene2, Date Joined: 2025-05-27 15:12:19.810927+00:00",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2025-05-27T22:13:36.583Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "7",
+    "object_repr": "HeatherIrene Cunningham, Username: heatherirene, Date Joined: 2025-05-27 22:12:29.532287+00:00",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2025-05-27T22:13:47.188Z",
+    "user": 2,
+    "content_type": 11,
+    "object_id": "7",
+    "object_repr": "heatherirene2@comcast.net",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Verified\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2025-05-27T22:14:11.918Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "7",
+    "object_repr": "HeatherIrene Cunningham, Username: heatherirene, Date Joined: 2025-05-27 22:12:29.532287+00:00",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2025-05-29T15:36:09.972Z",
+    "user": 2,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "Review submitted by:\n\n        --------------------\n\n        Heather Cunningham, Username: (hcunningham)\n\n        Email: Cunningham.HeatherIrene@gmail.com,\n        On: 2025-05-22 17:57:22.811393+00:00,",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2025-05-29T17:20:27.768Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "8",
+    "object_repr": "Joe Schmoe, Username: joe, Date Joined: 2025-05-29 17:20:27.768198+00:00",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2025-05-29T17:20:53.870Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "8",
+    "object_repr": "Joe Schmoe, Username: joe, Date Joined: 2025-05-29 17:20:27.768198+00:00",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2025-05-29T17:22:22.058Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "9",
+    "object_repr": "Ms. Madeup Teacher, Username: ms_teacher, Date Joined: 2025-05-29 17:22:22.058591+00:00",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2025-05-29T17:23:33.718Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "10",
+    "object_repr": "Jane Doe, Username: jane, Date Joined: 2025-05-29 17:23:33.718071+00:00",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2025-05-29T17:26:31.601Z",
+    "user": 2,
+    "content_type": 9,
+    "object_id": "6",
+    "object_repr": "Review submitted by:\n\n        --------------------\n\n        Joe Schmoe, Username: (joe)\n\n        Email: joe_schmoe@email.com,\n        On: 2025-05-29 17:26:31.601963+00:00,\n        Comments:\n\n        -",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2025-05-29T17:27:10.373Z",
+    "user": 2,
+    "content_type": 9,
+    "object_id": "5",
+    "object_repr": "Review submitted by:\n\n        --------------------\n\n        Heather Cunningham, Username: (Unregistered User)\n\n        Email: Cunningham.HeatherIrene@gmail.com,\n        On: 2025-05-22 18:55:32.013796+",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2025-05-29T17:27:10.373Z",
+    "user": 2,
+    "content_type": 9,
+    "object_id": "4",
+    "object_repr": "Review submitted by:\n\n        --------------------\n\n        Heather Cunningham, Username: (Unregistered User)\n\n        Email: Cunningham.HeatherIrene@gmail.com,\n        On: 2025-05-22 18:09:21.998536+",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2025-05-29T17:27:10.373Z",
+    "user": 2,
+    "content_type": 9,
+    "object_id": "3",
+    "object_repr": "Review submitted by:\n\n        --------------------\n\n        heather Cunningham, Username: (hcunningham)\n\n        Email: Cunningham.HeatherIrene@gmail.com,\n        On: 2025-05-22 18:06:07.172684+00:00,",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2025-05-29T17:27:10.373Z",
+    "user": 2,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "Review submitted by:\n\n        --------------------\n\n        Heather Cunningham, Username: (hcunningham)\n\n        Email: Cunningham.HeatherIrene@gmail.com,\n        On: 2025-05-22 17:07:47.385858+00:00,",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2025-05-29T17:29:35.666Z",
+    "user": 2,
+    "content_type": 11,
+    "object_id": "8",
+    "object_repr": "joe_schmoe@email.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2025-05-29T17:30:10.310Z",
+    "user": 2,
+    "content_type": 9,
+    "object_id": "7",
+    "object_repr": "Review submitted by:\n\n        --------------------\n\n        Ms. Madeup Teacher, Username: (ms_teacher)\n\n        Email: ms_teacher@email.com,\n        On: 2025-05-29 17:30:10.310762+00:00,\n        Comme",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2025-05-29T17:30:35.623Z",
+    "user": 2,
+    "content_type": 11,
+    "object_id": "9",
+    "object_repr": "ms_teacher@email.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2025-05-29T17:31:02.064Z",
+    "user": 2,
+    "content_type": 11,
+    "object_id": "10",
+    "object_repr": "jane_doe@email.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2025-05-29T17:32:31.069Z",
+    "user": 2,
+    "content_type": 9,
+    "object_id": "8",
+    "object_repr": "Review submitted by:\n\n        --------------------\n\n        Jane Doe, Username: (jane)\n\n        Email: jane_doe@email.com,\n        On: 2025-05-29 17:32:31.069630+00:00,\n        Comments:\n\n        ----",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2025-05-29T20:29:57.287Z",
+    "user": 2,
+    "content_type": 9,
+    "object_id": "10",
+    "object_repr": "Review submitted by:\n\n        --------------------\n\n        Heather Cunningham, Username: (Unregistered User)\n\n        Email: Cunningham.HeatherIrene@gmail.com,\n        On: 2025-05-29 20:28:39.504407+",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2025-05-29T20:29:57.287Z",
+    "user": 2,
+    "content_type": 9,
+    "object_id": "9",
+    "object_repr": "Review submitted by:\n\n        --------------------\n\n        Test User3, Username: (Unregistered User)\n\n        Email: test_user3@email.com,\n        On: 2025-05-29 20:02:24.836131+00:00,\n        Commen",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2025-05-31T18:06:25.496Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "41",
+    "object_repr": "Player: heatherirene, Game: math_facts, Game Settings: {'operation': '+', 'max_number': 10}, Rank: None,Final Score: 5, Game Date: 2025-05-31 18:03:25.154338+00:00",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2025-05-31T18:12:32.266Z",
+    "user": 2,
+    "content_type": 11,
+    "object_id": "11",
+    "object_repr": "daphne@email.com",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Verified\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2025-05-31T18:12:44.486Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "11",
+    "object_repr": "Daphne Scoobydoo, Username: daphne, Date Joined: 2025-05-31 18:10:29.523921+00:00",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2025-06-03T15:31:22.218Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "12",
+    "object_repr": "Heather Cunningham, Username: heather, Date Joined: 2025-06-03 15:31:22.165924+00:00",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2025-06-03T15:31:39.391Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "12",
+    "object_repr": "Heather Cunningham, Username: heather, Date Joined: 2025-06-03 15:31:22.165924+00:00",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2025-06-03T15:35:58.990Z",
+    "user": 2,
+    "content_type": 11,
+    "object_id": "12",
+    "object_repr": "Cunningham.heatherirene@gmail.com",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Verified\", \"Primary\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2025-06-04T16:28:36.468Z",
+    "user": 2,
+    "content_type": 9,
+    "object_id": "8",
+    "object_repr": "Review submitted by:\n\n        --------------------\n\n        Jane Doe, Username: (jane)\n\n        Email: jane_doe@email.com\n\n        On: 2025-05-29 17:32:31.069630+00:00\n\n        Featured Review: (True)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Is featured\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2025-06-04T16:29:27.289Z",
+    "user": 2,
+    "content_type": 9,
+    "object_id": "7",
+    "object_repr": "Review submitted by:\n\n        --------------------\n\n        Ms. Madeup Teacher, Username: (ms_teacher)\n\n        Email: ms_teacher@email.com\n\n        On: 2025-05-29 17:30:10.310762+00:00\n\n        Featu",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Is featured\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2025-06-04T16:29:35.058Z",
+    "user": 2,
+    "content_type": 9,
+    "object_id": "6",
+    "object_repr": "Review submitted by:\n\n        --------------------\n\n        Joe Schmoe, Username: (joe)\n\n        Email: joe_schmoe@email.com\n\n        On: 2025-05-29 17:26:31.601963+00:00\n\n        Featured Review: (Tr",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Is featured\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2025-06-04T16:43:38.404Z",
+    "user": 2,
+    "content_type": 9,
+    "object_id": "11",
+    "object_repr": "Review submitted by:\n\n        --------------------\n\n        Daphne Blake, Username: (daphne)\n\n        Email: daphne@email.com\n\n        On: 2025-06-04 16:39:52.705631+00:00\n\n        Featured Review: (T",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Username\", \"Is featured\"]}}]"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 4,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 4,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 4,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 4,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 5,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 5,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 5,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 5,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add game",
+    "content_type": 6,
+    "codename": "add_game"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change game",
+    "content_type": 6,
+    "codename": "change_game"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete game",
+    "content_type": 6,
+    "codename": "delete_game"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view game",
+    "content_type": 6,
+    "codename": "view_game"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add final score",
+    "content_type": 7,
+    "codename": "add_finalscore"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change final score",
+    "content_type": 7,
+    "codename": "change_finalscore"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete final score",
+    "content_type": 7,
+    "codename": "delete_finalscore"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view final score",
+    "content_type": 7,
+    "codename": "view_finalscore"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 8,
+    "codename": "add_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 8,
+    "codename": "change_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 8,
+    "codename": "delete_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 8,
+    "codename": "view_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add review",
+    "content_type": 9,
+    "codename": "add_review"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change review",
+    "content_type": 9,
+    "codename": "change_review"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete review",
+    "content_type": 9,
+    "codename": "delete_review"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view review",
+    "content_type": 9,
+    "codename": "view_review"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add contact us",
+    "content_type": 10,
+    "codename": "add_contactus"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change contact us",
+    "content_type": 10,
+    "codename": "change_contactus"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete contact us",
+    "content_type": 10,
+    "codename": "delete_contactus"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view contact us",
+    "content_type": 10,
+    "codename": "view_contactus"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add email address",
+    "content_type": 11,
+    "codename": "add_emailaddress"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change email address",
+    "content_type": 11,
+    "codename": "change_emailaddress"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete email address",
+    "content_type": 11,
+    "codename": "delete_emailaddress"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view email address",
+    "content_type": 11,
+    "codename": "view_emailaddress"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add email confirmation",
+    "content_type": 12,
+    "codename": "add_emailconfirmation"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change email confirmation",
+    "content_type": 12,
+    "codename": "change_emailconfirmation"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete email confirmation",
+    "content_type": 12,
+    "codename": "delete_emailconfirmation"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view email confirmation",
+    "content_type": 12,
+    "codename": "view_emailconfirmation"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add social account",
+    "content_type": 13,
+    "codename": "add_socialaccount"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change social account",
+    "content_type": 13,
+    "codename": "change_socialaccount"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete social account",
+    "content_type": 13,
+    "codename": "delete_socialaccount"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view social account",
+    "content_type": 13,
+    "codename": "view_socialaccount"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can add social application",
+    "content_type": 14,
+    "codename": "add_socialapp"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can change social application",
+    "content_type": 14,
+    "codename": "change_socialapp"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can delete social application",
+    "content_type": 14,
+    "codename": "delete_socialapp"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can view social application",
+    "content_type": 14,
+    "codename": "view_socialapp"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 57,
+  "fields": {
+    "name": "Can add social application token",
+    "content_type": 15,
+    "codename": "add_socialtoken"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 58,
+  "fields": {
+    "name": "Can change social application token",
+    "content_type": 15,
+    "codename": "change_socialtoken"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 59,
+  "fields": {
+    "name": "Can delete social application token",
+    "content_type": 15,
+    "codename": "delete_socialtoken"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 60,
+  "fields": {
+    "name": "Can view social application token",
+    "content_type": 15,
+    "codename": "view_socialtoken"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "games",
+    "model": "game"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "games",
+    "model": "finalscore"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "users",
+    "model": "customuser"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "reviews",
+    "model": "review"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "pages",
+    "model": "contactus"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "account",
+    "model": "emailaddress"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "account",
+    "model": "emailconfirmation"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "socialaccount",
+    "model": "socialaccount"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 14,
+  "fields": {
+    "app_label": "socialaccount",
+    "model": "socialapp"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 15,
+  "fields": {
+    "app_label": "socialaccount",
+    "model": "socialtoken"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "3wylurec7y91qebtnlax6oh6pfjo3xrt",
+  "fields": {
+    "session_data": ".eJxVjU0OgjAQhe_StSEt0A6w04s0M9MhNJJibEk0xrsLhoUu39_3XsrjWia_Zrn7GNSgjFGnX5OQr5L2BOd5tytkXtZUqm_niHN13pSkEhlLXNLlWP2hJszTxuk1tJZrwzJCxyC2GUkwAPfsGkCne-AONQE5x8SmNQ3arrWkbQiuph2aJeftxsvjFu9PNej3B_otRBU:1uLR69:JLlw2YKj6LlQfxRri9TtWQomrM-vcRRYM9nGxVfze2k",
+    "expire_date": "2025-06-14T18:38:25.907Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "6or5u7xp1r3ypsavjpcktivgjfrtblfb",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hAYOtR26d4zkBmgFjVgSptojHe3TbrQ7X_vv7dwtMyjW2qcXAqiFyAOvxuTv8W8gXClfCnSlzxPieWmyJ1WeS4h3k-7-xcYqY7rm5UH8Ba0HoADIjM3po2ERx2HxnboO2O9NcQGcQUAiGowuiXjCZTdojXWmkp28flI00v06vMFe0s-kw:1uKLBS:HXL-dMqOy6GEYtsLhNhYZaKdom6XLnwmq6Vz9HPoT8E",
+    "expire_date": "2025-06-11T18:07:22.852Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "dgl9zhv6l3dgly6gljtpurg7qwnsw2gz",
+  "fields": {
+    "session_data": "eyJhY2NvdW50X3ZlcmlmaWVkX2VtYWlsIjpudWxsLCJhY2NvdW50X3VzZXIiOiIzIn0:1uIXTL:GEz1DGBrPb27RP6MUUx7hwwVtVVVJX163aVOGJoUCO0",
+    "expire_date": "2025-06-06T18:50:23.177Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ivhew6xldke2oiesffto4gfb3qv58he8",
+  "fields": {
+    "session_data": ".eJxVjMsOgjAQRf-la9NMHxSGpXu_oWk7g1RNMRQSjfHflYSFbu8597yED-sy-rXy7DOJXihx-N1iSFcuG6BLKOdJpqksc45yU-ROqzxNxLfj7v4FxlDH7xtVg0TKaddShwNr6ACQXJMwKINsEzZoQaMhNGABcXDORtWaFLVh2KKVa81T8fy45_kpenh_ADx7Pak:1uMDkb:KPF0CIaNEAK8NqCjUi5bKvUrGzLtxn0B-UZQ5pWscVw",
+    "expire_date": "2025-06-16T22:35:25.649Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "iz5njcih1tvv3ghucv8rfchw4n35rww9",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGln-x0tJnzNYa3uDA8iW4qRC3J1ESgHtzLz3ZgG3tYSt0xLmzK5Mscsvi5ieVA-RH1jvjadW12WO_Ej4aTsfW6bX7Wz_Dgr2sq8FSG-naAYCZ0gJkaPUbnJih2B9AoU4OGkRSCbttcsS0ZhsQWBM3rLPF8ppN3Q:1uHQbk:uXVMgG2C7SsTfU__8udrW-7shvaqsRo8IaUY1ErND40",
+    "expire_date": "2025-06-03T17:18:28.347Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "j7gvsyay895kypi3llwufdgiumb0mgki",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hAYOtR26d4zkBmgFjVgSptojHe3TbrQ7X_vv7dwtMyjW2qcXAqiFyAOvxuTv8W8gXClfCnSlzxPieWmyJ1WeS4h3k-7-xcYqY7rm5UH8Ba0HoADIjM3po2ERx2HxnboO2O9NcQGcQUAiGowuiXjCZTdojXWmkp28flI00v06vMFe0s-kw:1uJyS5:_jD42LN8z5sNR5G29eJDQ-hCuCpCv-AUICyG2RxTL5o",
+    "expire_date": "2025-06-10T17:51:01.790Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "jh8nxwunu69toel913ugeotx9cljd3u9",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hAYOtR26d4zkBmgFjVgSptojHe3TbrQ7X_vv7dwtMyjW2qcXAqiFyAOvxuTv8W8gXClfCnSlzxPieWmyJ1WeS4h3k-7-xcYqY7rm5UH8Ba0HoADIjM3po2ERx2HxnboO2O9NcQGcQUAiGowuiXjCZTdojXWmkp28flI00v06vMFe0s-kw:1uKJjD:2E-ByapZeMb-Ig_LWRpylKELpBoZUAUmoOUY3_rUZgU",
+    "expire_date": "2025-06-11T16:34:07.865Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "nfu5qn13mvc6ejjw49c95gzqxuy5kuxg",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hAYOtR26d4zkBmgFjVgSptojHe3TbrQ7X_vv7dwtMyjW2qcXAqiFyAOvxuTv8W8gXClfCnSlzxPieWmyJ1WeS4h3k-7-xcYqY7rm5UH8Ba0HoADIjM3po2ERx2HxnboO2O9NcQGcQUAiGowuiXjCZTdojXWmkp28flI00v06vMFe0s-kw:1uJycA:Hqc2ren4ktW99712lbq88p3_B7qsGgVzu0IZBapRiiQ",
+    "expire_date": "2025-05-28T18:01:26.167Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "oo6kieutm53qijs4w3ev312ppyx1vbq6",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hAYOtR26d4zkBmgFjVgSptojHe3TbrQ7X_vv7dwtMyjW2qcXAqiFyAOvxuTv8W8gXClfCnSlzxPieWmyJ1WeS4h3k-7-xcYqY7rm5UH8Ba0HoADIjM3po2ERx2HxnboO2O9NcQGcQUAiGowuiXjCZTdojXWmkp28flI00v06vMFe0s-kw:1uM65L:fkGq5bbRDeXdvUX4T37wdR4PhGft_zoPzETb7Shppvk",
+    "expire_date": "2025-06-16T14:24:19.467Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ski6bi2zsyktgp7f2d2k4pc5a8uh15j8",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hAYOtR26d4zkBmgFjVgSptojHe3TbrQ7X_vv7dwtMyjW2qcXAqiFyAOvxuTv8W8gXClfCnSlzxPieWmyJ1WeS4h3k-7-xcYqY7rm5UH8Ba0HoADIjM3po2ERx2HxnboO2O9NcQGcQUAiGowuiXjCZTdojXWmkp28flI00v06vMFe0s-kw:1uM6dO:7D4eiqrI4UaaOSfqY7cMDj6Kph9mnDAlf740WQwYpVI",
+    "expire_date": "2025-06-16T14:59:30.770Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "sl0asfxqgc2i7sfnxmmsr92u792v5ezu",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hAYOtR26d4zkBmgFjVgSptojHe3TbrQ7X_vv7dwtMyjW2qcXAqiFyAOvxuTv8W8gXClfCnSlzxPieWmyJ1WeS4h3k-7-xcYqY7rm5UH8Ba0HoADIjM3po2ERx2HxnboO2O9NcQGcQUAiGowuiXjCZTdojXWmkp28flI00v06vMFe0s-kw:1uJyJ9:v9UMZERxtnmNjLjEnYfPq_eAieBIKe96I8evX79tN2E",
+    "expire_date": "2025-06-10T17:41:47.925Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "urnkw8x3382q82dw8ommhz5341bye25v",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hAYOtR26d4zkBmgFjVgSptojHe3TbrQ7X_vv7dwtMyjW2qcXAqiFyAOvxuTv8W8gXClfCnSlzxPieWmyJ1WeS4h3k-7-xcYqY7rm5UH8Ba0HoADIjM3po2ERx2HxnboO2O9NcQGcQUAiGowuiXjCZTdojXWmkp28flI00v06vMFe0s-kw:1uM6iw:e6-IUlq6fZWqHDNer7jC7uiMCj9CC06saiubDY2G3d4",
+    "expire_date": "2025-06-16T15:05:14.917Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "xav46x7279a5huqzey8p3f6n2auqgpyk",
+  "fields": {
+    "session_data": ".eJxVjMsOgjAQRf-la9NMHxSGpXu_oWk7g1RNMRQSjfHflYSFbu8597yED-sy-rXy7DOJXihx-N1iSFcuG6BLKOdJpqksc45yU-ROqzxNxLfj7v4FxlDH7xtVg0TKaddShwNr6ACQXJMwKINsEzZoQaMhNGABcXDORtWaFLVh2KKVa81T8fy45_kpenh_ADx7Pak:1uM9UF:TtcbctdVC67ZXfC69rsWC311n86quttX0FHsDCKH964",
+    "expire_date": "2025-06-16T18:02:15.952Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "z4u4uckw92g9x8wdx706o0rpboe83fhp",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hAYOtR26d4zkBmgFjVgSptojHe3TbrQ7X_vv7dwtMyjW2qcXAqiFyAOvxuTv8W8gXClfCnSlzxPieWmyJ1WeS4h3k-7-xcYqY7rm5UH8Ba0HoADIjM3po2ERx2HxnboO2O9NcQGcQUAiGowuiXjCZTdojXWmkp28flI00v06vMFe0s-kw:1uL7p2:ki5jiPeb9h3FwcsyrU9wc-4N9XLOrVa-pFnKRrcsRgs",
+    "expire_date": "2025-06-13T22:03:28.947Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "z6n931esgebbpdf0223q7zyeqr54u6w8",
+  "fields": {
+    "session_data": ".eJxVjMEOwiAQBf-FsyHAFmh79O43EFgWixowpU00xn_XJj3o9c28eTHn12Vya6PZ5chGZtnhdwser1Q2EC--nCvHWpY5B74pfKeNn2qk23F3_wKTb9P3nYxHBEWGhAq9HaQCi8GAIZ2GXlmQOnnddYAgIySBRgqVAhCFTovgt2ij1nItjh73PD_ZKN4fhU0_Ag:1uK2ZK:zznJHqd7Czf0tC4aBJg5GtXCwSI5q50e_pAv2BFaV-M",
+    "expire_date": "2025-06-10T22:14:46.816Z"
+  }
+},
+{
+  "model": "account.emailaddress",
+  "pk": 1,
+  "fields": {
+    "user": 2,
+    "email": "heatherirene2@msn.com",
+    "verified": true,
+    "primary": true
+  }
+},
+{
+  "model": "account.emailaddress",
+  "pk": 4,
+  "fields": {
+    "user": 5,
+    "email": "Cunningham.HeatherIrene@gmail.com",
+    "verified": true,
+    "primary": true
+  }
+},
+{
+  "model": "account.emailaddress",
+  "pk": 5,
+  "fields": {
+    "user": 1,
+    "email": "cunningham.heatherirene@gmail.com",
+    "verified": true,
+    "primary": true
+  }
+},
+{
+  "model": "account.emailaddress",
+  "pk": 7,
+  "fields": {
+    "user": 7,
+    "email": "heatherirene2@comcast.net",
+    "verified": true,
+    "primary": true
+  }
+},
+{
+  "model": "account.emailaddress",
+  "pk": 8,
+  "fields": {
+    "user": 8,
+    "email": "joe_schmoe@email.com",
+    "verified": true,
+    "primary": true
+  }
+},
+{
+  "model": "account.emailaddress",
+  "pk": 9,
+  "fields": {
+    "user": 9,
+    "email": "ms_teacher@email.com",
+    "verified": true,
+    "primary": true
+  }
+},
+{
+  "model": "account.emailaddress",
+  "pk": 10,
+  "fields": {
+    "user": 10,
+    "email": "jane_doe@email.com",
+    "verified": true,
+    "primary": true
+  }
+},
+{
+  "model": "account.emailaddress",
+  "pk": 11,
+  "fields": {
+    "user": 11,
+    "email": "daphne@email.com",
+    "verified": true,
+    "primary": true
+  }
+},
+{
+  "model": "account.emailaddress",
+  "pk": 12,
+  "fields": {
+    "user": 12,
+    "email": "Cunningham.heatherirene@gmail.com",
+    "verified": true,
+    "primary": true
+  }
+},
+{
+  "model": "games.game",
+  "pk": 1,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-20T17:15:28.502Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 2,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-20T17:15:28.502Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 3,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-05-20T17:16:49.360Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 4,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-20T18:31:50.403Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 5,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-20T18:32:00.627Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 6,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-05-20T18:32:22.778Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 7,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-05-23T15:37:00.919Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 8,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-23T15:37:09.613Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 9,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-23T17:16:52.161Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 10,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-23T17:17:18.029Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 11,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-05-23T17:18:20.927Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 12,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-27T17:40:59.904Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 13,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-27T17:41:25.412Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 14,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-27T17:48:38.598Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 15,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-27T18:00:51.607Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 16,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-27T18:34:45.743Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 17,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-27T18:37:50.013Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 18,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-27T18:42:06.607Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 19,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-27T19:04:02.593Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 20,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-27T19:06:37.562Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 21,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-27T19:10:22.602Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 22,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-27T19:11:21.349Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 23,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-27T19:16:02.146Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 24,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-27T19:34:57.461Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 25,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-27T19:37:15.682Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 26,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-27T19:41:42.973Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 27,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-05-27T20:01:32.815Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 28,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-27T20:07:29.784Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 29,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-27T20:08:20.914Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 30,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-05-27T20:08:44.646Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 31,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-27T20:14:29.870Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 32,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-05-28T14:22:20.094Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 33,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-05-28T15:44:29.827Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 34,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-28T19:02:36.077Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 35,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-28T19:02:49.783Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 36,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-28T19:03:02.420Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 37,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-28T19:03:14.886Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 38,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-28T19:04:00.054Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 39,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-05-28T19:05:33.382Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 40,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-05-28T19:05:46.907Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 41,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-05-28T19:06:01.505Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 42,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-05-28T19:06:14.249Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 43,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-05-28T19:06:27.058Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 44,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-05-28T19:06:39.706Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 45,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-05-28T19:06:52.545Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 46,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-05-28T19:11:50.164Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 47,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-05-28T19:12:03.187Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 48,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-05-28T19:12:15.870Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 49,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-05-28T19:26:27.746Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 50,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-05-28T19:26:40.606Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 51,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-05-29T20:44:06.327Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 52,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-05-29T20:45:09.887Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 53,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": "8"
+    },
+    "created": "2025-05-29T20:45:24.139Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 54,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "-",
+      "max_number": 10
+    },
+    "created": "2025-05-29T20:45:39.872Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 55,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-30T17:38:20.959Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 56,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": "6"
+    },
+    "created": "2025-05-30T19:00:16.795Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 57,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-31T17:04:42.015Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 58,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-05-31T17:42:48.844Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 59,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-05-31T17:44:15.293Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 60,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-05-31T17:51:39.402Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 61,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-05-31T18:02:56.674Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 62,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-05-31T18:06:56.457Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 63,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-05-31T18:08:47.192Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 64,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-02T14:54:21.114Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 65,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-02T15:13:16.022Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 66,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-02T15:14:18.803Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 67,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-02T15:15:56.567Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 68,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-02T15:55:14.647Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 69,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-02T15:56:40.347Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 70,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-06-02T17:29:11.269Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 71,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-06-02T17:39:47.029Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 72,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-06-02T17:48:40.223Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 73,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-06-02T17:54:43.855Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 74,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-06-02T18:01:48.398Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 75,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-06-02T18:06:29.038Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 76,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-06-02T18:58:41.834Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 77,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-02T18:59:06.697Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 78,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-02T19:00:51.118Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 79,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-02T20:18:31.337Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 80,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-02T20:43:16.966Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 81,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-02T20:48:54.182Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 82,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-02T20:49:39.318Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 83,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-02T20:55:19.394Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 84,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-02T21:02:23.731Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 85,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-02T21:08:53.138Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 86,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-06-02T21:20:38.866Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 87,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-06-02T21:24:49.832Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 88,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-06-02T21:26:48.057Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 89,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 2
+    },
+    "created": "2025-06-02T21:32:02.033Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 90,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-06-02T21:42:12.242Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 91,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 2
+    },
+    "created": "2025-06-02T21:48:59.576Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 92,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-06-02T21:58:52.248Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 93,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 2
+    },
+    "created": "2025-06-02T22:04:21.816Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 94,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 2
+    },
+    "created": "2025-06-02T22:05:53.035Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 95,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-06-02T22:10:59.598Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 96,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 2
+    },
+    "created": "2025-06-02T22:16:53.132Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 97,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 2
+    },
+    "created": "2025-06-02T22:29:55.024Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 98,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 2
+    },
+    "created": "2025-06-02T22:30:05.360Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 99,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 3
+    },
+    "created": "2025-06-02T22:30:34.174Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 100,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 4
+    },
+    "created": "2025-06-02T22:34:58.387Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 101,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 4
+    },
+    "created": "2025-06-03T16:13:26.527Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 102,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 6
+    },
+    "created": "2025-06-03T16:26:11.160Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 103,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 4
+    },
+    "created": "2025-06-03T16:27:04.116Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 104,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-06-03T16:30:04.658Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 105,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 3
+    },
+    "created": "2025-06-03T16:35:57.477Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 106,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T16:37:56.913Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 107,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-06-03T16:59:13.712Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 108,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-06-03T17:01:09.473Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 109,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-06-03T17:15:14.003Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 110,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-06-03T17:16:35.100Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 111,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 20
+    },
+    "created": "2025-06-03T17:25:00.512Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 112,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 12
+    },
+    "created": "2025-06-03T17:26:42.514Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 113,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 2
+    },
+    "created": "2025-06-03T17:28:08.422Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 114,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 2
+    },
+    "created": "2025-06-03T17:28:13.412Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 115,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 2
+    },
+    "created": "2025-06-03T17:28:28.330Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 116,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 2
+    },
+    "created": "2025-06-03T17:28:55.930Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 117,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 2
+    },
+    "created": "2025-06-03T17:29:15.170Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 118,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 2
+    },
+    "created": "2025-06-03T17:30:18.782Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 119,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-06-03T17:33:47.452Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 120,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-06-03T17:34:51.351Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 121,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-06-03T17:37:49.566Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 122,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-06-03T17:38:54.110Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 123,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-06-03T17:39:18.173Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 124,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T18:33:45.350Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 125,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T18:34:08.655Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 126,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T18:35:29.492Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 127,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T18:36:34.137Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 128,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T18:37:06.124Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 129,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T18:38:20.292Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 130,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T18:38:27.947Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 131,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 8
+    },
+    "created": "2025-06-03T18:45:04.892Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 132,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 8
+    },
+    "created": "2025-06-03T18:46:10.951Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 133,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 8
+    },
+    "created": "2025-06-03T18:47:16.627Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 134,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 20
+    },
+    "created": "2025-06-03T18:48:15.602Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 135,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T18:49:33.610Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 136,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T18:50:37.777Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 137,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T18:51:44.177Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 138,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T18:51:50.432Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 139,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T18:51:52.310Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 140,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T18:54:10.293Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 141,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T19:10:37.728Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 142,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T19:11:21.315Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 143,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T19:11:34.988Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 144,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T19:11:37.525Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 145,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T19:14:19.190Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 146,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T19:14:32.919Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 147,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T19:14:45.108Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 148,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T19:14:57.507Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 149,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T19:15:12.333Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 150,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T19:16:35.738Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 151,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T19:18:06.002Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 152,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T19:18:29.401Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 153,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T19:18:41.818Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 154,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T19:18:54.544Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 155,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T19:19:06.448Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 156,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T19:19:27.375Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 157,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T19:19:53.516Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 158,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T19:20:05.490Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 159,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T19:20:17.134Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 160,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T19:20:28.690Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 161,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T19:20:40.400Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 162,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-06-03T19:28:40.335Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 163,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-06-03T19:28:53.318Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 164,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-06-03T19:29:17.223Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 165,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-06-03T19:29:52.115Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 166,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-06-03T19:30:04.174Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 167,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-06-03T19:30:16.224Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 168,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-06-03T19:30:28.227Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 169,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-06-03T19:30:40.299Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 170,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-06-03T20:28:41.957Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 171,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-06-03T21:00:45.611Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 172,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 10
+    },
+    "created": "2025-06-03T21:00:52.119Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 173,
+  "fields": {
+    "game_name": "anagram_hunt",
+    "settings": {
+      "word_length": 5
+    },
+    "created": "2025-06-03T21:02:51.729Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 174,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-06-03T21:04:45.009Z"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 175,
+  "fields": {
+    "game_name": "math_facts",
+    "settings": {
+      "operation": "+",
+      "max_number": 5
+    },
+    "created": "2025-06-03T21:05:47.639Z"
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 1,
+  "fields": {
+    "player": 1,
+    "game": 2,
+    "game_name": "math_facts",
+    "final_score": 6,
+    "game_date_time": "2025-05-20T16:13:21.488Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 97
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 2,
+  "fields": {
+    "player": 1,
+    "game": 3,
+    "game_name": "anagram_hunt",
+    "final_score": 4,
+    "game_date_time": "2025-05-20T17:16:59.388Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 19
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 3,
+  "fields": {
+    "player": 2,
+    "game": 4,
+    "game_name": "math_facts",
+    "final_score": 7,
+    "game_date_time": "2025-05-20T18:32:00.458Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 81
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 4,
+  "fields": {
+    "player": 2,
+    "game": 6,
+    "game_name": "anagram_hunt",
+    "final_score": 5,
+    "game_date_time": "2025-05-20T18:32:32.813Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 10
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 5,
+  "fields": {
+    "player": 1,
+    "game": 8,
+    "game_name": "math_facts",
+    "final_score": 0,
+    "game_date_time": "2025-05-23T15:37:19.646Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 126
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 6,
+  "fields": {
+    "player": 1,
+    "game": 9,
+    "game_name": "math_facts",
+    "final_score": 8,
+    "game_date_time": "2025-05-23T17:17:02.165Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 62
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 7,
+  "fields": {
+    "player": 1,
+    "game": 10,
+    "game_name": "math_facts",
+    "final_score": 7,
+    "game_date_time": "2025-05-23T17:17:28.014Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 85
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 8,
+  "fields": {
+    "player": 1,
+    "game": 11,
+    "game_name": "anagram_hunt",
+    "final_score": 4,
+    "game_date_time": "2025-05-23T17:18:30.933Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 13
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 9,
+  "fields": {
+    "player": 2,
+    "game": 19,
+    "game_name": "math_facts",
+    "final_score": 6,
+    "game_date_time": "2025-05-27T19:04:33.922Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 94
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 10,
+  "fields": {
+    "player": 2,
+    "game": 20,
+    "game_name": "math_facts",
+    "final_score": 7,
+    "game_date_time": "2025-05-27T19:06:59.319Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 82
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 11,
+  "fields": {
+    "player": 2,
+    "game": 21,
+    "game_name": "math_facts",
+    "final_score": 8,
+    "game_date_time": "2025-05-27T19:10:44.970Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 63
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 12,
+  "fields": {
+    "player": 2,
+    "game": 17,
+    "game_name": "math_facts",
+    "final_score": 6,
+    "game_date_time": "2025-05-27T19:13:11.605Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 99
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 14,
+  "fields": {
+    "player": 2,
+    "game": 24,
+    "game_name": "math_facts",
+    "final_score": 8,
+    "game_date_time": "2025-05-27T19:35:21.180Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 69
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 16,
+  "fields": {
+    "player": 5,
+    "game": 26,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-05-27T19:42:12.325Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 26
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 18,
+  "fields": {
+    "player": 2,
+    "game": 32,
+    "game_name": "anagram_hunt",
+    "final_score": 1,
+    "game_date_time": "2025-05-28T14:22:41.793Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 31
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 19,
+  "fields": {
+    "player": 1,
+    "game": 33,
+    "game_name": "anagram_hunt",
+    "final_score": 3,
+    "game_date_time": "2025-05-28T15:44:55.065Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 22
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 20,
+  "fields": {
+    "player": 2,
+    "game": 34,
+    "game_name": "math_facts",
+    "final_score": 8,
+    "game_date_time": "2025-05-28T19:02:46.044Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 65
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 21,
+  "fields": {
+    "player": 2,
+    "game": 35,
+    "game_name": "math_facts",
+    "final_score": 8,
+    "game_date_time": "2025-05-28T19:02:59.782Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 67
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 22,
+  "fields": {
+    "player": 2,
+    "game": 36,
+    "game_name": "math_facts",
+    "final_score": 7,
+    "game_date_time": "2025-05-28T19:03:12.419Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 84
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 23,
+  "fields": {
+    "player": 2,
+    "game": 37,
+    "game_name": "math_facts",
+    "final_score": 8,
+    "game_date_time": "2025-05-28T19:03:24.907Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 72
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 24,
+  "fields": {
+    "player": 2,
+    "game": 38,
+    "game_name": "math_facts",
+    "final_score": 6,
+    "game_date_time": "2025-05-28T19:04:10.032Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 98
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 25,
+  "fields": {
+    "player": 2,
+    "game": 39,
+    "game_name": "anagram_hunt",
+    "final_score": 2,
+    "game_date_time": "2025-05-28T19:05:43.411Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 28
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 26,
+  "fields": {
+    "player": 2,
+    "game": 40,
+    "game_name": "anagram_hunt",
+    "final_score": 1,
+    "game_date_time": "2025-05-28T19:05:56.946Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 30
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 27,
+  "fields": {
+    "player": 2,
+    "game": 41,
+    "game_name": "anagram_hunt",
+    "final_score": 3,
+    "game_date_time": "2025-05-28T19:06:11.489Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 21
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 28,
+  "fields": {
+    "player": 2,
+    "game": 42,
+    "game_name": "anagram_hunt",
+    "final_score": 2,
+    "game_date_time": "2025-05-28T19:06:24.349Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 25
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 29,
+  "fields": {
+    "player": 2,
+    "game": 43,
+    "game_name": "anagram_hunt",
+    "final_score": 4,
+    "game_date_time": "2025-05-28T19:06:37.165Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 14
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 30,
+  "fields": {
+    "player": 2,
+    "game": 44,
+    "game_name": "anagram_hunt",
+    "final_score": 1,
+    "game_date_time": "2025-05-28T19:06:49.734Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 32
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 31,
+  "fields": {
+    "player": 2,
+    "game": 45,
+    "game_name": "anagram_hunt",
+    "final_score": 0,
+    "game_date_time": "2025-05-28T19:07:02.678Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 35
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 32,
+  "fields": {
+    "player": 2,
+    "game": 46,
+    "game_name": "anagram_hunt",
+    "final_score": 5,
+    "game_date_time": "2025-05-28T19:12:00.205Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 8
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 33,
+  "fields": {
+    "player": 2,
+    "game": 47,
+    "game_name": "anagram_hunt",
+    "final_score": 5,
+    "game_date_time": "2025-05-28T19:12:13.209Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 9
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 34,
+  "fields": {
+    "player": 2,
+    "game": 48,
+    "game_name": "anagram_hunt",
+    "final_score": 2,
+    "game_date_time": "2025-05-28T19:12:25.895Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 26
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 35,
+  "fields": {
+    "player": 2,
+    "game": 49,
+    "game_name": "anagram_hunt",
+    "final_score": 1,
+    "game_date_time": "2025-05-28T19:26:37.777Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 33
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 36,
+  "fields": {
+    "player": 2,
+    "game": 51,
+    "game_name": "anagram_hunt",
+    "final_score": 17,
+    "game_date_time": "2025-05-29T20:45:06.401Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 6
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 37,
+  "fields": {
+    "player": 2,
+    "game": 54,
+    "game_name": "math_facts",
+    "final_score": 31,
+    "game_date_time": "2025-05-29T20:46:39.909Z",
+    "settings": "{\"operation\": \"-\", \"max_number\": 10}",
+    "rank": 12
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 38,
+  "fields": {
+    "player": 2,
+    "game": 55,
+    "game_name": "math_facts",
+    "final_score": 41,
+    "game_date_time": "2025-05-30T17:39:21.004Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 4
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 39,
+  "fields": {
+    "player": 2,
+    "game": 56,
+    "game_name": "anagram_hunt",
+    "final_score": 5,
+    "game_date_time": "2025-05-30T19:01:16.743Z",
+    "settings": "{\"word_length\": \"6\"}",
+    "rank": 11
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 40,
+  "fields": {
+    "player": 1,
+    "game": 60,
+    "game_name": "math_facts",
+    "final_score": 4,
+    "game_date_time": "2025-05-31T18:00:31.110Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 113
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 42,
+  "fields": {
+    "player": 7,
+    "game": 62,
+    "game_name": "math_facts",
+    "final_score": 4,
+    "game_date_time": "2025-05-31T18:07:25.276Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 114
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 43,
+  "fields": {
+    "player": 2,
+    "game": 63,
+    "game_name": "math_facts",
+    "final_score": 5,
+    "game_date_time": "2025-05-31T18:11:38.725Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 109
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 44,
+  "fields": {
+    "player": 2,
+    "game": 64,
+    "game_name": "math_facts",
+    "final_score": 0,
+    "game_date_time": "2025-06-02T14:55:22.012Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 123
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 45,
+  "fields": {
+    "player": 11,
+    "game": 65,
+    "game_name": "math_facts",
+    "final_score": 5,
+    "game_date_time": "2025-06-02T15:13:26.012Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 107
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 46,
+  "fields": {
+    "player": 11,
+    "game": 66,
+    "game_name": "math_facts",
+    "final_score": 4,
+    "game_date_time": "2025-06-02T15:14:28.808Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 115
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 47,
+  "fields": {
+    "player": 11,
+    "game": 67,
+    "game_name": "math_facts",
+    "final_score": 5,
+    "game_date_time": "2025-06-02T15:16:06.503Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 108
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 48,
+  "fields": {
+    "player": 11,
+    "game": 68,
+    "game_name": "math_facts",
+    "final_score": 5,
+    "game_date_time": "2025-06-02T15:55:24.619Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 106
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 49,
+  "fields": {
+    "player": 1,
+    "game": 69,
+    "game_name": "math_facts",
+    "final_score": 5,
+    "game_date_time": "2025-06-02T15:57:08.832Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 112
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 50,
+  "fields": {
+    "player": 1,
+    "game": 72,
+    "game_name": "math_facts",
+    "final_score": 8,
+    "game_date_time": "2025-06-02T17:49:02.790Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 66
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 51,
+  "fields": {
+    "player": 1,
+    "game": 73,
+    "game_name": "math_facts",
+    "final_score": 7,
+    "game_date_time": "2025-06-02T17:55:24.888Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 80
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 52,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:06:56.624Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 54
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 53,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:06:56.945Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 55
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 54,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:08:22.422Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 53
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 55,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:08:22.701Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 60
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 56,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:08:43.832Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 45
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 57,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:08:44.173Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 51
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 58,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:09:03.048Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 17
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 59,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:09:03.417Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 42
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 60,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:09:53.610Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 46
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 61,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:09:53.952Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 43
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 62,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:10:38.043Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 49
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 63,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:10:38.324Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 44
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 64,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:11:08.371Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 19
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 65,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:11:08.750Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 47
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 66,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:11:42.057Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 16
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 67,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:11:42.432Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 48
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 68,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:11:56.645Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 56
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 69,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:11:57.037Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 18
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 70,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:12:42.423Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 41
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 71,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:12:42.987Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 58
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 72,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:12:57.452Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 57
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 73,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:12:57.874Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 28
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 74,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:21:13.997Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 36
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 75,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:21:14.410Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 27
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 76,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:22:01.233Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 35
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 77,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:22:01.589Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 23
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 78,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:22:44.505Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 40
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 79,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:22:44.929Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 59
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 80,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:24:53.624Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 34
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 81,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:24:53.953Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 24
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 82,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:29:48.839Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 33
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 83,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:29:49.141Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 25
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 84,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:32:29.656Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 32
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 85,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:32:29.974Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 38
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 86,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:33:14.910Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 31
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 87,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:33:15.248Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 39
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 88,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:36:21.412Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 30
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 89,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:36:21.839Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 20
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 90,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:39:01.006Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 29
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 91,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:39:01.296Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 52
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 92,
+  "fields": {
+    "player": 1,
+    "game": 75,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T18:39:10.671Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 21
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 93,
+  "fields": {
+    "player": 1,
+    "game": 76,
+    "game_name": "math_facts",
+    "final_score": 6,
+    "game_date_time": "2025-06-02T18:58:51.908Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 91
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 94,
+  "fields": {
+    "player": 1,
+    "game": 77,
+    "game_name": "math_facts",
+    "final_score": 6,
+    "game_date_time": "2025-06-02T18:59:16.702Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 92
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 95,
+  "fields": {
+    "player": 11,
+    "game": 79,
+    "game_name": "math_facts",
+    "final_score": 5,
+    "game_date_time": "2025-06-02T20:18:41.357Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 111
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 96,
+  "fields": {
+    "player": 11,
+    "game": 80,
+    "game_name": "math_facts",
+    "final_score": 6,
+    "game_date_time": "2025-06-02T20:43:26.965Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 88
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 97,
+  "fields": {
+    "player": 11,
+    "game": 82,
+    "game_name": "math_facts",
+    "final_score": 6,
+    "game_date_time": "2025-06-02T20:50:06.940Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 90
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 98,
+  "fields": {
+    "player": 11,
+    "game": 83,
+    "game_name": "math_facts",
+    "final_score": 4,
+    "game_date_time": "2025-06-02T20:55:47.038Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 117
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 99,
+  "fields": {
+    "player": 11,
+    "game": 84,
+    "game_name": "math_facts",
+    "final_score": 6,
+    "game_date_time": "2025-06-02T21:02:51.896Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 89
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 100,
+  "fields": {
+    "player": 11,
+    "game": 85,
+    "game_name": "math_facts",
+    "final_score": 6,
+    "game_date_time": "2025-06-02T21:09:41.590Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 93
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 101,
+  "fields": {
+    "player": 11,
+    "game": 86,
+    "game_name": "math_facts",
+    "final_score": 8,
+    "game_date_time": "2025-06-02T21:21:10.581Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 70
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 102,
+  "fields": {
+    "player": 11,
+    "game": 87,
+    "game_name": "math_facts",
+    "final_score": 8,
+    "game_date_time": "2025-06-02T21:25:22.135Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 64
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 103,
+  "fields": {
+    "player": 11,
+    "game": 88,
+    "game_name": "math_facts",
+    "final_score": 7,
+    "game_date_time": "2025-06-02T21:27:14.441Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 86
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 104,
+  "fields": {
+    "player": 2,
+    "game": 89,
+    "game_name": "math_facts",
+    "final_score": 8,
+    "game_date_time": "2025-06-02T21:32:30.056Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 2}",
+    "rank": 74
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 105,
+  "fields": {
+    "player": 11,
+    "game": 90,
+    "game_name": "math_facts",
+    "final_score": 7,
+    "game_date_time": "2025-06-02T21:42:48.276Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 79
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 106,
+  "fields": {
+    "player": 11,
+    "game": 92,
+    "game_name": "math_facts",
+    "final_score": 8,
+    "game_date_time": "2025-06-02T21:59:35.233Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 73
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 107,
+  "fields": {
+    "player": 2,
+    "game": 94,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T22:06:19.981Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 2}",
+    "rank": 50
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 108,
+  "fields": {
+    "player": 11,
+    "game": 95,
+    "game_name": "math_facts",
+    "final_score": 7,
+    "game_date_time": "2025-06-02T22:11:29.186Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 83
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 109,
+  "fields": {
+    "player": 1,
+    "game": 96,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-02T22:17:19.259Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 2}",
+    "rank": 22
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 110,
+  "fields": {
+    "player": 1,
+    "game": 97,
+    "game_name": "math_facts",
+    "final_score": 7,
+    "game_date_time": "2025-06-02T22:30:05.031Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 2}",
+    "rank": 77
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 111,
+  "fields": {
+    "player": 1,
+    "game": 99,
+    "game_name": "math_facts",
+    "final_score": 7,
+    "game_date_time": "2025-06-02T22:31:20.294Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 3}",
+    "rank": 87
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 112,
+  "fields": {
+    "player": 1,
+    "game": 100,
+    "game_name": "math_facts",
+    "final_score": 8,
+    "game_date_time": "2025-06-02T22:35:27.987Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 4}",
+    "rank": 61
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 113,
+  "fields": {
+    "player": 12,
+    "game": 102,
+    "game_name": "math_facts",
+    "final_score": 7,
+    "game_date_time": "2025-06-03T16:26:21.186Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 6}",
+    "rank": 78
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 114,
+  "fields": {
+    "player": 12,
+    "game": 103,
+    "game_name": "math_facts",
+    "final_score": 9,
+    "game_date_time": "2025-06-03T16:27:30.232Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 4}",
+    "rank": 37
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 115,
+  "fields": {
+    "player": 12,
+    "game": 104,
+    "game_name": "math_facts",
+    "final_score": 8,
+    "game_date_time": "2025-06-03T16:30:28.085Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 68
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 116,
+  "fields": {
+    "player": 12,
+    "game": 105,
+    "game_name": "math_facts",
+    "final_score": 8,
+    "game_date_time": "2025-06-03T16:36:21.452Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 3}",
+    "rank": 75
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 117,
+  "fields": {
+    "player": 12,
+    "game": 106,
+    "game_name": "math_facts",
+    "final_score": 35,
+    "game_date_time": "2025-06-03T16:39:10.647Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 8
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 118,
+  "fields": {
+    "player": 12,
+    "game": 107,
+    "game_name": "anagram_hunt",
+    "final_score": 2,
+    "game_date_time": "2025-06-03T16:59:39.661Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 24
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 119,
+  "fields": {
+    "player": 12,
+    "game": 108,
+    "game_name": "anagram_hunt",
+    "final_score": 4,
+    "game_date_time": "2025-06-03T17:01:19.589Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 18
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 120,
+  "fields": {
+    "player": 12,
+    "game": 109,
+    "game_name": "anagram_hunt",
+    "final_score": 19,
+    "game_date_time": "2025-06-03T17:16:14.047Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 5
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 121,
+  "fields": {
+    "player": 12,
+    "game": 110,
+    "game_name": "anagram_hunt",
+    "final_score": 21,
+    "game_date_time": "2025-06-03T17:17:54.340Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 4
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 122,
+  "fields": {
+    "player": 12,
+    "game": 111,
+    "game_name": "math_facts",
+    "final_score": 24,
+    "game_date_time": "2025-06-03T17:26:16.297Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 20}",
+    "rank": 14
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 123,
+  "fields": {
+    "player": 12,
+    "game": 112,
+    "game_name": "math_facts",
+    "final_score": 33,
+    "game_date_time": "2025-06-03T17:27:42.589Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 12}",
+    "rank": 10
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 124,
+  "fields": {
+    "player": 12,
+    "game": 115,
+    "game_name": "math_facts",
+    "final_score": 0,
+    "game_date_time": "2025-06-03T17:28:37.837Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 2}",
+    "rank": 129
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 125,
+  "fields": {
+    "player": 12,
+    "game": 116,
+    "game_name": "math_facts",
+    "final_score": 0,
+    "game_date_time": "2025-06-03T17:29:03.435Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 2}",
+    "rank": 127
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 126,
+  "fields": {
+    "player": 12,
+    "game": 117,
+    "game_name": "math_facts",
+    "final_score": 46,
+    "game_date_time": "2025-06-03T17:30:15.210Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 2}",
+    "rank": 2
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 127,
+  "fields": {
+    "player": 12,
+    "game": 118,
+    "game_name": "math_facts",
+    "final_score": 2,
+    "game_date_time": "2025-06-03T17:31:18.833Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 2}",
+    "rank": 120
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 128,
+  "fields": {
+    "player": 12,
+    "game": 119,
+    "game_name": "anagram_hunt",
+    "final_score": 23,
+    "game_date_time": "2025-06-03T17:34:47.452Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 2
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 129,
+  "fields": {
+    "player": 12,
+    "game": 120,
+    "game_name": "anagram_hunt",
+    "final_score": 6,
+    "game_date_time": "2025-06-03T17:35:51.443Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 7
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 130,
+  "fields": {
+    "player": 12,
+    "game": 121,
+    "game_name": "anagram_hunt",
+    "final_score": 23,
+    "game_date_time": "2025-06-03T17:38:49.599Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 3
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 131,
+  "fields": {
+    "player": 12,
+    "game": 123,
+    "game_name": "anagram_hunt",
+    "final_score": 0,
+    "game_date_time": "2025-06-03T17:39:36.168Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 34
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 132,
+  "fields": {
+    "player": 12,
+    "game": 125,
+    "game_name": "math_facts",
+    "final_score": 33,
+    "game_date_time": "2025-06-03T18:35:24.258Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 9
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 133,
+  "fields": {
+    "player": 12,
+    "game": 126,
+    "game_name": "math_facts",
+    "final_score": 37,
+    "game_date_time": "2025-06-03T18:36:29.538Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 6
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 134,
+  "fields": {
+    "player": 12,
+    "game": 128,
+    "game_name": "math_facts",
+    "final_score": 30,
+    "game_date_time": "2025-06-03T18:38:06.316Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 13
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 135,
+  "fields": {
+    "player": 12,
+    "game": 130,
+    "game_name": "math_facts",
+    "final_score": 0,
+    "game_date_time": "2025-06-03T18:38:54.261Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 132
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 136,
+  "fields": {
+    "player": 12,
+    "game": 130,
+    "game_name": "math_facts",
+    "final_score": 0,
+    "game_date_time": "2025-06-03T18:39:54.827Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 122
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 137,
+  "fields": {
+    "player": 12,
+    "game": 131,
+    "game_name": "math_facts",
+    "final_score": 43,
+    "game_date_time": "2025-06-03T18:46:04.807Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 8}",
+    "rank": 3
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 138,
+  "fields": {
+    "player": 12,
+    "game": 132,
+    "game_name": "math_facts",
+    "final_score": 40,
+    "game_date_time": "2025-06-03T18:47:11.010Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 8}",
+    "rank": 5
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 139,
+  "fields": {
+    "player": 12,
+    "game": 134,
+    "game_name": "math_facts",
+    "final_score": 12,
+    "game_date_time": "2025-06-03T18:49:29.781Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 20}",
+    "rank": 15
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 140,
+  "fields": {
+    "player": 12,
+    "game": 135,
+    "game_name": "math_facts",
+    "final_score": 32,
+    "game_date_time": "2025-06-03T18:50:33.714Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 11
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 141,
+  "fields": {
+    "player": 12,
+    "game": 136,
+    "game_name": "math_facts",
+    "final_score": 35,
+    "game_date_time": "2025-06-03T18:51:37.815Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 7
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 142,
+  "fields": {
+    "player": 12,
+    "game": 139,
+    "game_name": "math_facts",
+    "final_score": 0,
+    "game_date_time": "2025-06-03T18:52:09.394Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 134
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 143,
+  "fields": {
+    "player": 12,
+    "game": 139,
+    "game_name": "math_facts",
+    "final_score": 0,
+    "game_date_time": "2025-06-03T18:52:39.214Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 124
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 144,
+  "fields": {
+    "player": 12,
+    "game": 139,
+    "game_name": "math_facts",
+    "final_score": 0,
+    "game_date_time": "2025-06-03T18:53:09.246Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 130
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 145,
+  "fields": {
+    "player": 12,
+    "game": 139,
+    "game_name": "math_facts",
+    "final_score": 0,
+    "game_date_time": "2025-06-03T18:53:39.605Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 133
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 146,
+  "fields": {
+    "player": 12,
+    "game": 139,
+    "game_name": "math_facts",
+    "final_score": 0,
+    "game_date_time": "2025-06-03T18:54:09.169Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 128
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 147,
+  "fields": {
+    "player": 12,
+    "game": 140,
+    "game_name": "math_facts",
+    "final_score": 0,
+    "game_date_time": "2025-06-03T18:54:29.467Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 131
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 148,
+  "fields": {
+    "player": 12,
+    "game": 142,
+    "game_name": "math_facts",
+    "final_score": 5,
+    "game_date_time": "2025-06-03T19:11:31.331Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 105
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 149,
+  "fields": {
+    "player": 12,
+    "game": 144,
+    "game_name": "math_facts",
+    "final_score": 0,
+    "game_date_time": "2025-06-03T19:11:47.484Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 125
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 150,
+  "fields": {
+    "player": 12,
+    "game": 145,
+    "game_name": "math_facts",
+    "final_score": 7,
+    "game_date_time": "2025-06-03T19:14:29.172Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 76
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 151,
+  "fields": {
+    "player": 12,
+    "game": 146,
+    "game_name": "math_facts",
+    "final_score": 6,
+    "game_date_time": "2025-06-03T19:14:42.971Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 100
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 152,
+  "fields": {
+    "player": 12,
+    "game": 147,
+    "game_name": "math_facts",
+    "final_score": 5,
+    "game_date_time": "2025-06-03T19:14:55.139Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 110
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 153,
+  "fields": {
+    "player": 12,
+    "game": 148,
+    "game_name": "math_facts",
+    "final_score": 6,
+    "game_date_time": "2025-06-03T19:15:07.519Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 101
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 154,
+  "fields": {
+    "player": 12,
+    "game": 149,
+    "game_name": "math_facts",
+    "final_score": 1,
+    "game_date_time": "2025-06-03T19:15:22.467Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 121
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 155,
+  "fields": {
+    "player": 12,
+    "game": 152,
+    "game_name": "math_facts",
+    "final_score": 5,
+    "game_date_time": "2025-06-03T19:18:39.451Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 104
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 156,
+  "fields": {
+    "player": 12,
+    "game": 153,
+    "game_name": "math_facts",
+    "final_score": 5,
+    "game_date_time": "2025-06-03T19:18:51.832Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 102
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 157,
+  "fields": {
+    "player": 12,
+    "game": 154,
+    "game_name": "math_facts",
+    "final_score": 4,
+    "game_date_time": "2025-06-03T19:19:04.690Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 118
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 158,
+  "fields": {
+    "player": 12,
+    "game": 155,
+    "game_name": "math_facts",
+    "final_score": 8,
+    "game_date_time": "2025-06-03T19:19:16.423Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 71
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 159,
+  "fields": {
+    "player": 12,
+    "game": 156,
+    "game_name": "math_facts",
+    "final_score": 3,
+    "game_date_time": "2025-06-03T19:19:49.497Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 119
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 160,
+  "fields": {
+    "player": 12,
+    "game": 157,
+    "game_name": "math_facts",
+    "final_score": 6,
+    "game_date_time": "2025-06-03T19:20:03.535Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 95
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 161,
+  "fields": {
+    "player": 12,
+    "game": 158,
+    "game_name": "math_facts",
+    "final_score": 6,
+    "game_date_time": "2025-06-03T19:20:15.514Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 96
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 162,
+  "fields": {
+    "player": 12,
+    "game": 159,
+    "game_name": "math_facts",
+    "final_score": 4,
+    "game_date_time": "2025-06-03T19:20:27.140Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 116
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 163,
+  "fields": {
+    "player": 12,
+    "game": 160,
+    "game_name": "math_facts",
+    "final_score": 5,
+    "game_date_time": "2025-06-03T19:20:38.704Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 10}",
+    "rank": 103
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 164,
+  "fields": {
+    "player": 12,
+    "game": 162,
+    "game_name": "anagram_hunt",
+    "final_score": 4,
+    "game_date_time": "2025-06-03T19:28:50.341Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 16
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 165,
+  "fields": {
+    "player": 12,
+    "game": 163,
+    "game_name": "anagram_hunt",
+    "final_score": 5,
+    "game_date_time": "2025-06-03T19:29:03.382Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 12
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 166,
+  "fields": {
+    "player": 12,
+    "game": 164,
+    "game_name": "anagram_hunt",
+    "final_score": 2,
+    "game_date_time": "2025-06-03T19:29:46.884Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 27
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 167,
+  "fields": {
+    "player": 12,
+    "game": 165,
+    "game_name": "anagram_hunt",
+    "final_score": 3,
+    "game_date_time": "2025-06-03T19:30:02.153Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 23
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 168,
+  "fields": {
+    "player": 12,
+    "game": 166,
+    "game_name": "anagram_hunt",
+    "final_score": 4,
+    "game_date_time": "2025-06-03T19:30:14.301Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 17
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 169,
+  "fields": {
+    "player": 12,
+    "game": 167,
+    "game_name": "anagram_hunt",
+    "final_score": 3,
+    "game_date_time": "2025-06-03T19:30:26.307Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 20
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 170,
+  "fields": {
+    "player": 12,
+    "game": 168,
+    "game_name": "anagram_hunt",
+    "final_score": 4,
+    "game_date_time": "2025-06-03T19:30:38.204Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 15
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 171,
+  "fields": {
+    "player": 12,
+    "game": 169,
+    "game_name": "anagram_hunt",
+    "final_score": 2,
+    "game_date_time": "2025-06-03T19:30:50.409Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 29
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 172,
+  "fields": {
+    "player": 12,
+    "game": 173,
+    "game_name": "anagram_hunt",
+    "final_score": 26,
+    "game_date_time": "2025-06-03T21:04:06.060Z",
+    "settings": "{\"word_length\": 5}",
+    "rank": 1
+  }
+},
+{
+  "model": "games.finalscore",
+  "pk": 173,
+  "fields": {
+    "player": 12,
+    "game": 174,
+    "game_name": "math_facts",
+    "final_score": 50,
+    "game_date_time": "2025-06-03T21:05:45.055Z",
+    "settings": "{\"operation\": \"+\", \"max_number\": 5}",
+    "rank": 1
+  }
+},
+{
+  "model": "pages.contactus",
+  "pk": 1,
+  "fields": {
+    "first_name": "Heather",
+    "last_name": "Cunningham",
+    "email": "Cunningham.HeatherIrene@gmail.com",
+    "username": "Unregistered User",
+    "user": null,
+    "comments": "Hi, I have questions about your pedagogy? #2",
+    "contact_date_time": "2025-05-22T19:24:05.537Z"
+  }
+},
+{
+  "model": "pages.contactus",
+  "pk": 2,
+  "fields": {
+    "first_name": "Heather",
+    "last_name": "Cunningham",
+    "email": "Cunningham.HeatherIrene@gmail.com",
+    "username": "Unregistered User",
+    "user": null,
+    "comments": "Hi, I have questions about NSCC...",
+    "contact_date_time": "2025-05-23T14:16:11.585Z"
+  }
+},
+{
+  "model": "pages.contactus",
+  "pk": 3,
+  "fields": {
+    "first_name": "Test",
+    "last_name": "User2",
+    "email": "test_user2@eamil.com",
+    "username": "Unregistered User",
+    "user": 2,
+    "comments": "testing contact thanks mobile page",
+    "contact_date_time": "2025-05-29T19:47:13.204Z"
+  }
+},
+{
+  "model": "pages.contactus",
+  "pk": 4,
+  "fields": {
+    "first_name": "Heather",
+    "last_name": "Cunningham",
+    "email": "Cunningham.HeatherIrene@gmail.com",
+    "username": "Unregistered User",
+    "user": null,
+    "comments": "Test Contact Us full screen page",
+    "contact_date_time": "2025-05-29T20:28:07.645Z"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 6,
+  "fields": {
+    "first_name": "Joe",
+    "last_name": "Schmoe",
+    "email": "joe_schmoe@email.com",
+    "username": "joe",
+    "user": 8,
+    "comments": "I've never had more fun than playing Anagram Hunt.  It's the best anagram game ever!",
+    "review_date_time": "2025-05-29T17:26:31.601Z",
+    "is_featured": true
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 7,
+  "fields": {
+    "first_name": "Ms. Madeup",
+    "last_name": "Teacher",
+    "email": "ms_teacher@email.com",
+    "username": "ms_teacher",
+    "user": 9,
+    "comments": "I've definitely seen an improvement in arithmetic scores since my students started playing Math Facts.",
+    "review_date_time": "2025-05-29T17:30:10.310Z",
+    "is_featured": true
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 8,
+  "fields": {
+    "first_name": "Jane",
+    "last_name": "Doe",
+    "email": "jane_doe@email.com",
+    "username": "jane",
+    "user": 10,
+    "comments": "I love playing Math Facts for homework.  It's way better than normal homework!",
+    "review_date_time": "2025-05-29T17:32:31.069Z",
+    "is_featured": true
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 11,
+  "fields": {
+    "first_name": "Daphne",
+    "last_name": "Blake",
+    "email": "daphne@email.com",
+    "username": "daphne",
+    "user": 11,
+    "comments": "Jinkies!  Play2Learn is more fun than solving mysteries!",
+    "review_date_time": "2025-06-04T16:39:52.705Z",
+    "is_featured": true
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 12,
+  "fields": {
+    "first_name": "HeatherIrene",
+    "last_name": "C",
+    "email": "heatherirene2@msn.com",
+    "username": "Unregistered User",
+    "user": 2,
+    "comments": "I had so much fun developing this website.  I hope you enjoy it.",
+    "review_date_time": "2025-06-04T16:45:29.760Z",
+    "is_featured": false
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 13,
+  "fields": {
+    "first_name": "Test",
+    "last_name": "User1",
+    "email": "test_user1@email.com",
+    "username": "test_user1",
+    "user": 1,
+    "comments": "Test, test, test:  This is a test.",
+    "review_date_time": "2025-06-04T16:52:32.370Z",
+    "is_featured": false
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 14,
+  "fields": {
+    "first_name": "Test",
+    "last_name": "User1",
+    "email": "test_user1@email.com",
+    "username": "test_user1",
+    "user": null,
+    "comments": "#2: Test, test, test: This is test #2.",
+    "review_date_time": "2025-06-04T16:54:26.531Z",
+    "is_featured": false
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 15,
+  "fields": {
+    "first_name": "Anonymous",
+    "last_name": "User",
+    "email": "anonymous_user@email.com",
+    "username": "Unregistered User",
+    "user": null,
+    "comments": "#3: This test is for an 'Unregistered User' review. \r\nThis is test #3.",
+    "review_date_time": "2025-06-04T16:56:19.568Z",
+    "is_featured": false
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$vOCsrS1edv5pAf0Eobb1jX$U/kbS0AHCpbAYHJugvWhDD2iIRXQyXOvR1iG/f18Gg8=",
+    "last_login": "2025-06-04T16:51:36.093Z",
+    "is_superuser": false,
+    "username": "test_user1",
+    "first_name": "Test",
+    "last_name": "User1",
+    "email": "cunningham.heatherirene@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-05-20T16:13:20Z",
+    "joined": "2025-05-28T16:43:04.060Z",
+    "birthdate": null,
+    "avatar": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$NsxDpWOkCJpUSuE1NzjJIB$NDNAqoRiSswDENqr6jXvEXbFVkeqDnr2JuyRV0VEyIA=",
+    "last_login": "2025-06-04T16:56:51.364Z",
+    "is_superuser": true,
+    "username": "heatherirene2",
+    "first_name": "HeatherIrene2",
+    "last_name": "Cunningham",
+    "email": "heatherirene2@msn.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-05-20T16:23:34Z",
+    "joined": "2025-05-28T16:43:04.060Z",
+    "birthdate": null,
+    "avatar": "avatars/heather_flowers.jpg",
+    "groups": [],
+    "user_permissions": [
+      1,
+      2,
+      3,
+      4,
+      9,
+      10,
+      11,
+      12,
+      5,
+      6,
+      7,
+      8,
+      13,
+      14,
+      15,
+      16,
+      25,
+      26,
+      27,
+      28,
+      21,
+      22,
+      23,
+      24,
+      17,
+      18,
+      19,
+      20,
+      29,
+      30,
+      31,
+      32
+    ]
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$ZcoinyX6KnZuUBvVpGwR7F$h0Ks6xxD/uGO0ffcjWFY2Mu/3vC1m0aw1d1BCuW/4+s=",
+    "last_login": "2025-05-27T19:42:09.962Z",
+    "is_superuser": true,
+    "username": "hcunningham",
+    "first_name": "Heather",
+    "last_name": "Cunningham",
+    "email": "Cunningham.HeatherIrene@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-05-26T17:55:48Z",
+    "joined": "2025-05-28T16:43:04.060Z",
+    "birthdate": null,
+    "avatar": "",
+    "groups": [],
+    "user_permissions": [
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      1,
+      2,
+      3,
+      4,
+      9,
+      10,
+      11,
+      12,
+      5,
+      6,
+      7,
+      8,
+      13,
+      14,
+      15,
+      16,
+      25,
+      26,
+      27,
+      28,
+      21,
+      22,
+      23,
+      24,
+      37,
+      38,
+      39,
+      40,
+      33,
+      34,
+      35,
+      36,
+      17,
+      18,
+      19,
+      20,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      29,
+      30,
+      31,
+      32
+    ]
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$Bp2IyMA3OI4NAzShQx8zWJ$SELKEv+s0ffvU4GcZqtsP3OWEVMGAOKqBnsdYpE1EXQ=",
+    "last_login": "2025-05-31T18:07:22.788Z",
+    "is_superuser": false,
+    "username": "heatherirene",
+    "first_name": "HeatherIrene",
+    "last_name": "Cunningham",
+    "email": "heatherirene2@comcast.net",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-05-27T22:12:28Z",
+    "joined": "2025-05-28T16:43:04.060Z",
+    "birthdate": null,
+    "avatar": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$VDX8ZruYYTIsruXuFN1bIL$HcqSAHjzkVCXo6WgSWLepA50y7mupenwQ4SHrXj6bHo=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "joe",
+    "first_name": "Joe",
+    "last_name": "Schmoe",
+    "email": "joe_schmoe@email.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-05-29T17:20:26Z",
+    "joined": "2025-05-29T17:20:27.768Z",
+    "birthdate": null,
+    "avatar": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$G8SqTFJW8EBM2EOczXTsZS$CHvU6Kcq27eVOvC+MOSjGD03TmplUZEVB3NIW1Ex7wk=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ms_teacher",
+    "first_name": "Ms. Madeup",
+    "last_name": "Teacher",
+    "email": "ms_teacher@email.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-05-29T17:22:21.017Z",
+    "joined": "2025-05-29T17:22:22.058Z",
+    "birthdate": null,
+    "avatar": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$MCr8OVd7nLwbnQWz3VVXd2$S5EbuOSB20PZwbOPFm1EFsQUgh12gNzInbB8OPag41s=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "jane",
+    "first_name": "Jane",
+    "last_name": "Doe",
+    "email": "jane_doe@email.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-05-29T17:23:32.649Z",
+    "joined": "2025-05-29T17:23:33.718Z",
+    "birthdate": null,
+    "avatar": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$4ljof5h6xitNw8sx9hjDg9$HMQQ+eP3ijeuMesY/sUIEAYkN+0J5JtSSeDBuU9iHp4=",
+    "last_login": "2025-06-04T16:37:41.889Z",
+    "is_superuser": false,
+    "username": "daphne",
+    "first_name": "Daphne",
+    "last_name": "Blake",
+    "email": "daphne@email.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-05-31T18:10:28Z",
+    "joined": "2025-05-31T18:10:29.523Z",
+    "birthdate": null,
+    "avatar": "avatars/daphne_profile_pic.png",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 12,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$b02UnzPWMZxZI5b2uSl46h$c3JfkPEbb+h8BBaCTtSSAJxJhmeBYdjIkWfGpYrzkbQ=",
+    "last_login": "2025-06-03T21:06:14.190Z",
+    "is_superuser": false,
+    "username": "heather",
+    "first_name": "Heather",
+    "last_name": "Cunningham",
+    "email": "Cunningham.heatherirene@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-06-03T15:31:19Z",
+    "joined": "2025-06-03T15:31:22.165Z",
+    "birthdate": null,
+    "avatar": "avatars/purple_flower_sml.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
