@@ -10,6 +10,14 @@ class HomePageView(ListView):
     model = Review
     template_name = "pages/home.html"
     context_object_name = "reviews"
+    #
+    #
+    def get_queryset(self):
+        """ Return featured reviews for the homepage carousel. """
+        queryset = Review.objects.filter(is_featured=True).order_by("-review_date_time")
+        if not queryset.exists():
+            return []
+        return queryset
 
 
 class AboutUsView(TemplateView):
@@ -20,8 +28,8 @@ class ContactUsFormView(FormView):
     template_name = "pages/contact-us.html"
     form_class = ContactUsForm
     success_url = reverse_lazy("pages:contact-thanks")
-
-
+    #
+    #
     def form_valid(self, form):
         data = form.cleaned_data
         user = self.request.user if self.request.user.is_authenticated else None

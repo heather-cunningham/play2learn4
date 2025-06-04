@@ -14,6 +14,7 @@ class Review(models.Model):
                              blank=True, null=True)
     comments = models.TextField()
     review_date_time = models.DateTimeField(auto_now_add=True)
+    is_featured = models.BooleanField(default=False, blank=True, null=True)
     # 
     # 
     def save(self, *args, **kwargs):
@@ -27,12 +28,14 @@ class Review(models.Model):
     def __str__(self):
         submitted_by = f"{self.first_name} {self.last_name}"
         username_info = f"Username: ({self.username})" if self.username else ""
+        featured = f"Featured Review: ({self.is_featured})" if self.is_featured else ""
 
         return f"""Review submitted by:\n
         {'-' * 20}\n
         {submitted_by}, {username_info}\n
-        Email: {self.email},
-        On: {self.review_date_time},
+        Email: {self.email}\n
+        On: {self.review_date_time}\n
+        {featured}\n
         Comments:\n
         {'-' * 10}\n
         {self.comments}"""

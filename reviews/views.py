@@ -9,22 +9,24 @@ class ReviewFormView(FormView):
     template_name = "reviews/review-form.html"
     form_class = ReviewForm
     success_url = reverse_lazy("reviews:thanks")
-
-
+    #
+    #
     def form_valid(self, form):
         data = form.cleaned_data
         user = self.request.user if self.request.user.is_authenticated else None
-        username = data.get("username", "").strip()
-        if (not username and user):  
+        if (user):  
             username = user.username  
         else:
-            username = "Unregistered User"
+            username = data.get("username", "").strip() or "Unregistered User"
         data["username"] = username
         ## Set up email to send
         to = "cunningham.heatherirene@gmail.com"
         subject = "Review submitted"
-        content = f'''<p>Hey PR Manager!</p>
+        content = f'''<p>Hey Admin or PR Manager!</p>
             <p>Play2Learn feedback received:</p>
+            <p>Please, login to the admin site if you wish to mark this review as featured 
+            and display it on the home page.</p>  
+            <p>Only featured reviews will display on the home page.</p>
             <ul>'''
         for key, value in data.items():
             label = key.replace('_', ' ').title()

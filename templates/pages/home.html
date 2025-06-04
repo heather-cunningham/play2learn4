@@ -51,11 +51,11 @@
     </div>
   </div> <!-- END games-cards-row -->
 
-  
+  <!-- Review Carousel -->
+  {% if reviews %}
   <h3 id="review-carousel-header" 
     class="mx-auto my-3 text-center">Wow! Our Reviews</h3>
-
-  <!-- Review Carousel -->
+    
   <div id="review-carousel-container" class="container mx-auto mb-5 pb-5 text-center"> 
     <div id="review-carousel" class="carousel slide" data-bs-ride="carousel">
       <div id="review-carousel-inner" class="carousel-inner">
@@ -84,7 +84,9 @@
         aria-label="Next"><span class="carousel-control-next-icon" 
         aria-hidden="true"></span></button>
     </div>
-  </div> <!-- END Review Carousel -->
+  </div> 
+  {% endif %}
+  <!-- END Review Carousel -->
 
 </div>
 {% endblock %}
