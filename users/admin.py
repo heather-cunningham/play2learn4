@@ -14,6 +14,7 @@ class CustomUserAdmin(UserAdmin):
     list_display_links = ("username", "first_name", "last_name", "email", )
     list_filter = ("is_staff", "is_superuser", "is_active", "birthdate", "joined",)
     search_fields = ("first_name", "last_name", "email", "username",)
+    actions = ["deactivate_users"]
     #
     #
     def deactivate_users(self, request, queryset):
