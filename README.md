@@ -14,7 +14,7 @@ final score for each game.  Also, add leaderboards for both games. These leaderb
 * Python - Written by me
 * Django -  Written by me
 * Postgresql - For the database
--- See file: `./play2learn/fixtures/fixture_play2learn4.json` for the data dump.
+* -- See file: `./play2learn/fixtures/fixture_play2learn4.json` for the data dump.
 * Node.js - Written by my instructors in the GitHub template
 * Vue.js - Part of the GitHub template written by my instructors with bug fixes by me
 * JavaScript - Some written by me, some from the template written by my instructors
